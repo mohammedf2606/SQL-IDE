@@ -2,8 +2,16 @@ grammar uk.ac.kcl.inf.languages.tracery.TraceryLanguage with org.eclipse.xtext.c
 
 generate traceryLanguage "http://www.ac.uk/kcl/inf/languages/tracery/TraceryLanguage"
 
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
+TraceryProgram:
+	'{'
+	statements += Statement*
+	'}'
+;
+
+Statement:
+	'"' Variable '":' '['  ']'  
+;
+
+Variable:
+	"text"
+;
