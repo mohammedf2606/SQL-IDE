@@ -1,0 +1,4 @@
+{
+	&origin&: [&"hello"&, &#test_abc.the#&]
+	,&test_abc&:[&"nice job dude"&, &"nah bad job" #helloworld# "la ala ala ala"&]
+}

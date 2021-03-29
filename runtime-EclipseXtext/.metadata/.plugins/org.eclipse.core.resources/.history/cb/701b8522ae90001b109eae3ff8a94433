@@ -1,0 +1,5 @@
+{
+	&origin&:[&"hello" #"yay"#&]
+	,&yay&:[&"kick" "my" "ass" "dick" #"bodyPart"#&, &"you are a greatest friend"&, &#"hello".a#& ]
+	,&bodyPart&:[&"head"&, &"arm"&, &"leg hello"&]
+}

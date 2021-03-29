@@ -1,0 +1,4 @@
+{
+	&origin&: [&"hello"&, &#"test".the#&]
+	,&test&:[&"nice job dude"&, &"nah bad job"&]
+}

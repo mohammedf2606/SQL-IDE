@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: uk.ac.kcl.inf.languages.tracery
+Bundle-ManifestVersion: 2
+Bundle-Name: uk.ac.kcl.inf.languages.tracery
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: uk.ac.kcl.inf.languages.tracery; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: uk.ac.kcl.inf.languages.tracery.traceryLanguage.util,
+ uk.ac.kcl.inf.languages.tracery.parser.antlr,
+ uk.ac.kcl.inf.languages.tracery.serializer,
+ uk.ac.kcl.inf.languages.tracery.parser.antlr.internal,
+ uk.ac.kcl.inf.languages.tracery.services,
+ uk.ac.kcl.inf.languages.tracery.validation,
+ uk.ac.kcl.inf.languages.tracery.generator,
+ uk.ac.kcl.inf.languages.tracery,
+ uk.ac.kcl.inf.languages.tracery.traceryLanguage,
+ uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl,
+ uk.ac.kcl.inf.languages.tracery.scoping
+Import-Package: org.apache.log4j
