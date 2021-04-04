@@ -42,22 +42,22 @@ public interface TraceryLanguageFactory extends EFactory
   VariableDecleration createVariableDecleration();
 
   /**
-   * Returns a new object of class '<em>Initial Statement</em>'.
+   * Returns a new object of class '<em>Initial JSON Line</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Initial Statement</em>'.
+   * @return a new object of class '<em>Initial JSON Line</em>'.
    * @generated
    */
-  InitialStatement createInitialStatement();
+  InitialJSONLine createInitialJSONLine();
 
   /**
-   * Returns a new object of class '<em>Statement</em>'.
+   * Returns a new object of class '<em>Normal JSON Line</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Statement</em>'.
+   * @return a new object of class '<em>Normal JSON Line</em>'.
    * @generated
    */
-  Statement createStatement();
+  NormalJSONLine createNormalJSONLine();
 
   /**
    * Returns a new object of class '<em>start Value</em>'.

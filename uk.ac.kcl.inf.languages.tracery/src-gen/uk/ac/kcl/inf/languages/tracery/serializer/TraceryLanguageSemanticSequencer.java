@@ -15,7 +15,7 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import uk.ac.kcl.inf.languages.tracery.services.TraceryLanguageGrammarAccess;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialStatement;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatement;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartingJSONExpression;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
@@ -38,19 +38,19 @@ public class TraceryLanguageSemanticSequencer extends AbstractDelegatingSemantic
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == TraceryLanguagePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case TraceryLanguagePackage.INITIAL_STATEMENT:
-				sequence_InitialStatement(context, (InitialStatement) semanticObject); 
+			case TraceryLanguagePackage.INITIAL_JSON_LINE:
+				sequence_InitialJSONLine(context, (InitialJSONLine) semanticObject); 
 				return; 
 			case TraceryLanguagePackage.INNER_STATEMENT:
 				sequence_InnerStatement(context, (InnerStatement) semanticObject); 
 				return; 
 			case TraceryLanguagePackage.STARTING_JSON_EXPRESSION:
-				if (rule == grammarAccess.getStartingJSONExpressionRule()) {
-					sequence_StartingJSONExpression(context, (StartingJSONExpression) semanticObject); 
+				if (rule == grammarAccess.getNormalJSONLineRule()) {
+					sequence_NormalJSONLine_StartingJSONExpression(context, (StartingJSONExpression) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getStatementRule()) {
-					sequence_StartingJSONExpression_Statement(context, (StartingJSONExpression) semanticObject); 
+				else if (rule == grammarAccess.getStartingJSONExpressionRule()) {
+					sequence_StartingJSONExpression(context, (StartingJSONExpression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -73,12 +73,12 @@ public class TraceryLanguageSemanticSequencer extends AbstractDelegatingSemantic
 	
 	/**
 	 * Contexts:
-	 *     InitialStatement returns InitialStatement
+	 *     InitialJSONLine returns InitialJSONLine
 	 *
 	 * Constraint:
 	 *     (startVal+=startValue vals+=normalValue*)
 	 */
-	protected void sequence_InitialStatement(ISerializationContext context, InitialStatement semanticObject) {
+	protected void sequence_InitialJSONLine(ISerializationContext context, InitialJSONLine semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -103,6 +103,18 @@ public class TraceryLanguageSemanticSequencer extends AbstractDelegatingSemantic
 	
 	/**
 	 * Contexts:
+	 *     NormalJSONLine returns StartingJSONExpression
+	 *
+	 * Constraint:
+	 *     (var=[VariableDecleration|ID] startVal+=startValue vals+=normalValue*)
+	 */
+	protected void sequence_NormalJSONLine_StartingJSONExpression(ISerializationContext context, StartingJSONExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     StartingJSONExpression returns StartingJSONExpression
 	 *
 	 * Constraint:
@@ -121,22 +133,10 @@ public class TraceryLanguageSemanticSequencer extends AbstractDelegatingSemantic
 	
 	/**
 	 * Contexts:
-	 *     Statement returns StartingJSONExpression
-	 *
-	 * Constraint:
-	 *     (var=[VariableDecleration|ID] startVal+=startValue vals+=normalValue*)
-	 */
-	protected void sequence_StartingJSONExpression_Statement(ISerializationContext context, StartingJSONExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     TraceryProgram returns TraceryProgram
 	 *
 	 * Constraint:
-	 *     (initialStatement=InitialStatement statements+=Statement*)
+	 *     (initialStatement=InitialJSONLine statements+=NormalJSONLine*)
 	 */
 	protected void sequence_TraceryProgram(ISerializationContext context, TraceryProgram semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -167,7 +167,7 @@ public class TraceryLanguageSemanticSequencer extends AbstractDelegatingSemantic
 	 *     normalValue returns normalValue
 	 *
 	 * Constraint:
-	 *     innards+=InnerStatement*
+	 *     value+=InnerStatement*
 	 */
 	protected void sequence_normalValue(ISerializationContext context, normalValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -179,7 +179,7 @@ public class TraceryLanguageSemanticSequencer extends AbstractDelegatingSemantic
 	 *     startValue returns startValue
 	 *
 	 * Constraint:
-	 *     innards+=InnerStatement*
+	 *     value+=InnerStatement*
 	 */
 	protected void sequence_startValue(ISerializationContext context, startValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

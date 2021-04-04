@@ -86,14 +86,14 @@ public class TraceryLanguageAdapterFactory extends AdapterFactoryImpl
         return createVariableDeclerationAdapter();
       }
       @Override
-      public Adapter caseInitialStatement(InitialStatement object)
+      public Adapter caseInitialJSONLine(InitialJSONLine object)
       {
-        return createInitialStatementAdapter();
+        return createInitialJSONLineAdapter();
       }
       @Override
-      public Adapter caseStatement(Statement object)
+      public Adapter caseNormalJSONLine(NormalJSONLine object)
       {
-        return createStatementAdapter();
+        return createNormalJSONLineAdapter();
       }
       @Override
       public Adapter casestartValue(startValue object)
@@ -168,31 +168,31 @@ public class TraceryLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialStatement <em>Initial Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine <em>Initial JSON Line</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialStatement
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine
    * @generated
    */
-  public Adapter createInitialStatementAdapter()
+  public Adapter createInitialJSONLineAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.Statement <em>Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalJSONLine <em>Normal JSON Line</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.Statement
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalJSONLine
    * @generated
    */
-  public Adapter createStatementAdapter()
+  public Adapter createNormalJSONLineAdapter()
   {
     return null;
   }

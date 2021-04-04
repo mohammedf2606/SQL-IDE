@@ -9,22 +9,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Initial Statement</b></em>'.
+ * A representation of the model object '<em><b>Initial JSON Line</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialStatement#getStartVal <em>Start Val</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialStatement#getVals <em>Vals</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getStartVal <em>Start Val</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getVals <em>Vals</em>}</li>
  * </ul>
  *
- * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialStatement()
+ * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONLine()
  * @model
  * @generated
  */
-public interface InitialStatement extends EObject
+public interface InitialJSONLine extends EObject
 {
   /**
    * Returns the value of the '<em><b>Start Val</b></em>' containment reference list.
@@ -32,7 +32,7 @@ public interface InitialStatement extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Start Val</em>' containment reference list.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialStatement_StartVal()
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONLine_StartVal()
    * @model containment="true"
    * @generated
    */
@@ -44,10 +44,10 @@ public interface InitialStatement extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Vals</em>' containment reference list.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialStatement_Vals()
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONLine_Vals()
    * @model containment="true"
    * @generated
    */
   EList<normalValue> getVals();
 
-} // InitialStatement
+} // InitialJSONLine

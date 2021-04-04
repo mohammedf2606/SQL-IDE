@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialStatement;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.Statement;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalJSONLine;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram;
 
@@ -48,7 +48,7 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    * @ordered
    */
-  protected InitialStatement initialStatement;
+  protected InitialJSONLine initialStatement;
 
   /**
    * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
@@ -58,7 +58,7 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    * @ordered
    */
-  protected EList<Statement> statements;
+  protected EList<NormalJSONLine> statements;
 
   /**
    * <!-- begin-user-doc -->
@@ -87,7 +87,7 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public InitialStatement getInitialStatement()
+  public InitialJSONLine getInitialStatement()
   {
     return initialStatement;
   }
@@ -97,9 +97,9 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetInitialStatement(InitialStatement newInitialStatement, NotificationChain msgs)
+  public NotificationChain basicSetInitialStatement(InitialJSONLine newInitialStatement, NotificationChain msgs)
   {
-    InitialStatement oldInitialStatement = initialStatement;
+    InitialJSONLine oldInitialStatement = initialStatement;
     initialStatement = newInitialStatement;
     if (eNotificationRequired())
     {
@@ -115,7 +115,7 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public void setInitialStatement(InitialStatement newInitialStatement)
+  public void setInitialStatement(InitialJSONLine newInitialStatement)
   {
     if (newInitialStatement != initialStatement)
     {
@@ -137,11 +137,11 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public EList<Statement> getStatements()
+  public EList<NormalJSONLine> getStatements()
   {
     if (statements == null)
     {
-      statements = new EObjectContainmentEList<Statement>(Statement.class, this, TraceryLanguagePackage.TRACERY_PROGRAM__STATEMENTS);
+      statements = new EObjectContainmentEList<NormalJSONLine>(NormalJSONLine.class, this, TraceryLanguagePackage.TRACERY_PROGRAM__STATEMENTS);
     }
     return statements;
   }
@@ -194,11 +194,11 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT:
-        setInitialStatement((InitialStatement)newValue);
+        setInitialStatement((InitialJSONLine)newValue);
         return;
       case TraceryLanguagePackage.TRACERY_PROGRAM__STATEMENTS:
         getStatements().clear();
-        getStatements().addAll((Collection<? extends Statement>)newValue);
+        getStatements().addAll((Collection<? extends NormalJSONLine>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -215,7 +215,7 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT:
-        setInitialStatement((InitialStatement)null);
+        setInitialStatement((InitialJSONLine)null);
         return;
       case TraceryLanguagePackage.TRACERY_PROGRAM__STATEMENTS:
         getStatements().clear();

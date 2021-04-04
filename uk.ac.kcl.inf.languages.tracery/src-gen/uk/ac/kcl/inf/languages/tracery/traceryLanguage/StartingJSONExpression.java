@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface StartingJSONExpression extends Statement
+public interface StartingJSONExpression extends NormalJSONLine
 {
   /**
    * Returns the value of the '<em><b>Start Val</b></em>' containment reference list.

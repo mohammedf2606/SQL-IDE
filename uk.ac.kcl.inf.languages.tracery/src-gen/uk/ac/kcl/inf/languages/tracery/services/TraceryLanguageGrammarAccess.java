@@ -28,49 +28,51 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.TraceryProgram");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cInitialStatementAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cInitialStatementInitialStatementParserRuleCall_1_0 = (RuleCall)cInitialStatementAssignment_1.eContents().get(0);
-		private final Assignment cStatementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cStatementsStatementParserRuleCall_2_0 = (RuleCall)cStatementsAssignment_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Action cTraceryProgramAction_1 = (Action)cGroup.eContents().get(1);
+		private final Assignment cInitialStatementAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cInitialStatementInitialJSONLineParserRuleCall_2_0 = (RuleCall)cInitialStatementAssignment_2.eContents().get(0);
+		private final Assignment cStatementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStatementsNormalJSONLineParserRuleCall_3_0 = (RuleCall)cStatementsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//TraceryProgram:
-		//	'{'
-		//	initialStatement=InitialStatement
-		//	statements+=Statement*
+		//	'{' {TraceryProgram} initialStatement=InitialJSONLine
+		//	statements+=NormalJSONLine*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'{'
-		//initialStatement=InitialStatement
-		//statements+=Statement*
+		//'{' {TraceryProgram} initialStatement=InitialJSONLine
+		//statements+=NormalJSONLine*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
 		
-		//initialStatement=InitialStatement
-		public Assignment getInitialStatementAssignment_1() { return cInitialStatementAssignment_1; }
+		//{TraceryProgram}
+		public Action getTraceryProgramAction_1() { return cTraceryProgramAction_1; }
 		
-		//InitialStatement
-		public RuleCall getInitialStatementInitialStatementParserRuleCall_1_0() { return cInitialStatementInitialStatementParserRuleCall_1_0; }
+		//initialStatement=InitialJSONLine
+		public Assignment getInitialStatementAssignment_2() { return cInitialStatementAssignment_2; }
 		
-		//statements+=Statement*
-		public Assignment getStatementsAssignment_2() { return cStatementsAssignment_2; }
+		//InitialJSONLine
+		public RuleCall getInitialStatementInitialJSONLineParserRuleCall_2_0() { return cInitialStatementInitialJSONLineParserRuleCall_2_0; }
 		
-		//Statement
-		public RuleCall getStatementsStatementParserRuleCall_2_0() { return cStatementsStatementParserRuleCall_2_0; }
+		//statements+=NormalJSONLine*
+		public Assignment getStatementsAssignment_3() { return cStatementsAssignment_3; }
+		
+		//NormalJSONLine
+		public RuleCall getStatementsNormalJSONLineParserRuleCall_3_0() { return cStatementsNormalJSONLineParserRuleCall_3_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class VariableDeclerationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.VariableDecleration");
 		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
 		
-		//VariableDecleration:
+		//VariableDecleration hidden():
 		//	name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -80,8 +82,8 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
 	}
-	public class InitialStatementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.InitialStatement");
+	public class InitialJSONLineElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.InitialJSONLine");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cOriginKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -92,7 +94,7 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		private final RuleCall cValsNormalValueParserRuleCall_4_0 = (RuleCall)cValsAssignment_4.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//InitialStatement:
+		//InitialJSONLine hidden(WS):
 		//	'&origin&' ':' '[' startVal+=startValue vals+=normalValue* ']';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -123,8 +125,8 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		//']'
 		public Keyword getRightSquareBracketKeyword_5() { return cRightSquareBracketKeyword_5; }
 	}
-	public class StatementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.Statement");
+	public class NormalJSONLineElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.NormalJSONLine");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCommaKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cAmpersandKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -138,7 +140,7 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		private final RuleCall cValsNormalValueParserRuleCall_7_0 = (RuleCall)cValsAssignment_7.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
-		//Statement:
+		//NormalJSONLine hidden(WS):
 		//	',' '&' StartingJSONExpression '&' ':' '[' startVal+=startValue vals+=normalValue* ']';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -183,15 +185,15 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cStartValueAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cAmpersandKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cInnardsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cInnardsInnerStatementParserRuleCall_2_0 = (RuleCall)cInnardsAssignment_2.eContents().get(0);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueInnerStatementParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		private final Keyword cAmpersandKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//startValue:
-		//	{startValue} '&' innards+=InnerStatement* '&';
+		//startValue hidden(WS):
+		//	{startValue} '&' value+=InnerStatement* '&';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{startValue} '&' innards+=InnerStatement* '&'
+		//{startValue} '&' value+=InnerStatement* '&'
 		public Group getGroup() { return cGroup; }
 		
 		//{startValue}
@@ -200,11 +202,11 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		//'&'
 		public Keyword getAmpersandKeyword_1() { return cAmpersandKeyword_1; }
 		
-		//innards+=InnerStatement*
-		public Assignment getInnardsAssignment_2() { return cInnardsAssignment_2; }
+		//value+=InnerStatement*
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
 		//InnerStatement
-		public RuleCall getInnardsInnerStatementParserRuleCall_2_0() { return cInnardsInnerStatementParserRuleCall_2_0; }
+		public RuleCall getValueInnerStatementParserRuleCall_2_0() { return cValueInnerStatementParserRuleCall_2_0; }
 		
 		//'&'
 		public Keyword getAmpersandKeyword_3() { return cAmpersandKeyword_3; }
@@ -215,15 +217,15 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		private final Action cNormalValueAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cCommaKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cAmpersandKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cInnardsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cInnardsInnerStatementParserRuleCall_3_0 = (RuleCall)cInnardsAssignment_3.eContents().get(0);
+		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cValueInnerStatementParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		private final Keyword cAmpersandKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//normalValue:
-		//	{normalValue} ',' '&' innards+=InnerStatement* '&';
+		//normalValue hidden(WS):
+		//	{normalValue} ',' '&' value+=InnerStatement* '&';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{normalValue} ',' '&' innards+=InnerStatement* '&'
+		//{normalValue} ',' '&' value+=InnerStatement* '&'
 		public Group getGroup() { return cGroup; }
 		
 		//{normalValue}
@@ -235,11 +237,11 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		//'&'
 		public Keyword getAmpersandKeyword_2() { return cAmpersandKeyword_2; }
 		
-		//innards+=InnerStatement*
-		public Assignment getInnardsAssignment_3() { return cInnardsAssignment_3; }
+		//value+=InnerStatement*
+		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
 		
 		//InnerStatement
-		public RuleCall getInnardsInnerStatementParserRuleCall_3_0() { return cInnardsInnerStatementParserRuleCall_3_0; }
+		public RuleCall getValueInnerStatementParserRuleCall_3_0() { return cValueInnerStatementParserRuleCall_3_0; }
 		
 		//'&'
 		public Keyword getAmpersandKeyword_4() { return cAmpersandKeyword_4; }
@@ -270,7 +272,7 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		private final RuleCall cVariableDeclerationParserRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
 		private final Keyword cCapitaliseKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
 		
-		//InnerStatement:
+		//InnerStatement hidden():
 		//	value=STRING |
 		//	'#' VariableDecleration '#' |
 		//	'#' VariableDecleration '.ed#' |
@@ -359,7 +361,7 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		private final CrossReference cVarVariableDeclerationCrossReference_0 = (CrossReference)cVarAssignment.eContents().get(0);
 		private final RuleCall cVarVariableDeclerationIDTerminalRuleCall_0_1 = (RuleCall)cVarVariableDeclerationCrossReference_0.eContents().get(1);
 		
-		//StartingJSONExpression:
+		//StartingJSONExpression hidden():
 		//	var=[VariableDecleration];
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -376,8 +378,8 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 	
 	private final TraceryProgramElements pTraceryProgram;
 	private final VariableDeclerationElements pVariableDecleration;
-	private final InitialStatementElements pInitialStatement;
-	private final StatementElements pStatement;
+	private final InitialJSONLineElements pInitialJSONLine;
+	private final NormalJSONLineElements pNormalJSONLine;
 	private final StartValueElements pStartValue;
 	private final NormalValueElements pNormalValue;
 	private final InnerStatementElements pInnerStatement;
@@ -394,8 +396,8 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		this.gaTerminals = gaTerminals;
 		this.pTraceryProgram = new TraceryProgramElements();
 		this.pVariableDecleration = new VariableDeclerationElements();
-		this.pInitialStatement = new InitialStatementElements();
-		this.pStatement = new StatementElements();
+		this.pInitialJSONLine = new InitialJSONLineElements();
+		this.pNormalJSONLine = new NormalJSONLineElements();
 		this.pStartValue = new StartValueElements();
 		this.pNormalValue = new NormalValueElements();
 		this.pInnerStatement = new InnerStatementElements();
@@ -430,9 +432,8 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 
 	
 	//TraceryProgram:
-	//	'{'
-	//	initialStatement=InitialStatement
-	//	statements+=Statement*
+	//	'{' {TraceryProgram} initialStatement=InitialJSONLine
+	//	statements+=NormalJSONLine*
 	//	'}';
 	public TraceryProgramElements getTraceryProgramAccess() {
 		return pTraceryProgram;
@@ -442,7 +443,7 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		return getTraceryProgramAccess().getRule();
 	}
 	
-	//VariableDecleration:
+	//VariableDecleration hidden():
 	//	name=ID;
 	public VariableDeclerationElements getVariableDeclerationAccess() {
 		return pVariableDecleration;
@@ -452,28 +453,28 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		return getVariableDeclerationAccess().getRule();
 	}
 	
-	//InitialStatement:
+	//InitialJSONLine hidden(WS):
 	//	'&origin&' ':' '[' startVal+=startValue vals+=normalValue* ']';
-	public InitialStatementElements getInitialStatementAccess() {
-		return pInitialStatement;
+	public InitialJSONLineElements getInitialJSONLineAccess() {
+		return pInitialJSONLine;
 	}
 	
-	public ParserRule getInitialStatementRule() {
-		return getInitialStatementAccess().getRule();
+	public ParserRule getInitialJSONLineRule() {
+		return getInitialJSONLineAccess().getRule();
 	}
 	
-	//Statement:
+	//NormalJSONLine hidden(WS):
 	//	',' '&' StartingJSONExpression '&' ':' '[' startVal+=startValue vals+=normalValue* ']';
-	public StatementElements getStatementAccess() {
-		return pStatement;
+	public NormalJSONLineElements getNormalJSONLineAccess() {
+		return pNormalJSONLine;
 	}
 	
-	public ParserRule getStatementRule() {
-		return getStatementAccess().getRule();
+	public ParserRule getNormalJSONLineRule() {
+		return getNormalJSONLineAccess().getRule();
 	}
 	
-	//startValue:
-	//	{startValue} '&' innards+=InnerStatement* '&';
+	//startValue hidden(WS):
+	//	{startValue} '&' value+=InnerStatement* '&';
 	public StartValueElements getStartValueAccess() {
 		return pStartValue;
 	}
@@ -482,8 +483,8 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		return getStartValueAccess().getRule();
 	}
 	
-	//normalValue:
-	//	{normalValue} ',' '&' innards+=InnerStatement* '&';
+	//normalValue hidden(WS):
+	//	{normalValue} ',' '&' value+=InnerStatement* '&';
 	public NormalValueElements getNormalValueAccess() {
 		return pNormalValue;
 	}
@@ -492,7 +493,7 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		return getNormalValueAccess().getRule();
 	}
 	
-	//InnerStatement:
+	//InnerStatement hidden():
 	//	value=STRING |
 	//	'#' VariableDecleration '#' |
 	//	'#' VariableDecleration '.ed#' |
@@ -507,7 +508,7 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		return getInnerStatementAccess().getRule();
 	}
 	
-	//StartingJSONExpression:
+	//StartingJSONExpression hidden():
 	//	var=[VariableDecleration];
 	public StartingJSONExpressionElements getStartingJSONExpressionAccess() {
 		return pStartingJSONExpression;

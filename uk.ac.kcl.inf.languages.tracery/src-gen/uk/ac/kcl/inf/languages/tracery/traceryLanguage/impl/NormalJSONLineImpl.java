@@ -7,24 +7,24 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.Statement;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalJSONLine;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Statement</b></em>'.
+ * An implementation of the model object '<em><b>Normal JSON Line</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class StatementImpl extends MinimalEObjectImpl.Container implements Statement
+public class NormalJSONLineImpl extends MinimalEObjectImpl.Container implements NormalJSONLine
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected StatementImpl()
+  protected NormalJSONLineImpl()
   {
     super();
   }
@@ -37,7 +37,7 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   @Override
   protected EClass eStaticClass()
   {
-    return TraceryLanguagePackage.Literals.STATEMENT;
+    return TraceryLanguagePackage.Literals.NORMAL_JSON_LINE;
   }
 
-} //StatementImpl
+} //NormalJSONLineImpl

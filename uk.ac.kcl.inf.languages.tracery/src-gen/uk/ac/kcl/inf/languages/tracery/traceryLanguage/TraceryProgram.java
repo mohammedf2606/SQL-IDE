@@ -31,12 +31,12 @@ public interface TraceryProgram extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Initial Statement</em>' containment reference.
-   * @see #setInitialStatement(InitialStatement)
+   * @see #setInitialStatement(InitialJSONLine)
    * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getTraceryProgram_InitialStatement()
    * @model containment="true"
    * @generated
    */
-  InitialStatement getInitialStatement();
+  InitialJSONLine getInitialStatement();
 
   /**
    * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getInitialStatement <em>Initial Statement</em>}' containment reference.
@@ -46,11 +46,11 @@ public interface TraceryProgram extends EObject
    * @see #getInitialStatement()
    * @generated
    */
-  void setInitialStatement(InitialStatement value);
+  void setInitialStatement(InitialJSONLine value);
 
   /**
    * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.Statement}.
+   * The list contents are of type {@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalJSONLine}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Statements</em>' containment reference list.
@@ -58,6 +58,6 @@ public interface TraceryProgram extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Statement> getStatements();
+  EList<NormalJSONLine> getStatements();
 
 } // TraceryProgram

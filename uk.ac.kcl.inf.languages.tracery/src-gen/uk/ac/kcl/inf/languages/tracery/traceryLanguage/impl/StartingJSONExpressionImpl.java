@@ -39,7 +39,7 @@ import uk.ac.kcl.inf.languages.tracery.traceryLanguage.startValue;
  *
  * @generated
  */
-public class StartingJSONExpressionImpl extends StatementImpl implements StartingJSONExpression
+public class StartingJSONExpressionImpl extends NormalJSONLineImpl implements StartingJSONExpression
 {
   /**
    * The cached value of the '{@link #getStartVal() <em>Start Val</em>}' containment reference list.

@@ -121,42 +121,53 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTraceryProgram"
-    // InternalTraceryLanguage.g:71:1: ruleTraceryProgram returns [EObject current=null] : (otherlv_0= '{' ( (lv_initialStatement_1_0= ruleInitialStatement ) ) ( (lv_statements_2_0= ruleStatement ) )* otherlv_3= '}' ) ;
+    // InternalTraceryLanguage.g:71:1: ruleTraceryProgram returns [EObject current=null] : (otherlv_0= '{' () ( (lv_initialStatement_2_0= ruleInitialJSONLine ) ) ( (lv_statements_3_0= ruleNormalJSONLine ) )* otherlv_4= '}' ) ;
     public final EObject ruleTraceryProgram() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_3=null;
-        EObject lv_initialStatement_1_0 = null;
+        Token otherlv_4=null;
+        EObject lv_initialStatement_2_0 = null;
 
-        EObject lv_statements_2_0 = null;
+        EObject lv_statements_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalTraceryLanguage.g:77:2: ( (otherlv_0= '{' ( (lv_initialStatement_1_0= ruleInitialStatement ) ) ( (lv_statements_2_0= ruleStatement ) )* otherlv_3= '}' ) )
-            // InternalTraceryLanguage.g:78:2: (otherlv_0= '{' ( (lv_initialStatement_1_0= ruleInitialStatement ) ) ( (lv_statements_2_0= ruleStatement ) )* otherlv_3= '}' )
+            // InternalTraceryLanguage.g:77:2: ( (otherlv_0= '{' () ( (lv_initialStatement_2_0= ruleInitialJSONLine ) ) ( (lv_statements_3_0= ruleNormalJSONLine ) )* otherlv_4= '}' ) )
+            // InternalTraceryLanguage.g:78:2: (otherlv_0= '{' () ( (lv_initialStatement_2_0= ruleInitialJSONLine ) ) ( (lv_statements_3_0= ruleNormalJSONLine ) )* otherlv_4= '}' )
             {
-            // InternalTraceryLanguage.g:78:2: (otherlv_0= '{' ( (lv_initialStatement_1_0= ruleInitialStatement ) ) ( (lv_statements_2_0= ruleStatement ) )* otherlv_3= '}' )
-            // InternalTraceryLanguage.g:79:3: otherlv_0= '{' ( (lv_initialStatement_1_0= ruleInitialStatement ) ) ( (lv_statements_2_0= ruleStatement ) )* otherlv_3= '}'
+            // InternalTraceryLanguage.g:78:2: (otherlv_0= '{' () ( (lv_initialStatement_2_0= ruleInitialJSONLine ) ) ( (lv_statements_3_0= ruleNormalJSONLine ) )* otherlv_4= '}' )
+            // InternalTraceryLanguage.g:79:3: otherlv_0= '{' () ( (lv_initialStatement_2_0= ruleInitialJSONLine ) ) ( (lv_statements_3_0= ruleNormalJSONLine ) )* otherlv_4= '}'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTraceryProgramAccess().getLeftCurlyBracketKeyword_0());
             		
-            // InternalTraceryLanguage.g:83:3: ( (lv_initialStatement_1_0= ruleInitialStatement ) )
-            // InternalTraceryLanguage.g:84:4: (lv_initialStatement_1_0= ruleInitialStatement )
-            {
-            // InternalTraceryLanguage.g:84:4: (lv_initialStatement_1_0= ruleInitialStatement )
-            // InternalTraceryLanguage.g:85:5: lv_initialStatement_1_0= ruleInitialStatement
+            // InternalTraceryLanguage.g:83:3: ()
+            // InternalTraceryLanguage.g:84:4: 
             {
 
-            					newCompositeNode(grammarAccess.getTraceryProgramAccess().getInitialStatementInitialStatementParserRuleCall_1_0());
+            				current = forceCreateModelElement(
+            					grammarAccess.getTraceryProgramAccess().getTraceryProgramAction_1(),
+            					current);
+            			
+
+            }
+
+            // InternalTraceryLanguage.g:90:3: ( (lv_initialStatement_2_0= ruleInitialJSONLine ) )
+            // InternalTraceryLanguage.g:91:4: (lv_initialStatement_2_0= ruleInitialJSONLine )
+            {
+            // InternalTraceryLanguage.g:91:4: (lv_initialStatement_2_0= ruleInitialJSONLine )
+            // InternalTraceryLanguage.g:92:5: lv_initialStatement_2_0= ruleInitialJSONLine
+            {
+
+            					newCompositeNode(grammarAccess.getTraceryProgramAccess().getInitialStatementInitialJSONLineParserRuleCall_2_0());
             				
             pushFollow(FOLLOW_4);
-            lv_initialStatement_1_0=ruleInitialStatement();
+            lv_initialStatement_2_0=ruleInitialJSONLine();
 
             state._fsp--;
 
@@ -167,8 +178,8 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"initialStatement",
-            						lv_initialStatement_1_0,
-            						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.InitialStatement");
+            						lv_initialStatement_2_0,
+            						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.InitialJSONLine");
             					afterParserOrEnumRuleCall();
             				
 
@@ -177,7 +188,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTraceryLanguage.g:102:3: ( (lv_statements_2_0= ruleStatement ) )*
+            // InternalTraceryLanguage.g:109:3: ( (lv_statements_3_0= ruleNormalJSONLine ) )*
             loop1:
             do {
                 int alt1=2;
@@ -190,16 +201,16 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalTraceryLanguage.g:103:4: (lv_statements_2_0= ruleStatement )
+            	    // InternalTraceryLanguage.g:110:4: (lv_statements_3_0= ruleNormalJSONLine )
             	    {
-            	    // InternalTraceryLanguage.g:103:4: (lv_statements_2_0= ruleStatement )
-            	    // InternalTraceryLanguage.g:104:5: lv_statements_2_0= ruleStatement
+            	    // InternalTraceryLanguage.g:110:4: (lv_statements_3_0= ruleNormalJSONLine )
+            	    // InternalTraceryLanguage.g:111:5: lv_statements_3_0= ruleNormalJSONLine
             	    {
 
-            	    					newCompositeNode(grammarAccess.getTraceryProgramAccess().getStatementsStatementParserRuleCall_2_0());
+            	    					newCompositeNode(grammarAccess.getTraceryProgramAccess().getStatementsNormalJSONLineParserRuleCall_3_0());
             	    				
             	    pushFollow(FOLLOW_4);
-            	    lv_statements_2_0=ruleStatement();
+            	    lv_statements_3_0=ruleNormalJSONLine();
 
             	    state._fsp--;
 
@@ -210,8 +221,8 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
             	    					add(
             	    						current,
             	    						"statements",
-            	    						lv_statements_2_0,
-            	    						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.Statement");
+            	    						lv_statements_3_0,
+            	    						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.NormalJSONLine");
             	    					afterParserOrEnumRuleCall();
             	    				
 
@@ -226,9 +237,9 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_3=(Token)match(input,12,FOLLOW_2); 
+            otherlv_4=(Token)match(input,12,FOLLOW_2); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getTraceryProgramAccess().getRightCurlyBracketKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getTraceryProgramAccess().getRightCurlyBracketKeyword_4());
             		
 
             }
@@ -253,16 +264,19 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVariableDecleration"
-    // InternalTraceryLanguage.g:129:1: entryRuleVariableDecleration returns [EObject current=null] : iv_ruleVariableDecleration= ruleVariableDecleration EOF ;
+    // InternalTraceryLanguage.g:136:1: entryRuleVariableDecleration returns [EObject current=null] : iv_ruleVariableDecleration= ruleVariableDecleration EOF ;
     public final EObject entryRuleVariableDecleration() throws RecognitionException {
         EObject current = null;
 
         EObject iv_ruleVariableDecleration = null;
 
 
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+
         try {
-            // InternalTraceryLanguage.g:129:60: (iv_ruleVariableDecleration= ruleVariableDecleration EOF )
-            // InternalTraceryLanguage.g:130:2: iv_ruleVariableDecleration= ruleVariableDecleration EOF
+            // InternalTraceryLanguage.g:138:2: (iv_ruleVariableDecleration= ruleVariableDecleration EOF )
+            // InternalTraceryLanguage.g:139:2: iv_ruleVariableDecleration= ruleVariableDecleration EOF
             {
              newCompositeNode(grammarAccess.getVariableDeclerationRule()); 
             pushFollow(FOLLOW_1);
@@ -282,6 +296,9 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             }
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return current;
     }
@@ -289,7 +306,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariableDecleration"
-    // InternalTraceryLanguage.g:136:1: ruleVariableDecleration returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    // InternalTraceryLanguage.g:148:1: ruleVariableDecleration returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
     public final EObject ruleVariableDecleration() throws RecognitionException {
         EObject current = null;
 
@@ -297,16 +314,17 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
         	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 
         try {
-            // InternalTraceryLanguage.g:142:2: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // InternalTraceryLanguage.g:143:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalTraceryLanguage.g:155:2: ( ( (lv_name_0_0= RULE_ID ) ) )
+            // InternalTraceryLanguage.g:156:2: ( (lv_name_0_0= RULE_ID ) )
             {
-            // InternalTraceryLanguage.g:143:2: ( (lv_name_0_0= RULE_ID ) )
-            // InternalTraceryLanguage.g:144:3: (lv_name_0_0= RULE_ID )
+            // InternalTraceryLanguage.g:156:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalTraceryLanguage.g:157:3: (lv_name_0_0= RULE_ID )
             {
-            // InternalTraceryLanguage.g:144:3: (lv_name_0_0= RULE_ID )
-            // InternalTraceryLanguage.g:145:4: lv_name_0_0= RULE_ID
+            // InternalTraceryLanguage.g:157:3: (lv_name_0_0= RULE_ID )
+            // InternalTraceryLanguage.g:158:4: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -341,31 +359,37 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             }
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return current;
     }
     // $ANTLR end "ruleVariableDecleration"
 
 
-    // $ANTLR start "entryRuleInitialStatement"
-    // InternalTraceryLanguage.g:164:1: entryRuleInitialStatement returns [EObject current=null] : iv_ruleInitialStatement= ruleInitialStatement EOF ;
-    public final EObject entryRuleInitialStatement() throws RecognitionException {
+    // $ANTLR start "entryRuleInitialJSONLine"
+    // InternalTraceryLanguage.g:180:1: entryRuleInitialJSONLine returns [EObject current=null] : iv_ruleInitialJSONLine= ruleInitialJSONLine EOF ;
+    public final EObject entryRuleInitialJSONLine() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleInitialStatement = null;
+        EObject iv_ruleInitialJSONLine = null;
 
+
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalTraceryLanguage.g:164:57: (iv_ruleInitialStatement= ruleInitialStatement EOF )
-            // InternalTraceryLanguage.g:165:2: iv_ruleInitialStatement= ruleInitialStatement EOF
+            // InternalTraceryLanguage.g:182:2: (iv_ruleInitialJSONLine= ruleInitialJSONLine EOF )
+            // InternalTraceryLanguage.g:183:2: iv_ruleInitialJSONLine= ruleInitialJSONLine EOF
             {
-             newCompositeNode(grammarAccess.getInitialStatementRule()); 
+             newCompositeNode(grammarAccess.getInitialJSONLineRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleInitialStatement=ruleInitialStatement();
+            iv_ruleInitialJSONLine=ruleInitialJSONLine();
 
             state._fsp--;
 
-             current =iv_ruleInitialStatement; 
+             current =iv_ruleInitialJSONLine; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -377,15 +401,18 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             }
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return current;
     }
-    // $ANTLR end "entryRuleInitialStatement"
+    // $ANTLR end "entryRuleInitialJSONLine"
 
 
-    // $ANTLR start "ruleInitialStatement"
-    // InternalTraceryLanguage.g:171:1: ruleInitialStatement returns [EObject current=null] : (otherlv_0= '&origin&' otherlv_1= ':' otherlv_2= '[' ( (lv_startVal_3_0= rulestartValue ) ) ( (lv_vals_4_0= rulenormalValue ) )* otherlv_5= ']' ) ;
-    public final EObject ruleInitialStatement() throws RecognitionException {
+    // $ANTLR start "ruleInitialJSONLine"
+    // InternalTraceryLanguage.g:192:1: ruleInitialJSONLine returns [EObject current=null] : (otherlv_0= '&origin&' otherlv_1= ':' otherlv_2= '[' ( (lv_startVal_3_0= rulestartValue ) ) ( (lv_vals_4_0= rulenormalValue ) )* otherlv_5= ']' ) ;
+    public final EObject ruleInitialJSONLine() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -399,34 +426,35 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
         	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalTraceryLanguage.g:177:2: ( (otherlv_0= '&origin&' otherlv_1= ':' otherlv_2= '[' ( (lv_startVal_3_0= rulestartValue ) ) ( (lv_vals_4_0= rulenormalValue ) )* otherlv_5= ']' ) )
-            // InternalTraceryLanguage.g:178:2: (otherlv_0= '&origin&' otherlv_1= ':' otherlv_2= '[' ( (lv_startVal_3_0= rulestartValue ) ) ( (lv_vals_4_0= rulenormalValue ) )* otherlv_5= ']' )
+            // InternalTraceryLanguage.g:199:2: ( (otherlv_0= '&origin&' otherlv_1= ':' otherlv_2= '[' ( (lv_startVal_3_0= rulestartValue ) ) ( (lv_vals_4_0= rulenormalValue ) )* otherlv_5= ']' ) )
+            // InternalTraceryLanguage.g:200:2: (otherlv_0= '&origin&' otherlv_1= ':' otherlv_2= '[' ( (lv_startVal_3_0= rulestartValue ) ) ( (lv_vals_4_0= rulenormalValue ) )* otherlv_5= ']' )
             {
-            // InternalTraceryLanguage.g:178:2: (otherlv_0= '&origin&' otherlv_1= ':' otherlv_2= '[' ( (lv_startVal_3_0= rulestartValue ) ) ( (lv_vals_4_0= rulenormalValue ) )* otherlv_5= ']' )
-            // InternalTraceryLanguage.g:179:3: otherlv_0= '&origin&' otherlv_1= ':' otherlv_2= '[' ( (lv_startVal_3_0= rulestartValue ) ) ( (lv_vals_4_0= rulenormalValue ) )* otherlv_5= ']'
+            // InternalTraceryLanguage.g:200:2: (otherlv_0= '&origin&' otherlv_1= ':' otherlv_2= '[' ( (lv_startVal_3_0= rulestartValue ) ) ( (lv_vals_4_0= rulenormalValue ) )* otherlv_5= ']' )
+            // InternalTraceryLanguage.g:201:3: otherlv_0= '&origin&' otherlv_1= ':' otherlv_2= '[' ( (lv_startVal_3_0= rulestartValue ) ) ( (lv_vals_4_0= rulenormalValue ) )* otherlv_5= ']'
             {
             otherlv_0=(Token)match(input,13,FOLLOW_5); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getInitialStatementAccess().getOriginKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getInitialJSONLineAccess().getOriginKeyword_0());
             		
             otherlv_1=(Token)match(input,14,FOLLOW_6); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getInitialStatementAccess().getColonKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getInitialJSONLineAccess().getColonKeyword_1());
             		
             otherlv_2=(Token)match(input,15,FOLLOW_7); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getInitialStatementAccess().getLeftSquareBracketKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getInitialJSONLineAccess().getLeftSquareBracketKeyword_2());
             		
-            // InternalTraceryLanguage.g:191:3: ( (lv_startVal_3_0= rulestartValue ) )
-            // InternalTraceryLanguage.g:192:4: (lv_startVal_3_0= rulestartValue )
+            // InternalTraceryLanguage.g:213:3: ( (lv_startVal_3_0= rulestartValue ) )
+            // InternalTraceryLanguage.g:214:4: (lv_startVal_3_0= rulestartValue )
             {
-            // InternalTraceryLanguage.g:192:4: (lv_startVal_3_0= rulestartValue )
-            // InternalTraceryLanguage.g:193:5: lv_startVal_3_0= rulestartValue
+            // InternalTraceryLanguage.g:214:4: (lv_startVal_3_0= rulestartValue )
+            // InternalTraceryLanguage.g:215:5: lv_startVal_3_0= rulestartValue
             {
 
-            					newCompositeNode(grammarAccess.getInitialStatementAccess().getStartValStartValueParserRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getInitialJSONLineAccess().getStartValStartValueParserRuleCall_3_0());
             				
             pushFollow(FOLLOW_8);
             lv_startVal_3_0=rulestartValue();
@@ -435,7 +463,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getInitialStatementRule());
+            						current = createModelElementForParent(grammarAccess.getInitialJSONLineRule());
             					}
             					add(
             						current,
@@ -450,7 +478,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTraceryLanguage.g:210:3: ( (lv_vals_4_0= rulenormalValue ) )*
+            // InternalTraceryLanguage.g:232:3: ( (lv_vals_4_0= rulenormalValue ) )*
             loop2:
             do {
                 int alt2=2;
@@ -463,13 +491,13 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalTraceryLanguage.g:211:4: (lv_vals_4_0= rulenormalValue )
+            	    // InternalTraceryLanguage.g:233:4: (lv_vals_4_0= rulenormalValue )
             	    {
-            	    // InternalTraceryLanguage.g:211:4: (lv_vals_4_0= rulenormalValue )
-            	    // InternalTraceryLanguage.g:212:5: lv_vals_4_0= rulenormalValue
+            	    // InternalTraceryLanguage.g:233:4: (lv_vals_4_0= rulenormalValue )
+            	    // InternalTraceryLanguage.g:234:5: lv_vals_4_0= rulenormalValue
             	    {
 
-            	    					newCompositeNode(grammarAccess.getInitialStatementAccess().getValsNormalValueParserRuleCall_4_0());
+            	    					newCompositeNode(grammarAccess.getInitialJSONLineAccess().getValsNormalValueParserRuleCall_4_0());
             	    				
             	    pushFollow(FOLLOW_8);
             	    lv_vals_4_0=rulenormalValue();
@@ -478,7 +506,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
             	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getInitialStatementRule());
+            	    						current = createModelElementForParent(grammarAccess.getInitialJSONLineRule());
             	    					}
             	    					add(
             	    						current,
@@ -501,7 +529,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
             otherlv_5=(Token)match(input,16,FOLLOW_2); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getInitialStatementAccess().getRightSquareBracketKeyword_5());
+            			newLeafNode(otherlv_5, grammarAccess.getInitialJSONLineAccess().getRightSquareBracketKeyword_5());
             		
 
             }
@@ -519,31 +547,37 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             }
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return current;
     }
-    // $ANTLR end "ruleInitialStatement"
+    // $ANTLR end "ruleInitialJSONLine"
 
 
-    // $ANTLR start "entryRuleStatement"
-    // InternalTraceryLanguage.g:237:1: entryRuleStatement returns [EObject current=null] : iv_ruleStatement= ruleStatement EOF ;
-    public final EObject entryRuleStatement() throws RecognitionException {
+    // $ANTLR start "entryRuleNormalJSONLine"
+    // InternalTraceryLanguage.g:262:1: entryRuleNormalJSONLine returns [EObject current=null] : iv_ruleNormalJSONLine= ruleNormalJSONLine EOF ;
+    public final EObject entryRuleNormalJSONLine() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleStatement = null;
+        EObject iv_ruleNormalJSONLine = null;
 
+
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalTraceryLanguage.g:237:50: (iv_ruleStatement= ruleStatement EOF )
-            // InternalTraceryLanguage.g:238:2: iv_ruleStatement= ruleStatement EOF
+            // InternalTraceryLanguage.g:264:2: (iv_ruleNormalJSONLine= ruleNormalJSONLine EOF )
+            // InternalTraceryLanguage.g:265:2: iv_ruleNormalJSONLine= ruleNormalJSONLine EOF
             {
-             newCompositeNode(grammarAccess.getStatementRule()); 
+             newCompositeNode(grammarAccess.getNormalJSONLineRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleStatement=ruleStatement();
+            iv_ruleNormalJSONLine=ruleNormalJSONLine();
 
             state._fsp--;
 
-             current =iv_ruleStatement; 
+             current =iv_ruleNormalJSONLine; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -555,15 +589,18 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             }
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return current;
     }
-    // $ANTLR end "entryRuleStatement"
+    // $ANTLR end "entryRuleNormalJSONLine"
 
 
-    // $ANTLR start "ruleStatement"
-    // InternalTraceryLanguage.g:244:1: ruleStatement returns [EObject current=null] : (otherlv_0= ',' otherlv_1= '&' this_StartingJSONExpression_2= ruleStartingJSONExpression otherlv_3= '&' otherlv_4= ':' otherlv_5= '[' ( (lv_startVal_6_0= rulestartValue ) ) ( (lv_vals_7_0= rulenormalValue ) )* otherlv_8= ']' ) ;
-    public final EObject ruleStatement() throws RecognitionException {
+    // $ANTLR start "ruleNormalJSONLine"
+    // InternalTraceryLanguage.g:274:1: ruleNormalJSONLine returns [EObject current=null] : (otherlv_0= ',' otherlv_1= '&' this_StartingJSONExpression_2= ruleStartingJSONExpression otherlv_3= '&' otherlv_4= ':' otherlv_5= '[' ( (lv_startVal_6_0= rulestartValue ) ) ( (lv_vals_7_0= rulenormalValue ) )* otherlv_8= ']' ) ;
+    public final EObject ruleNormalJSONLine() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -581,24 +618,25 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
         	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalTraceryLanguage.g:250:2: ( (otherlv_0= ',' otherlv_1= '&' this_StartingJSONExpression_2= ruleStartingJSONExpression otherlv_3= '&' otherlv_4= ':' otherlv_5= '[' ( (lv_startVal_6_0= rulestartValue ) ) ( (lv_vals_7_0= rulenormalValue ) )* otherlv_8= ']' ) )
-            // InternalTraceryLanguage.g:251:2: (otherlv_0= ',' otherlv_1= '&' this_StartingJSONExpression_2= ruleStartingJSONExpression otherlv_3= '&' otherlv_4= ':' otherlv_5= '[' ( (lv_startVal_6_0= rulestartValue ) ) ( (lv_vals_7_0= rulenormalValue ) )* otherlv_8= ']' )
+            // InternalTraceryLanguage.g:281:2: ( (otherlv_0= ',' otherlv_1= '&' this_StartingJSONExpression_2= ruleStartingJSONExpression otherlv_3= '&' otherlv_4= ':' otherlv_5= '[' ( (lv_startVal_6_0= rulestartValue ) ) ( (lv_vals_7_0= rulenormalValue ) )* otherlv_8= ']' ) )
+            // InternalTraceryLanguage.g:282:2: (otherlv_0= ',' otherlv_1= '&' this_StartingJSONExpression_2= ruleStartingJSONExpression otherlv_3= '&' otherlv_4= ':' otherlv_5= '[' ( (lv_startVal_6_0= rulestartValue ) ) ( (lv_vals_7_0= rulenormalValue ) )* otherlv_8= ']' )
             {
-            // InternalTraceryLanguage.g:251:2: (otherlv_0= ',' otherlv_1= '&' this_StartingJSONExpression_2= ruleStartingJSONExpression otherlv_3= '&' otherlv_4= ':' otherlv_5= '[' ( (lv_startVal_6_0= rulestartValue ) ) ( (lv_vals_7_0= rulenormalValue ) )* otherlv_8= ']' )
-            // InternalTraceryLanguage.g:252:3: otherlv_0= ',' otherlv_1= '&' this_StartingJSONExpression_2= ruleStartingJSONExpression otherlv_3= '&' otherlv_4= ':' otherlv_5= '[' ( (lv_startVal_6_0= rulestartValue ) ) ( (lv_vals_7_0= rulenormalValue ) )* otherlv_8= ']'
+            // InternalTraceryLanguage.g:282:2: (otherlv_0= ',' otherlv_1= '&' this_StartingJSONExpression_2= ruleStartingJSONExpression otherlv_3= '&' otherlv_4= ':' otherlv_5= '[' ( (lv_startVal_6_0= rulestartValue ) ) ( (lv_vals_7_0= rulenormalValue ) )* otherlv_8= ']' )
+            // InternalTraceryLanguage.g:283:3: otherlv_0= ',' otherlv_1= '&' this_StartingJSONExpression_2= ruleStartingJSONExpression otherlv_3= '&' otherlv_4= ':' otherlv_5= '[' ( (lv_startVal_6_0= rulestartValue ) ) ( (lv_vals_7_0= rulenormalValue ) )* otherlv_8= ']'
             {
             otherlv_0=(Token)match(input,17,FOLLOW_7); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getStatementAccess().getCommaKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getNormalJSONLineAccess().getCommaKeyword_0());
             		
             otherlv_1=(Token)match(input,18,FOLLOW_9); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getStatementAccess().getAmpersandKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getNormalJSONLineAccess().getAmpersandKeyword_1());
             		
 
-            			newCompositeNode(grammarAccess.getStatementAccess().getStartingJSONExpressionParserRuleCall_2());
+            			newCompositeNode(grammarAccess.getNormalJSONLineAccess().getStartingJSONExpressionParserRuleCall_2());
             		
             pushFollow(FOLLOW_7);
             this_StartingJSONExpression_2=ruleStartingJSONExpression();
@@ -611,24 +649,24 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
             		
             otherlv_3=(Token)match(input,18,FOLLOW_5); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getStatementAccess().getAmpersandKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getNormalJSONLineAccess().getAmpersandKeyword_3());
             		
             otherlv_4=(Token)match(input,14,FOLLOW_6); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getStatementAccess().getColonKeyword_4());
+            			newLeafNode(otherlv_4, grammarAccess.getNormalJSONLineAccess().getColonKeyword_4());
             		
             otherlv_5=(Token)match(input,15,FOLLOW_7); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getStatementAccess().getLeftSquareBracketKeyword_5());
+            			newLeafNode(otherlv_5, grammarAccess.getNormalJSONLineAccess().getLeftSquareBracketKeyword_5());
             		
-            // InternalTraceryLanguage.g:280:3: ( (lv_startVal_6_0= rulestartValue ) )
-            // InternalTraceryLanguage.g:281:4: (lv_startVal_6_0= rulestartValue )
+            // InternalTraceryLanguage.g:311:3: ( (lv_startVal_6_0= rulestartValue ) )
+            // InternalTraceryLanguage.g:312:4: (lv_startVal_6_0= rulestartValue )
             {
-            // InternalTraceryLanguage.g:281:4: (lv_startVal_6_0= rulestartValue )
-            // InternalTraceryLanguage.g:282:5: lv_startVal_6_0= rulestartValue
+            // InternalTraceryLanguage.g:312:4: (lv_startVal_6_0= rulestartValue )
+            // InternalTraceryLanguage.g:313:5: lv_startVal_6_0= rulestartValue
             {
 
-            					newCompositeNode(grammarAccess.getStatementAccess().getStartValStartValueParserRuleCall_6_0());
+            					newCompositeNode(grammarAccess.getNormalJSONLineAccess().getStartValStartValueParserRuleCall_6_0());
             				
             pushFollow(FOLLOW_8);
             lv_startVal_6_0=rulestartValue();
@@ -637,7 +675,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getStatementRule());
+            						current = createModelElementForParent(grammarAccess.getNormalJSONLineRule());
             					}
             					add(
             						current,
@@ -652,7 +690,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTraceryLanguage.g:299:3: ( (lv_vals_7_0= rulenormalValue ) )*
+            // InternalTraceryLanguage.g:330:3: ( (lv_vals_7_0= rulenormalValue ) )*
             loop3:
             do {
                 int alt3=2;
@@ -665,13 +703,13 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalTraceryLanguage.g:300:4: (lv_vals_7_0= rulenormalValue )
+            	    // InternalTraceryLanguage.g:331:4: (lv_vals_7_0= rulenormalValue )
             	    {
-            	    // InternalTraceryLanguage.g:300:4: (lv_vals_7_0= rulenormalValue )
-            	    // InternalTraceryLanguage.g:301:5: lv_vals_7_0= rulenormalValue
+            	    // InternalTraceryLanguage.g:331:4: (lv_vals_7_0= rulenormalValue )
+            	    // InternalTraceryLanguage.g:332:5: lv_vals_7_0= rulenormalValue
             	    {
 
-            	    					newCompositeNode(grammarAccess.getStatementAccess().getValsNormalValueParserRuleCall_7_0());
+            	    					newCompositeNode(grammarAccess.getNormalJSONLineAccess().getValsNormalValueParserRuleCall_7_0());
             	    				
             	    pushFollow(FOLLOW_8);
             	    lv_vals_7_0=rulenormalValue();
@@ -680,7 +718,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
             	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getStatementRule());
+            	    						current = createModelElementForParent(grammarAccess.getNormalJSONLineRule());
             	    					}
             	    					add(
             	    						current,
@@ -703,7 +741,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
             otherlv_8=(Token)match(input,16,FOLLOW_2); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getStatementAccess().getRightSquareBracketKeyword_8());
+            			newLeafNode(otherlv_8, grammarAccess.getNormalJSONLineAccess().getRightSquareBracketKeyword_8());
             		
 
             }
@@ -721,23 +759,29 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             }
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return current;
     }
-    // $ANTLR end "ruleStatement"
+    // $ANTLR end "ruleNormalJSONLine"
 
 
     // $ANTLR start "entryRulestartValue"
-    // InternalTraceryLanguage.g:326:1: entryRulestartValue returns [EObject current=null] : iv_rulestartValue= rulestartValue EOF ;
+    // InternalTraceryLanguage.g:360:1: entryRulestartValue returns [EObject current=null] : iv_rulestartValue= rulestartValue EOF ;
     public final EObject entryRulestartValue() throws RecognitionException {
         EObject current = null;
 
         EObject iv_rulestartValue = null;
 
 
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
         try {
-            // InternalTraceryLanguage.g:326:51: (iv_rulestartValue= rulestartValue EOF )
-            // InternalTraceryLanguage.g:327:2: iv_rulestartValue= rulestartValue EOF
+            // InternalTraceryLanguage.g:362:2: (iv_rulestartValue= rulestartValue EOF )
+            // InternalTraceryLanguage.g:363:2: iv_rulestartValue= rulestartValue EOF
             {
              newCompositeNode(grammarAccess.getStartValueRule()); 
             pushFollow(FOLLOW_1);
@@ -757,6 +801,9 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             }
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return current;
     }
@@ -764,27 +811,28 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulestartValue"
-    // InternalTraceryLanguage.g:333:1: rulestartValue returns [EObject current=null] : ( () otherlv_1= '&' ( (lv_innards_2_0= ruleInnerStatement ) )* otherlv_3= '&' ) ;
+    // InternalTraceryLanguage.g:372:1: rulestartValue returns [EObject current=null] : ( () otherlv_1= '&' ( (lv_value_2_0= ruleInnerStatement ) )* otherlv_3= '&' ) ;
     public final EObject rulestartValue() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_3=null;
-        EObject lv_innards_2_0 = null;
+        EObject lv_value_2_0 = null;
 
 
 
         	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalTraceryLanguage.g:339:2: ( ( () otherlv_1= '&' ( (lv_innards_2_0= ruleInnerStatement ) )* otherlv_3= '&' ) )
-            // InternalTraceryLanguage.g:340:2: ( () otherlv_1= '&' ( (lv_innards_2_0= ruleInnerStatement ) )* otherlv_3= '&' )
+            // InternalTraceryLanguage.g:379:2: ( ( () otherlv_1= '&' ( (lv_value_2_0= ruleInnerStatement ) )* otherlv_3= '&' ) )
+            // InternalTraceryLanguage.g:380:2: ( () otherlv_1= '&' ( (lv_value_2_0= ruleInnerStatement ) )* otherlv_3= '&' )
             {
-            // InternalTraceryLanguage.g:340:2: ( () otherlv_1= '&' ( (lv_innards_2_0= ruleInnerStatement ) )* otherlv_3= '&' )
-            // InternalTraceryLanguage.g:341:3: () otherlv_1= '&' ( (lv_innards_2_0= ruleInnerStatement ) )* otherlv_3= '&'
+            // InternalTraceryLanguage.g:380:2: ( () otherlv_1= '&' ( (lv_value_2_0= ruleInnerStatement ) )* otherlv_3= '&' )
+            // InternalTraceryLanguage.g:381:3: () otherlv_1= '&' ( (lv_value_2_0= ruleInnerStatement ) )* otherlv_3= '&'
             {
-            // InternalTraceryLanguage.g:341:3: ()
-            // InternalTraceryLanguage.g:342:4: 
+            // InternalTraceryLanguage.g:381:3: ()
+            // InternalTraceryLanguage.g:382:4: 
             {
 
             				current = forceCreateModelElement(
@@ -798,7 +846,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getStartValueAccess().getAmpersandKeyword_1());
             		
-            // InternalTraceryLanguage.g:352:3: ( (lv_innards_2_0= ruleInnerStatement ) )*
+            // InternalTraceryLanguage.g:392:3: ( (lv_value_2_0= ruleInnerStatement ) )*
             loop4:
             do {
                 int alt4=2;
@@ -811,16 +859,16 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalTraceryLanguage.g:353:4: (lv_innards_2_0= ruleInnerStatement )
+            	    // InternalTraceryLanguage.g:393:4: (lv_value_2_0= ruleInnerStatement )
             	    {
-            	    // InternalTraceryLanguage.g:353:4: (lv_innards_2_0= ruleInnerStatement )
-            	    // InternalTraceryLanguage.g:354:5: lv_innards_2_0= ruleInnerStatement
+            	    // InternalTraceryLanguage.g:393:4: (lv_value_2_0= ruleInnerStatement )
+            	    // InternalTraceryLanguage.g:394:5: lv_value_2_0= ruleInnerStatement
             	    {
 
-            	    					newCompositeNode(grammarAccess.getStartValueAccess().getInnardsInnerStatementParserRuleCall_2_0());
+            	    					newCompositeNode(grammarAccess.getStartValueAccess().getValueInnerStatementParserRuleCall_2_0());
             	    				
             	    pushFollow(FOLLOW_10);
-            	    lv_innards_2_0=ruleInnerStatement();
+            	    lv_value_2_0=ruleInnerStatement();
 
             	    state._fsp--;
 
@@ -830,8 +878,8 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
             	    					}
             	    					add(
             	    						current,
-            	    						"innards",
-            	    						lv_innards_2_0,
+            	    						"value",
+            	    						lv_value_2_0,
             	    						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.InnerStatement");
             	    					afterParserOrEnumRuleCall();
             	    				
@@ -867,6 +915,9 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             }
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return current;
     }
@@ -874,16 +925,19 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulenormalValue"
-    // InternalTraceryLanguage.g:379:1: entryRulenormalValue returns [EObject current=null] : iv_rulenormalValue= rulenormalValue EOF ;
+    // InternalTraceryLanguage.g:422:1: entryRulenormalValue returns [EObject current=null] : iv_rulenormalValue= rulenormalValue EOF ;
     public final EObject entryRulenormalValue() throws RecognitionException {
         EObject current = null;
 
         EObject iv_rulenormalValue = null;
 
 
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
         try {
-            // InternalTraceryLanguage.g:379:52: (iv_rulenormalValue= rulenormalValue EOF )
-            // InternalTraceryLanguage.g:380:2: iv_rulenormalValue= rulenormalValue EOF
+            // InternalTraceryLanguage.g:424:2: (iv_rulenormalValue= rulenormalValue EOF )
+            // InternalTraceryLanguage.g:425:2: iv_rulenormalValue= rulenormalValue EOF
             {
              newCompositeNode(grammarAccess.getNormalValueRule()); 
             pushFollow(FOLLOW_1);
@@ -903,6 +957,9 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             }
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return current;
     }
@@ -910,28 +967,29 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulenormalValue"
-    // InternalTraceryLanguage.g:386:1: rulenormalValue returns [EObject current=null] : ( () otherlv_1= ',' otherlv_2= '&' ( (lv_innards_3_0= ruleInnerStatement ) )* otherlv_4= '&' ) ;
+    // InternalTraceryLanguage.g:434:1: rulenormalValue returns [EObject current=null] : ( () otherlv_1= ',' otherlv_2= '&' ( (lv_value_3_0= ruleInnerStatement ) )* otherlv_4= '&' ) ;
     public final EObject rulenormalValue() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
-        EObject lv_innards_3_0 = null;
+        EObject lv_value_3_0 = null;
 
 
 
         	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalTraceryLanguage.g:392:2: ( ( () otherlv_1= ',' otherlv_2= '&' ( (lv_innards_3_0= ruleInnerStatement ) )* otherlv_4= '&' ) )
-            // InternalTraceryLanguage.g:393:2: ( () otherlv_1= ',' otherlv_2= '&' ( (lv_innards_3_0= ruleInnerStatement ) )* otherlv_4= '&' )
+            // InternalTraceryLanguage.g:441:2: ( ( () otherlv_1= ',' otherlv_2= '&' ( (lv_value_3_0= ruleInnerStatement ) )* otherlv_4= '&' ) )
+            // InternalTraceryLanguage.g:442:2: ( () otherlv_1= ',' otherlv_2= '&' ( (lv_value_3_0= ruleInnerStatement ) )* otherlv_4= '&' )
             {
-            // InternalTraceryLanguage.g:393:2: ( () otherlv_1= ',' otherlv_2= '&' ( (lv_innards_3_0= ruleInnerStatement ) )* otherlv_4= '&' )
-            // InternalTraceryLanguage.g:394:3: () otherlv_1= ',' otherlv_2= '&' ( (lv_innards_3_0= ruleInnerStatement ) )* otherlv_4= '&'
+            // InternalTraceryLanguage.g:442:2: ( () otherlv_1= ',' otherlv_2= '&' ( (lv_value_3_0= ruleInnerStatement ) )* otherlv_4= '&' )
+            // InternalTraceryLanguage.g:443:3: () otherlv_1= ',' otherlv_2= '&' ( (lv_value_3_0= ruleInnerStatement ) )* otherlv_4= '&'
             {
-            // InternalTraceryLanguage.g:394:3: ()
-            // InternalTraceryLanguage.g:395:4: 
+            // InternalTraceryLanguage.g:443:3: ()
+            // InternalTraceryLanguage.g:444:4: 
             {
 
             				current = forceCreateModelElement(
@@ -949,7 +1007,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getNormalValueAccess().getAmpersandKeyword_2());
             		
-            // InternalTraceryLanguage.g:409:3: ( (lv_innards_3_0= ruleInnerStatement ) )*
+            // InternalTraceryLanguage.g:458:3: ( (lv_value_3_0= ruleInnerStatement ) )*
             loop5:
             do {
                 int alt5=2;
@@ -962,16 +1020,16 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalTraceryLanguage.g:410:4: (lv_innards_3_0= ruleInnerStatement )
+            	    // InternalTraceryLanguage.g:459:4: (lv_value_3_0= ruleInnerStatement )
             	    {
-            	    // InternalTraceryLanguage.g:410:4: (lv_innards_3_0= ruleInnerStatement )
-            	    // InternalTraceryLanguage.g:411:5: lv_innards_3_0= ruleInnerStatement
+            	    // InternalTraceryLanguage.g:459:4: (lv_value_3_0= ruleInnerStatement )
+            	    // InternalTraceryLanguage.g:460:5: lv_value_3_0= ruleInnerStatement
             	    {
 
-            	    					newCompositeNode(grammarAccess.getNormalValueAccess().getInnardsInnerStatementParserRuleCall_3_0());
+            	    					newCompositeNode(grammarAccess.getNormalValueAccess().getValueInnerStatementParserRuleCall_3_0());
             	    				
             	    pushFollow(FOLLOW_10);
-            	    lv_innards_3_0=ruleInnerStatement();
+            	    lv_value_3_0=ruleInnerStatement();
 
             	    state._fsp--;
 
@@ -981,8 +1039,8 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
             	    					}
             	    					add(
             	    						current,
-            	    						"innards",
-            	    						lv_innards_3_0,
+            	    						"value",
+            	    						lv_value_3_0,
             	    						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.InnerStatement");
             	    					afterParserOrEnumRuleCall();
             	    				
@@ -1018,6 +1076,9 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             }
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return current;
     }
@@ -1025,16 +1086,19 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInnerStatement"
-    // InternalTraceryLanguage.g:436:1: entryRuleInnerStatement returns [EObject current=null] : iv_ruleInnerStatement= ruleInnerStatement EOF ;
+    // InternalTraceryLanguage.g:488:1: entryRuleInnerStatement returns [EObject current=null] : iv_ruleInnerStatement= ruleInnerStatement EOF ;
     public final EObject entryRuleInnerStatement() throws RecognitionException {
         EObject current = null;
 
         EObject iv_ruleInnerStatement = null;
 
 
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+
         try {
-            // InternalTraceryLanguage.g:436:55: (iv_ruleInnerStatement= ruleInnerStatement EOF )
-            // InternalTraceryLanguage.g:437:2: iv_ruleInnerStatement= ruleInnerStatement EOF
+            // InternalTraceryLanguage.g:490:2: (iv_ruleInnerStatement= ruleInnerStatement EOF )
+            // InternalTraceryLanguage.g:491:2: iv_ruleInnerStatement= ruleInnerStatement EOF
             {
              newCompositeNode(grammarAccess.getInnerStatementRule()); 
             pushFollow(FOLLOW_1);
@@ -1054,6 +1118,9 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             }
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return current;
     }
@@ -1061,7 +1128,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInnerStatement"
-    // InternalTraceryLanguage.g:443:1: ruleInnerStatement returns [EObject current=null] : ( ( (lv_value_0_0= RULE_STRING ) ) | (otherlv_1= '#' this_VariableDecleration_2= ruleVariableDecleration otherlv_3= '#' ) | (otherlv_4= '#' this_VariableDecleration_5= ruleVariableDecleration otherlv_6= '.ed#' ) | (otherlv_7= '#' this_VariableDecleration_8= ruleVariableDecleration otherlv_9= '.a#' ) | (otherlv_10= '#' this_VariableDecleration_11= ruleVariableDecleration otherlv_12= '.the#' ) | (otherlv_13= '#' this_VariableDecleration_14= ruleVariableDecleration otherlv_15= '.capitalise#' ) ) ;
+    // InternalTraceryLanguage.g:500:1: ruleInnerStatement returns [EObject current=null] : ( ( (lv_value_0_0= RULE_STRING ) ) | (otherlv_1= '#' this_VariableDecleration_2= ruleVariableDecleration otherlv_3= '#' ) | (otherlv_4= '#' this_VariableDecleration_5= ruleVariableDecleration otherlv_6= '.ed#' ) | (otherlv_7= '#' this_VariableDecleration_8= ruleVariableDecleration otherlv_9= '.a#' ) | (otherlv_10= '#' this_VariableDecleration_11= ruleVariableDecleration otherlv_12= '.the#' ) | (otherlv_13= '#' this_VariableDecleration_14= ruleVariableDecleration otherlv_15= '.capitalise#' ) ) ;
     public final EObject ruleInnerStatement() throws RecognitionException {
         EObject current = null;
 
@@ -1089,12 +1156,13 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
         	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 
         try {
-            // InternalTraceryLanguage.g:449:2: ( ( ( (lv_value_0_0= RULE_STRING ) ) | (otherlv_1= '#' this_VariableDecleration_2= ruleVariableDecleration otherlv_3= '#' ) | (otherlv_4= '#' this_VariableDecleration_5= ruleVariableDecleration otherlv_6= '.ed#' ) | (otherlv_7= '#' this_VariableDecleration_8= ruleVariableDecleration otherlv_9= '.a#' ) | (otherlv_10= '#' this_VariableDecleration_11= ruleVariableDecleration otherlv_12= '.the#' ) | (otherlv_13= '#' this_VariableDecleration_14= ruleVariableDecleration otherlv_15= '.capitalise#' ) ) )
-            // InternalTraceryLanguage.g:450:2: ( ( (lv_value_0_0= RULE_STRING ) ) | (otherlv_1= '#' this_VariableDecleration_2= ruleVariableDecleration otherlv_3= '#' ) | (otherlv_4= '#' this_VariableDecleration_5= ruleVariableDecleration otherlv_6= '.ed#' ) | (otherlv_7= '#' this_VariableDecleration_8= ruleVariableDecleration otherlv_9= '.a#' ) | (otherlv_10= '#' this_VariableDecleration_11= ruleVariableDecleration otherlv_12= '.the#' ) | (otherlv_13= '#' this_VariableDecleration_14= ruleVariableDecleration otherlv_15= '.capitalise#' ) )
+            // InternalTraceryLanguage.g:507:2: ( ( ( (lv_value_0_0= RULE_STRING ) ) | (otherlv_1= '#' this_VariableDecleration_2= ruleVariableDecleration otherlv_3= '#' ) | (otherlv_4= '#' this_VariableDecleration_5= ruleVariableDecleration otherlv_6= '.ed#' ) | (otherlv_7= '#' this_VariableDecleration_8= ruleVariableDecleration otherlv_9= '.a#' ) | (otherlv_10= '#' this_VariableDecleration_11= ruleVariableDecleration otherlv_12= '.the#' ) | (otherlv_13= '#' this_VariableDecleration_14= ruleVariableDecleration otherlv_15= '.capitalise#' ) ) )
+            // InternalTraceryLanguage.g:508:2: ( ( (lv_value_0_0= RULE_STRING ) ) | (otherlv_1= '#' this_VariableDecleration_2= ruleVariableDecleration otherlv_3= '#' ) | (otherlv_4= '#' this_VariableDecleration_5= ruleVariableDecleration otherlv_6= '.ed#' ) | (otherlv_7= '#' this_VariableDecleration_8= ruleVariableDecleration otherlv_9= '.a#' ) | (otherlv_10= '#' this_VariableDecleration_11= ruleVariableDecleration otherlv_12= '.the#' ) | (otherlv_13= '#' this_VariableDecleration_14= ruleVariableDecleration otherlv_15= '.capitalise#' ) )
             {
-            // InternalTraceryLanguage.g:450:2: ( ( (lv_value_0_0= RULE_STRING ) ) | (otherlv_1= '#' this_VariableDecleration_2= ruleVariableDecleration otherlv_3= '#' ) | (otherlv_4= '#' this_VariableDecleration_5= ruleVariableDecleration otherlv_6= '.ed#' ) | (otherlv_7= '#' this_VariableDecleration_8= ruleVariableDecleration otherlv_9= '.a#' ) | (otherlv_10= '#' this_VariableDecleration_11= ruleVariableDecleration otherlv_12= '.the#' ) | (otherlv_13= '#' this_VariableDecleration_14= ruleVariableDecleration otherlv_15= '.capitalise#' ) )
+            // InternalTraceryLanguage.g:508:2: ( ( (lv_value_0_0= RULE_STRING ) ) | (otherlv_1= '#' this_VariableDecleration_2= ruleVariableDecleration otherlv_3= '#' ) | (otherlv_4= '#' this_VariableDecleration_5= ruleVariableDecleration otherlv_6= '.ed#' ) | (otherlv_7= '#' this_VariableDecleration_8= ruleVariableDecleration otherlv_9= '.a#' ) | (otherlv_10= '#' this_VariableDecleration_11= ruleVariableDecleration otherlv_12= '.the#' ) | (otherlv_13= '#' this_VariableDecleration_14= ruleVariableDecleration otherlv_15= '.capitalise#' ) )
             int alt6=6;
             int LA6_0 = input.LA(1);
 
@@ -1106,16 +1174,6 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
                 if ( (LA6_2==RULE_ID) ) {
                     switch ( input.LA(3) ) {
-                    case 19:
-                        {
-                        alt6=2;
-                        }
-                        break;
-                    case 20:
-                        {
-                        alt6=3;
-                        }
-                        break;
                     case 21:
                         {
                         alt6=4;
@@ -1129,6 +1187,16 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                     case 23:
                         {
                         alt6=6;
+                        }
+                        break;
+                    case 19:
+                        {
+                        alt6=2;
+                        }
+                        break;
+                    case 20:
+                        {
+                        alt6=3;
                         }
                         break;
                     default:
@@ -1154,13 +1222,13 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalTraceryLanguage.g:451:3: ( (lv_value_0_0= RULE_STRING ) )
+                    // InternalTraceryLanguage.g:509:3: ( (lv_value_0_0= RULE_STRING ) )
                     {
-                    // InternalTraceryLanguage.g:451:3: ( (lv_value_0_0= RULE_STRING ) )
-                    // InternalTraceryLanguage.g:452:4: (lv_value_0_0= RULE_STRING )
+                    // InternalTraceryLanguage.g:509:3: ( (lv_value_0_0= RULE_STRING ) )
+                    // InternalTraceryLanguage.g:510:4: (lv_value_0_0= RULE_STRING )
                     {
-                    // InternalTraceryLanguage.g:452:4: (lv_value_0_0= RULE_STRING )
-                    // InternalTraceryLanguage.g:453:5: lv_value_0_0= RULE_STRING
+                    // InternalTraceryLanguage.g:510:4: (lv_value_0_0= RULE_STRING )
+                    // InternalTraceryLanguage.g:511:5: lv_value_0_0= RULE_STRING
                     {
                     lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1186,10 +1254,10 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalTraceryLanguage.g:470:3: (otherlv_1= '#' this_VariableDecleration_2= ruleVariableDecleration otherlv_3= '#' )
+                    // InternalTraceryLanguage.g:528:3: (otherlv_1= '#' this_VariableDecleration_2= ruleVariableDecleration otherlv_3= '#' )
                     {
-                    // InternalTraceryLanguage.g:470:3: (otherlv_1= '#' this_VariableDecleration_2= ruleVariableDecleration otherlv_3= '#' )
-                    // InternalTraceryLanguage.g:471:4: otherlv_1= '#' this_VariableDecleration_2= ruleVariableDecleration otherlv_3= '#'
+                    // InternalTraceryLanguage.g:528:3: (otherlv_1= '#' this_VariableDecleration_2= ruleVariableDecleration otherlv_3= '#' )
+                    // InternalTraceryLanguage.g:529:4: otherlv_1= '#' this_VariableDecleration_2= ruleVariableDecleration otherlv_3= '#'
                     {
                     otherlv_1=(Token)match(input,19,FOLLOW_9); 
 
@@ -1218,10 +1286,10 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalTraceryLanguage.g:489:3: (otherlv_4= '#' this_VariableDecleration_5= ruleVariableDecleration otherlv_6= '.ed#' )
+                    // InternalTraceryLanguage.g:547:3: (otherlv_4= '#' this_VariableDecleration_5= ruleVariableDecleration otherlv_6= '.ed#' )
                     {
-                    // InternalTraceryLanguage.g:489:3: (otherlv_4= '#' this_VariableDecleration_5= ruleVariableDecleration otherlv_6= '.ed#' )
-                    // InternalTraceryLanguage.g:490:4: otherlv_4= '#' this_VariableDecleration_5= ruleVariableDecleration otherlv_6= '.ed#'
+                    // InternalTraceryLanguage.g:547:3: (otherlv_4= '#' this_VariableDecleration_5= ruleVariableDecleration otherlv_6= '.ed#' )
+                    // InternalTraceryLanguage.g:548:4: otherlv_4= '#' this_VariableDecleration_5= ruleVariableDecleration otherlv_6= '.ed#'
                     {
                     otherlv_4=(Token)match(input,19,FOLLOW_9); 
 
@@ -1250,10 +1318,10 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalTraceryLanguage.g:508:3: (otherlv_7= '#' this_VariableDecleration_8= ruleVariableDecleration otherlv_9= '.a#' )
+                    // InternalTraceryLanguage.g:566:3: (otherlv_7= '#' this_VariableDecleration_8= ruleVariableDecleration otherlv_9= '.a#' )
                     {
-                    // InternalTraceryLanguage.g:508:3: (otherlv_7= '#' this_VariableDecleration_8= ruleVariableDecleration otherlv_9= '.a#' )
-                    // InternalTraceryLanguage.g:509:4: otherlv_7= '#' this_VariableDecleration_8= ruleVariableDecleration otherlv_9= '.a#'
+                    // InternalTraceryLanguage.g:566:3: (otherlv_7= '#' this_VariableDecleration_8= ruleVariableDecleration otherlv_9= '.a#' )
+                    // InternalTraceryLanguage.g:567:4: otherlv_7= '#' this_VariableDecleration_8= ruleVariableDecleration otherlv_9= '.a#'
                     {
                     otherlv_7=(Token)match(input,19,FOLLOW_9); 
 
@@ -1282,10 +1350,10 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalTraceryLanguage.g:527:3: (otherlv_10= '#' this_VariableDecleration_11= ruleVariableDecleration otherlv_12= '.the#' )
+                    // InternalTraceryLanguage.g:585:3: (otherlv_10= '#' this_VariableDecleration_11= ruleVariableDecleration otherlv_12= '.the#' )
                     {
-                    // InternalTraceryLanguage.g:527:3: (otherlv_10= '#' this_VariableDecleration_11= ruleVariableDecleration otherlv_12= '.the#' )
-                    // InternalTraceryLanguage.g:528:4: otherlv_10= '#' this_VariableDecleration_11= ruleVariableDecleration otherlv_12= '.the#'
+                    // InternalTraceryLanguage.g:585:3: (otherlv_10= '#' this_VariableDecleration_11= ruleVariableDecleration otherlv_12= '.the#' )
+                    // InternalTraceryLanguage.g:586:4: otherlv_10= '#' this_VariableDecleration_11= ruleVariableDecleration otherlv_12= '.the#'
                     {
                     otherlv_10=(Token)match(input,19,FOLLOW_9); 
 
@@ -1314,10 +1382,10 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalTraceryLanguage.g:546:3: (otherlv_13= '#' this_VariableDecleration_14= ruleVariableDecleration otherlv_15= '.capitalise#' )
+                    // InternalTraceryLanguage.g:604:3: (otherlv_13= '#' this_VariableDecleration_14= ruleVariableDecleration otherlv_15= '.capitalise#' )
                     {
-                    // InternalTraceryLanguage.g:546:3: (otherlv_13= '#' this_VariableDecleration_14= ruleVariableDecleration otherlv_15= '.capitalise#' )
-                    // InternalTraceryLanguage.g:547:4: otherlv_13= '#' this_VariableDecleration_14= ruleVariableDecleration otherlv_15= '.capitalise#'
+                    // InternalTraceryLanguage.g:604:3: (otherlv_13= '#' this_VariableDecleration_14= ruleVariableDecleration otherlv_15= '.capitalise#' )
+                    // InternalTraceryLanguage.g:605:4: otherlv_13= '#' this_VariableDecleration_14= ruleVariableDecleration otherlv_15= '.capitalise#'
                     {
                     otherlv_13=(Token)match(input,19,FOLLOW_9); 
 
@@ -1361,6 +1429,9 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             }
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return current;
     }
@@ -1368,16 +1439,19 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStartingJSONExpression"
-    // InternalTraceryLanguage.g:568:1: entryRuleStartingJSONExpression returns [EObject current=null] : iv_ruleStartingJSONExpression= ruleStartingJSONExpression EOF ;
+    // InternalTraceryLanguage.g:629:1: entryRuleStartingJSONExpression returns [EObject current=null] : iv_ruleStartingJSONExpression= ruleStartingJSONExpression EOF ;
     public final EObject entryRuleStartingJSONExpression() throws RecognitionException {
         EObject current = null;
 
         EObject iv_ruleStartingJSONExpression = null;
 
 
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+
         try {
-            // InternalTraceryLanguage.g:568:63: (iv_ruleStartingJSONExpression= ruleStartingJSONExpression EOF )
-            // InternalTraceryLanguage.g:569:2: iv_ruleStartingJSONExpression= ruleStartingJSONExpression EOF
+            // InternalTraceryLanguage.g:631:2: (iv_ruleStartingJSONExpression= ruleStartingJSONExpression EOF )
+            // InternalTraceryLanguage.g:632:2: iv_ruleStartingJSONExpression= ruleStartingJSONExpression EOF
             {
              newCompositeNode(grammarAccess.getStartingJSONExpressionRule()); 
             pushFollow(FOLLOW_1);
@@ -1397,6 +1471,9 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             }
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return current;
     }
@@ -1404,7 +1481,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStartingJSONExpression"
-    // InternalTraceryLanguage.g:575:1: ruleStartingJSONExpression returns [EObject current=null] : ( (otherlv_0= RULE_ID ) ) ;
+    // InternalTraceryLanguage.g:641:1: ruleStartingJSONExpression returns [EObject current=null] : ( (otherlv_0= RULE_ID ) ) ;
     public final EObject ruleStartingJSONExpression() throws RecognitionException {
         EObject current = null;
 
@@ -1412,16 +1489,17 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
         	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 
         try {
-            // InternalTraceryLanguage.g:581:2: ( ( (otherlv_0= RULE_ID ) ) )
-            // InternalTraceryLanguage.g:582:2: ( (otherlv_0= RULE_ID ) )
+            // InternalTraceryLanguage.g:648:2: ( ( (otherlv_0= RULE_ID ) ) )
+            // InternalTraceryLanguage.g:649:2: ( (otherlv_0= RULE_ID ) )
             {
-            // InternalTraceryLanguage.g:582:2: ( (otherlv_0= RULE_ID ) )
-            // InternalTraceryLanguage.g:583:3: (otherlv_0= RULE_ID )
+            // InternalTraceryLanguage.g:649:2: ( (otherlv_0= RULE_ID ) )
+            // InternalTraceryLanguage.g:650:3: (otherlv_0= RULE_ID )
             {
-            // InternalTraceryLanguage.g:583:3: (otherlv_0= RULE_ID )
-            // InternalTraceryLanguage.g:584:4: otherlv_0= RULE_ID
+            // InternalTraceryLanguage.g:650:3: (otherlv_0= RULE_ID )
+            // InternalTraceryLanguage.g:651:4: otherlv_0= RULE_ID
             {
 
             				if (current==null) {
@@ -1451,6 +1529,9 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             }
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return current;
     }

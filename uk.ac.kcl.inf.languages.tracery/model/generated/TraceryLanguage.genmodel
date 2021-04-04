@@ -13,16 +13,16 @@
     <genClasses ecoreClass="TraceryLanguage.ecore#//VariableDecleration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryLanguage.ecore#//VariableDecleration/name"/>
     </genClasses>
-    <genClasses ecoreClass="TraceryLanguage.ecore#//InitialStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//InitialStatement/startVal"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//InitialStatement/vals"/>
+    <genClasses ecoreClass="TraceryLanguage.ecore#//InitialJSONLine">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//InitialJSONLine/startVal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//InitialJSONLine/vals"/>
     </genClasses>
-    <genClasses ecoreClass="TraceryLanguage.ecore#//Statement"/>
+    <genClasses ecoreClass="TraceryLanguage.ecore#//NormalJSONLine"/>
     <genClasses ecoreClass="TraceryLanguage.ecore#//startValue">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//startValue/innards"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//startValue/value"/>
     </genClasses>
     <genClasses ecoreClass="TraceryLanguage.ecore#//normalValue">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//normalValue/innards"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//normalValue/value"/>
     </genClasses>
     <genClasses ecoreClass="TraceryLanguage.ecore#//InnerStatement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryLanguage.ecore#//InnerStatement/value"/>

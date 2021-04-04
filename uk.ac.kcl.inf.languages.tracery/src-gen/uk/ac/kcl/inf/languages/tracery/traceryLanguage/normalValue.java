@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.normalValue#getInnards <em>Innards</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.normalValue#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getnormalValue()
@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface normalValue extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Innards</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Value</b></em>' containment reference list.
    * The list contents are of type {@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Innards</em>' containment reference list.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getnormalValue_Innards()
+   * @return the value of the '<em>Value</em>' containment reference list.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getnormalValue_Value()
    * @model containment="true"
    * @generated
    */
-  EList<InnerStatement> getInnards();
+  EList<InnerStatement> getValue();
 
 } // normalValue

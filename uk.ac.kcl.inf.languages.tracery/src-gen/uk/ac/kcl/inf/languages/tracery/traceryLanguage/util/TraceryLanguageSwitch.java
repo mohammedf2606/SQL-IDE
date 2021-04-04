@@ -88,17 +88,17 @@ public class TraceryLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryLanguagePackage.INITIAL_STATEMENT:
+      case TraceryLanguagePackage.INITIAL_JSON_LINE:
       {
-        InitialStatement initialStatement = (InitialStatement)theEObject;
-        T result = caseInitialStatement(initialStatement);
+        InitialJSONLine initialJSONLine = (InitialJSONLine)theEObject;
+        T result = caseInitialJSONLine(initialJSONLine);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryLanguagePackage.STATEMENT:
+      case TraceryLanguagePackage.NORMAL_JSON_LINE:
       {
-        Statement statement = (Statement)theEObject;
-        T result = caseStatement(statement);
+        NormalJSONLine normalJSONLine = (NormalJSONLine)theEObject;
+        T result = caseNormalJSONLine(normalJSONLine);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -127,7 +127,7 @@ public class TraceryLanguageSwitch<T> extends Switch<T>
       {
         StartingJSONExpression startingJSONExpression = (StartingJSONExpression)theEObject;
         T result = caseStartingJSONExpression(startingJSONExpression);
-        if (result == null) result = caseStatement(startingJSONExpression);
+        if (result == null) result = caseNormalJSONLine(startingJSONExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -168,33 +168,33 @@ public class TraceryLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Initial Statement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Initial JSON Line</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Initial Statement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Initial JSON Line</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInitialStatement(InitialStatement object)
+  public T caseInitialJSONLine(InitialJSONLine object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Statement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Normal JSON Line</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Statement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Normal JSON Line</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStatement(Statement object)
+  public T caseNormalJSONLine(NormalJSONLine object)
   {
     return null;
   }

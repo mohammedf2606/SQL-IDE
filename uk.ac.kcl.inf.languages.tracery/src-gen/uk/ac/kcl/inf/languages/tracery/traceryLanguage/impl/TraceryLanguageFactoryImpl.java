@@ -67,8 +67,8 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
     {
       case TraceryLanguagePackage.TRACERY_PROGRAM: return createTraceryProgram();
       case TraceryLanguagePackage.VARIABLE_DECLERATION: return createVariableDecleration();
-      case TraceryLanguagePackage.INITIAL_STATEMENT: return createInitialStatement();
-      case TraceryLanguagePackage.STATEMENT: return createStatement();
+      case TraceryLanguagePackage.INITIAL_JSON_LINE: return createInitialJSONLine();
+      case TraceryLanguagePackage.NORMAL_JSON_LINE: return createNormalJSONLine();
       case TraceryLanguagePackage.START_VALUE: return createstartValue();
       case TraceryLanguagePackage.NORMAL_VALUE: return createnormalValue();
       case TraceryLanguagePackage.INNER_STATEMENT: return createInnerStatement();
@@ -108,10 +108,10 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
    * @generated
    */
   @Override
-  public InitialStatement createInitialStatement()
+  public InitialJSONLine createInitialJSONLine()
   {
-    InitialStatementImpl initialStatement = new InitialStatementImpl();
-    return initialStatement;
+    InitialJSONLineImpl initialJSONLine = new InitialJSONLineImpl();
+    return initialJSONLine;
   }
 
   /**
@@ -120,10 +120,10 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
    * @generated
    */
   @Override
-  public Statement createStatement()
+  public NormalJSONLine createNormalJSONLine()
   {
-    StatementImpl statement = new StatementImpl();
-    return statement;
+    NormalJSONLineImpl normalJSONLine = new NormalJSONLineImpl();
+    return normalJSONLine;
   }
 
   /**

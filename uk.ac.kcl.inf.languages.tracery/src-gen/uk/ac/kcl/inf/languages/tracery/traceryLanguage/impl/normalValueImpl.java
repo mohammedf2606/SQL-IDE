@@ -29,7 +29,7 @@ import uk.ac.kcl.inf.languages.tracery.traceryLanguage.normalValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.normalValueImpl#getInnards <em>Innards</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.normalValueImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +37,14 @@ import uk.ac.kcl.inf.languages.tracery.traceryLanguage.normalValue;
 public class normalValueImpl extends MinimalEObjectImpl.Container implements normalValue
 {
   /**
-   * The cached value of the '{@link #getInnards() <em>Innards</em>}' containment reference list.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInnards()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected EList<InnerStatement> innards;
+  protected EList<InnerStatement> value;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +73,13 @@ public class normalValueImpl extends MinimalEObjectImpl.Container implements nor
    * @generated
    */
   @Override
-  public EList<InnerStatement> getInnards()
+  public EList<InnerStatement> getValue()
   {
-    if (innards == null)
+    if (value == null)
     {
-      innards = new EObjectContainmentEList<InnerStatement>(InnerStatement.class, this, TraceryLanguagePackage.NORMAL_VALUE__INNARDS);
+      value = new EObjectContainmentEList<InnerStatement>(InnerStatement.class, this, TraceryLanguagePackage.NORMAL_VALUE__VALUE);
     }
-    return innards;
+    return value;
   }
 
   /**
@@ -92,8 +92,8 @@ public class normalValueImpl extends MinimalEObjectImpl.Container implements nor
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.NORMAL_VALUE__INNARDS:
-        return ((InternalEList<?>)getInnards()).basicRemove(otherEnd, msgs);
+      case TraceryLanguagePackage.NORMAL_VALUE__VALUE:
+        return ((InternalEList<?>)getValue()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class normalValueImpl extends MinimalEObjectImpl.Container implements nor
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.NORMAL_VALUE__INNARDS:
-        return getInnards();
+      case TraceryLanguagePackage.NORMAL_VALUE__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class normalValueImpl extends MinimalEObjectImpl.Container implements nor
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.NORMAL_VALUE__INNARDS:
-        getInnards().clear();
-        getInnards().addAll((Collection<? extends InnerStatement>)newValue);
+      case TraceryLanguagePackage.NORMAL_VALUE__VALUE:
+        getValue().clear();
+        getValue().addAll((Collection<? extends InnerStatement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class normalValueImpl extends MinimalEObjectImpl.Container implements nor
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.NORMAL_VALUE__INNARDS:
-        getInnards().clear();
+      case TraceryLanguagePackage.NORMAL_VALUE__VALUE:
+        getValue().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +160,8 @@ public class normalValueImpl extends MinimalEObjectImpl.Container implements nor
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.NORMAL_VALUE__INNARDS:
-        return innards != null && !innards.isEmpty();
+      case TraceryLanguagePackage.NORMAL_VALUE__VALUE:
+        return value != null && !value.isEmpty();
     }
     return super.eIsSet(featureID);
   }
