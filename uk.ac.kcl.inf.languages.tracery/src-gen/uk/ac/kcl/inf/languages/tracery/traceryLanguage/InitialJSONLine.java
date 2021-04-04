@@ -3,8 +3,6 @@
  */
 package uk.ac.kcl.inf.languages.tracery.traceryLanguage;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getStartVal <em>Start Val</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getVals <em>Vals</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONLine()
@@ -27,27 +25,47 @@ import org.eclipse.emf.ecore.EObject;
 public interface InitialJSONLine extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Start Val</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.startValue}.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Start Val</em>' containment reference list.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONLine_StartVal()
-   * @model containment="true"
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONLine_Name()
+   * @model
    * @generated
    */
-  EList<startValue> getStartVal();
+  String getName();
 
   /**
-   * Returns the value of the '<em><b>Vals</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.normalValue}.
+   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Vals</em>' containment reference list.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONLine_Vals()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Value</em>' containment reference.
+   * @see #setValue(InitialJSONEnding)
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONLine_Value()
    * @model containment="true"
    * @generated
    */
-  EList<normalValue> getVals();
+  InitialJSONEnding getValue();
+
+  /**
+   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getValue <em>Value</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Value</em>' containment reference.
+   * @see #getValue()
+   * @generated
+   */
+  void setValue(InitialJSONEnding value);
 
 } // InitialJSONLine

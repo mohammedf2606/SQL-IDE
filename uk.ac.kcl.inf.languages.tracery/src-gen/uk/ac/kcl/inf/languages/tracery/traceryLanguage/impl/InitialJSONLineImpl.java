@@ -3,24 +3,18 @@
  */
 package uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONEnding;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.normalValue;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.startValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,8 +24,8 @@ import uk.ac.kcl.inf.languages.tracery.traceryLanguage.startValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InitialJSONLineImpl#getStartVal <em>Start Val</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InitialJSONLineImpl#getVals <em>Vals</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InitialJSONLineImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InitialJSONLineImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,24 +33,34 @@ import uk.ac.kcl.inf.languages.tracery.traceryLanguage.startValue;
 public class InitialJSONLineImpl extends MinimalEObjectImpl.Container implements InitialJSONLine
 {
   /**
-   * The cached value of the '{@link #getStartVal() <em>Start Val</em>}' containment reference list.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStartVal()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<startValue> startVal;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getVals() <em>Vals</em>}' containment reference list.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVals()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<normalValue> vals;
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected InitialJSONEnding value;
 
   /**
    * <!-- begin-user-doc -->
@@ -85,13 +89,9 @@ public class InitialJSONLineImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public EList<startValue> getStartVal()
+  public String getName()
   {
-    if (startVal == null)
-    {
-      startVal = new EObjectContainmentEList<startValue>(startValue.class, this, TraceryLanguagePackage.INITIAL_JSON_LINE__START_VAL);
-    }
-    return startVal;
+    return name;
   }
 
   /**
@@ -100,13 +100,62 @@ public class InitialJSONLineImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public EList<normalValue> getVals()
+  public void setName(String newName)
   {
-    if (vals == null)
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TraceryLanguagePackage.INITIAL_JSON_LINE__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InitialJSONEnding getValue()
+  {
+    return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetValue(InitialJSONEnding newValue, NotificationChain msgs)
+  {
+    InitialJSONEnding oldValue = value;
+    value = newValue;
+    if (eNotificationRequired())
     {
-      vals = new EObjectContainmentEList<normalValue>(normalValue.class, this, TraceryLanguagePackage.INITIAL_JSON_LINE__VALS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TraceryLanguagePackage.INITIAL_JSON_LINE__VALUE, oldValue, newValue);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return vals;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setValue(InitialJSONEnding newValue)
+  {
+    if (newValue != value)
+    {
+      NotificationChain msgs = null;
+      if (value != null)
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TraceryLanguagePackage.INITIAL_JSON_LINE__VALUE, null, msgs);
+      if (newValue != null)
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TraceryLanguagePackage.INITIAL_JSON_LINE__VALUE, null, msgs);
+      msgs = basicSetValue(newValue, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TraceryLanguagePackage.INITIAL_JSON_LINE__VALUE, newValue, newValue));
   }
 
   /**
@@ -119,10 +168,8 @@ public class InitialJSONLineImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.INITIAL_JSON_LINE__START_VAL:
-        return ((InternalEList<?>)getStartVal()).basicRemove(otherEnd, msgs);
-      case TraceryLanguagePackage.INITIAL_JSON_LINE__VALS:
-        return ((InternalEList<?>)getVals()).basicRemove(otherEnd, msgs);
+      case TraceryLanguagePackage.INITIAL_JSON_LINE__VALUE:
+        return basicSetValue(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -137,10 +184,10 @@ public class InitialJSONLineImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.INITIAL_JSON_LINE__START_VAL:
-        return getStartVal();
-      case TraceryLanguagePackage.INITIAL_JSON_LINE__VALS:
-        return getVals();
+      case TraceryLanguagePackage.INITIAL_JSON_LINE__NAME:
+        return getName();
+      case TraceryLanguagePackage.INITIAL_JSON_LINE__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -150,19 +197,16 @@ public class InitialJSONLineImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.INITIAL_JSON_LINE__START_VAL:
-        getStartVal().clear();
-        getStartVal().addAll((Collection<? extends startValue>)newValue);
+      case TraceryLanguagePackage.INITIAL_JSON_LINE__NAME:
+        setName((String)newValue);
         return;
-      case TraceryLanguagePackage.INITIAL_JSON_LINE__VALS:
-        getVals().clear();
-        getVals().addAll((Collection<? extends normalValue>)newValue);
+      case TraceryLanguagePackage.INITIAL_JSON_LINE__VALUE:
+        setValue((InitialJSONEnding)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -178,11 +222,11 @@ public class InitialJSONLineImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.INITIAL_JSON_LINE__START_VAL:
-        getStartVal().clear();
+      case TraceryLanguagePackage.INITIAL_JSON_LINE__NAME:
+        setName(NAME_EDEFAULT);
         return;
-      case TraceryLanguagePackage.INITIAL_JSON_LINE__VALS:
-        getVals().clear();
+      case TraceryLanguagePackage.INITIAL_JSON_LINE__VALUE:
+        setValue((InitialJSONEnding)null);
         return;
     }
     super.eUnset(featureID);
@@ -198,12 +242,29 @@ public class InitialJSONLineImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.INITIAL_JSON_LINE__START_VAL:
-        return startVal != null && !startVal.isEmpty();
-      case TraceryLanguagePackage.INITIAL_JSON_LINE__VALS:
-        return vals != null && !vals.isEmpty();
+      case TraceryLanguagePackage.INITIAL_JSON_LINE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case TraceryLanguagePackage.INITIAL_JSON_LINE__VALUE:
+        return value != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //InitialJSONLineImpl

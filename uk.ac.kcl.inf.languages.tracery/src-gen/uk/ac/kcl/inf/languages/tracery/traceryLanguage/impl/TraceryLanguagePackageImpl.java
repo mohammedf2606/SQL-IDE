@@ -10,16 +10,15 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.DeclaredVariable;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONEnding;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatement;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalJSONLine;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartingJSONExpression;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatements;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalValue;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartValue;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguageFactory;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDecleration;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.normalValue;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.startValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,13 +40,6 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass variableDeclerationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass initialJSONLineEClass = null;
 
   /**
@@ -55,7 +47,7 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass normalJSONLineEClass = null;
+  private EClass initialJSONEndingEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -76,14 +68,14 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass innerStatementEClass = null;
+  private EClass innerStatementsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass startingJSONExpressionEClass = null;
+  private EClass declaredVariableEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -176,39 +168,6 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * @generated
    */
   @Override
-  public EReference getTraceryProgram_Statements()
-  {
-    return (EReference)traceryProgramEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getVariableDecleration()
-  {
-    return variableDeclerationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getVariableDecleration_Name()
-  {
-    return (EAttribute)variableDeclerationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getInitialJSONLine()
   {
     return initialJSONLineEClass;
@@ -220,9 +179,9 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * @generated
    */
   @Override
-  public EReference getInitialJSONLine_StartVal()
+  public EAttribute getInitialJSONLine_Name()
   {
-    return (EReference)initialJSONLineEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)initialJSONLineEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -231,7 +190,7 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * @generated
    */
   @Override
-  public EReference getInitialJSONLine_Vals()
+  public EReference getInitialJSONLine_Value()
   {
     return (EReference)initialJSONLineEClass.getEStructuralFeatures().get(1);
   }
@@ -242,9 +201,9 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * @generated
    */
   @Override
-  public EClass getNormalJSONLine()
+  public EClass getInitialJSONEnding()
   {
-    return normalJSONLineEClass;
+    return initialJSONEndingEClass;
   }
 
   /**
@@ -253,7 +212,29 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * @generated
    */
   @Override
-  public EClass getstartValue()
+  public EReference getInitialJSONEnding_StartVal()
+  {
+    return (EReference)initialJSONEndingEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInitialJSONEnding_Vals()
+  {
+    return (EReference)initialJSONEndingEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStartValue()
   {
     return startValueEClass;
   }
@@ -264,7 +245,7 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * @generated
    */
   @Override
-  public EReference getstartValue_Value()
+  public EReference getStartValue_ValueInnerStatements()
   {
     return (EReference)startValueEClass.getEStructuralFeatures().get(0);
   }
@@ -275,7 +256,7 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * @generated
    */
   @Override
-  public EClass getnormalValue()
+  public EClass getNormalValue()
   {
     return normalValueEClass;
   }
@@ -286,7 +267,7 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * @generated
    */
   @Override
-  public EReference getnormalValue_Value()
+  public EReference getNormalValue_ValueInnerStatements()
   {
     return (EReference)normalValueEClass.getEStructuralFeatures().get(0);
   }
@@ -297,9 +278,9 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * @generated
    */
   @Override
-  public EClass getInnerStatement()
+  public EClass getInnerStatements()
   {
-    return innerStatementEClass;
+    return innerStatementsEClass;
   }
 
   /**
@@ -308,9 +289,9 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * @generated
    */
   @Override
-  public EAttribute getInnerStatement_Value()
+  public EAttribute getInnerStatements_Val()
   {
-    return (EAttribute)innerStatementEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)innerStatementsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -319,9 +300,9 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * @generated
    */
   @Override
-  public EClass getStartingJSONExpression()
+  public EClass getDeclaredVariable()
   {
-    return startingJSONExpressionEClass;
+    return declaredVariableEClass;
   }
 
   /**
@@ -330,31 +311,9 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * @generated
    */
   @Override
-  public EReference getStartingJSONExpression_StartVal()
+  public EReference getDeclaredVariable_Var()
   {
-    return (EReference)startingJSONExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getStartingJSONExpression_Vals()
-  {
-    return (EReference)startingJSONExpressionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getStartingJSONExpression_Var()
-  {
-    return (EReference)startingJSONExpressionEClass.getEStructuralFeatures().get(2);
+    return (EReference)declaredVariableEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -390,30 +349,26 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
     // Create classes and their features
     traceryProgramEClass = createEClass(TRACERY_PROGRAM);
     createEReference(traceryProgramEClass, TRACERY_PROGRAM__INITIAL_STATEMENT);
-    createEReference(traceryProgramEClass, TRACERY_PROGRAM__STATEMENTS);
-
-    variableDeclerationEClass = createEClass(VARIABLE_DECLERATION);
-    createEAttribute(variableDeclerationEClass, VARIABLE_DECLERATION__NAME);
 
     initialJSONLineEClass = createEClass(INITIAL_JSON_LINE);
-    createEReference(initialJSONLineEClass, INITIAL_JSON_LINE__START_VAL);
-    createEReference(initialJSONLineEClass, INITIAL_JSON_LINE__VALS);
+    createEAttribute(initialJSONLineEClass, INITIAL_JSON_LINE__NAME);
+    createEReference(initialJSONLineEClass, INITIAL_JSON_LINE__VALUE);
 
-    normalJSONLineEClass = createEClass(NORMAL_JSON_LINE);
+    initialJSONEndingEClass = createEClass(INITIAL_JSON_ENDING);
+    createEReference(initialJSONEndingEClass, INITIAL_JSON_ENDING__START_VAL);
+    createEReference(initialJSONEndingEClass, INITIAL_JSON_ENDING__VALS);
 
     startValueEClass = createEClass(START_VALUE);
-    createEReference(startValueEClass, START_VALUE__VALUE);
+    createEReference(startValueEClass, START_VALUE__VALUE_INNER_STATEMENTS);
 
     normalValueEClass = createEClass(NORMAL_VALUE);
-    createEReference(normalValueEClass, NORMAL_VALUE__VALUE);
+    createEReference(normalValueEClass, NORMAL_VALUE__VALUE_INNER_STATEMENTS);
 
-    innerStatementEClass = createEClass(INNER_STATEMENT);
-    createEAttribute(innerStatementEClass, INNER_STATEMENT__VALUE);
+    innerStatementsEClass = createEClass(INNER_STATEMENTS);
+    createEAttribute(innerStatementsEClass, INNER_STATEMENTS__VAL);
 
-    startingJSONExpressionEClass = createEClass(STARTING_JSON_EXPRESSION);
-    createEReference(startingJSONExpressionEClass, STARTING_JSON_EXPRESSION__START_VAL);
-    createEReference(startingJSONExpressionEClass, STARTING_JSON_EXPRESSION__VALS);
-    createEReference(startingJSONExpressionEClass, STARTING_JSON_EXPRESSION__VAR);
+    declaredVariableEClass = createEClass(DECLARED_VARIABLE);
+    createEReference(declaredVariableEClass, DECLARED_VARIABLE__VAR);
   }
 
   /**
@@ -445,36 +400,31 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    variableDeclerationEClass.getESuperTypes().add(this.getInnerStatement());
-    startingJSONExpressionEClass.getESuperTypes().add(this.getNormalJSONLine());
+    declaredVariableEClass.getESuperTypes().add(this.getInnerStatements());
 
     // Initialize classes and features; add operations and parameters
     initEClass(traceryProgramEClass, TraceryProgram.class, "TraceryProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTraceryProgram_InitialStatement(), this.getInitialJSONLine(), null, "initialStatement", null, 0, 1, TraceryProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTraceryProgram_Statements(), this.getNormalJSONLine(), null, "statements", null, 0, -1, TraceryProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(variableDeclerationEClass, VariableDecleration.class, "VariableDecleration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVariableDecleration_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableDecleration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTraceryProgram_InitialStatement(), this.getInitialJSONLine(), null, "initialStatement", null, 0, -1, TraceryProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(initialJSONLineEClass, InitialJSONLine.class, "InitialJSONLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInitialJSONLine_StartVal(), this.getstartValue(), null, "startVal", null, 0, -1, InitialJSONLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInitialJSONLine_Vals(), this.getnormalValue(), null, "vals", null, 0, -1, InitialJSONLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInitialJSONLine_Name(), ecorePackage.getEString(), "name", null, 0, 1, InitialJSONLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInitialJSONLine_Value(), this.getInitialJSONEnding(), null, "value", null, 0, 1, InitialJSONLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(normalJSONLineEClass, NormalJSONLine.class, "NormalJSONLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(initialJSONEndingEClass, InitialJSONEnding.class, "InitialJSONEnding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInitialJSONEnding_StartVal(), this.getStartValue(), null, "startVal", null, 0, -1, InitialJSONEnding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInitialJSONEnding_Vals(), this.getNormalValue(), null, "vals", null, 0, -1, InitialJSONEnding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(startValueEClass, startValue.class, "startValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getstartValue_Value(), this.getInnerStatement(), null, "value", null, 0, -1, startValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(startValueEClass, StartValue.class, "StartValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStartValue_ValueInnerStatements(), this.getInnerStatements(), null, "valueInnerStatements", null, 0, -1, StartValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(normalValueEClass, normalValue.class, "normalValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getnormalValue_Value(), this.getInnerStatement(), null, "value", null, 0, -1, normalValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(normalValueEClass, NormalValue.class, "NormalValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNormalValue_ValueInnerStatements(), this.getInnerStatements(), null, "valueInnerStatements", null, 0, -1, NormalValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(innerStatementEClass, InnerStatement.class, "InnerStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInnerStatement_Value(), ecorePackage.getEString(), "value", null, 0, 1, InnerStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(innerStatementsEClass, InnerStatements.class, "InnerStatements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInnerStatements_Val(), ecorePackage.getEString(), "val", null, 0, 1, InnerStatements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(startingJSONExpressionEClass, StartingJSONExpression.class, "StartingJSONExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStartingJSONExpression_StartVal(), this.getstartValue(), null, "startVal", null, 0, -1, StartingJSONExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStartingJSONExpression_Vals(), this.getnormalValue(), null, "vals", null, 0, -1, StartingJSONExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStartingJSONExpression_Var(), this.getVariableDecleration(), null, "var", null, 0, 1, StartingJSONExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(declaredVariableEClass, DeclaredVariable.class, "DeclaredVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclaredVariable_Var(), this.getInitialJSONLine(), null, "var", null, 0, 1, DeclaredVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

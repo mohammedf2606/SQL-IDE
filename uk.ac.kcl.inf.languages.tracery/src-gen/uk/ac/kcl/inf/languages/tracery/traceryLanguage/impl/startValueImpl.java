@@ -17,41 +17,41 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatement;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatements;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartValue;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.startValue;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>start Value</b></em>'.
+ * An implementation of the model object '<em><b>Start Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.startValueImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StartValueImpl#getValueInnerStatements <em>Value Inner Statements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class startValueImpl extends MinimalEObjectImpl.Container implements startValue
+public class StartValueImpl extends MinimalEObjectImpl.Container implements StartValue
 {
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference list.
+   * The cached value of the '{@link #getValueInnerStatements() <em>Value Inner Statements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getValueInnerStatements()
    * @generated
    * @ordered
    */
-  protected EList<InnerStatement> value;
+  protected EList<InnerStatements> valueInnerStatements;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected startValueImpl()
+  protected StartValueImpl()
   {
     super();
   }
@@ -73,13 +73,13 @@ public class startValueImpl extends MinimalEObjectImpl.Container implements star
    * @generated
    */
   @Override
-  public EList<InnerStatement> getValue()
+  public EList<InnerStatements> getValueInnerStatements()
   {
-    if (value == null)
+    if (valueInnerStatements == null)
     {
-      value = new EObjectContainmentEList<InnerStatement>(InnerStatement.class, this, TraceryLanguagePackage.START_VALUE__VALUE);
+      valueInnerStatements = new EObjectContainmentEList<InnerStatements>(InnerStatements.class, this, TraceryLanguagePackage.START_VALUE__VALUE_INNER_STATEMENTS);
     }
-    return value;
+    return valueInnerStatements;
   }
 
   /**
@@ -92,8 +92,8 @@ public class startValueImpl extends MinimalEObjectImpl.Container implements star
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.START_VALUE__VALUE:
-        return ((InternalEList<?>)getValue()).basicRemove(otherEnd, msgs);
+      case TraceryLanguagePackage.START_VALUE__VALUE_INNER_STATEMENTS:
+        return ((InternalEList<?>)getValueInnerStatements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class startValueImpl extends MinimalEObjectImpl.Container implements star
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.START_VALUE__VALUE:
-        return getValue();
+      case TraceryLanguagePackage.START_VALUE__VALUE_INNER_STATEMENTS:
+        return getValueInnerStatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class startValueImpl extends MinimalEObjectImpl.Container implements star
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.START_VALUE__VALUE:
-        getValue().clear();
-        getValue().addAll((Collection<? extends InnerStatement>)newValue);
+      case TraceryLanguagePackage.START_VALUE__VALUE_INNER_STATEMENTS:
+        getValueInnerStatements().clear();
+        getValueInnerStatements().addAll((Collection<? extends InnerStatements>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class startValueImpl extends MinimalEObjectImpl.Container implements star
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.START_VALUE__VALUE:
-        getValue().clear();
+      case TraceryLanguagePackage.START_VALUE__VALUE_INNER_STATEMENTS:
+        getValueInnerStatements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,10 +160,10 @@ public class startValueImpl extends MinimalEObjectImpl.Container implements star
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.START_VALUE__VALUE:
-        return value != null && !value.isEmpty();
+      case TraceryLanguagePackage.START_VALUE__VALUE_INNER_STATEMENTS:
+        return valueInnerStatements != null && !valueInnerStatements.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //startValueImpl
+} //StartValueImpl

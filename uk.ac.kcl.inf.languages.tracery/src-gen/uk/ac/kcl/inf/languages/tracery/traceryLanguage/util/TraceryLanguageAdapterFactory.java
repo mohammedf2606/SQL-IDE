@@ -81,39 +81,34 @@ public class TraceryLanguageAdapterFactory extends AdapterFactoryImpl
         return createTraceryProgramAdapter();
       }
       @Override
-      public Adapter caseVariableDecleration(VariableDecleration object)
-      {
-        return createVariableDeclerationAdapter();
-      }
-      @Override
       public Adapter caseInitialJSONLine(InitialJSONLine object)
       {
         return createInitialJSONLineAdapter();
       }
       @Override
-      public Adapter caseNormalJSONLine(NormalJSONLine object)
+      public Adapter caseInitialJSONEnding(InitialJSONEnding object)
       {
-        return createNormalJSONLineAdapter();
+        return createInitialJSONEndingAdapter();
       }
       @Override
-      public Adapter casestartValue(startValue object)
+      public Adapter caseStartValue(StartValue object)
       {
-        return createstartValueAdapter();
+        return createStartValueAdapter();
       }
       @Override
-      public Adapter casenormalValue(normalValue object)
+      public Adapter caseNormalValue(NormalValue object)
       {
-        return createnormalValueAdapter();
+        return createNormalValueAdapter();
       }
       @Override
-      public Adapter caseInnerStatement(InnerStatement object)
+      public Adapter caseInnerStatements(InnerStatements object)
       {
-        return createInnerStatementAdapter();
+        return createInnerStatementsAdapter();
       }
       @Override
-      public Adapter caseStartingJSONExpression(StartingJSONExpression object)
+      public Adapter caseDeclaredVariable(DeclaredVariable object)
       {
-        return createStartingJSONExpressionAdapter();
+        return createDeclaredVariableAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -153,21 +148,6 @@ public class TraceryLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDecleration <em>Variable Decleration</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDecleration
-   * @generated
-   */
-  public Adapter createVariableDeclerationAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine <em>Initial JSON Line</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -183,76 +163,76 @@ public class TraceryLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalJSONLine <em>Normal JSON Line</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONEnding <em>Initial JSON Ending</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalJSONLine
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONEnding
    * @generated
    */
-  public Adapter createNormalJSONLineAdapter()
+  public Adapter createInitialJSONEndingAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.startValue <em>start Value</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartValue <em>Start Value</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.startValue
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartValue
    * @generated
    */
-  public Adapter createstartValueAdapter()
+  public Adapter createStartValueAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.normalValue <em>normal Value</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalValue <em>Normal Value</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.normalValue
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalValue
    * @generated
    */
-  public Adapter createnormalValueAdapter()
+  public Adapter createNormalValueAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatement <em>Inner Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatements <em>Inner Statements</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatement
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatements
    * @generated
    */
-  public Adapter createInnerStatementAdapter()
+  public Adapter createInnerStatementsAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartingJSONExpression <em>Starting JSON Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.DeclaredVariable <em>Declared Variable</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartingJSONExpression
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.DeclaredVariable
    * @generated
    */
-  public Adapter createStartingJSONExpressionAdapter()
+  public Adapter createDeclaredVariableAdapter()
   {
     return null;
   }

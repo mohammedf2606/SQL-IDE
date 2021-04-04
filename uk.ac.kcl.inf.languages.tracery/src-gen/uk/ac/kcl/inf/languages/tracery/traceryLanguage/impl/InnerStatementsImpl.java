@@ -10,50 +10,50 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatement;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatements;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Inner Statement</b></em>'.
+ * An implementation of the model object '<em><b>Inner Statements</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InnerStatementImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InnerStatementsImpl#getVal <em>Val</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class InnerStatementImpl extends MinimalEObjectImpl.Container implements InnerStatement
+public class InnerStatementsImpl extends MinimalEObjectImpl.Container implements InnerStatements
 {
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The default value of the '{@link #getVal() <em>Val</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getVal()
    * @generated
    * @ordered
    */
-  protected static final String VALUE_EDEFAULT = null;
+  protected static final String VAL_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getVal() <em>Val</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getVal()
    * @generated
    * @ordered
    */
-  protected String value = VALUE_EDEFAULT;
+  protected String val = VAL_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected InnerStatementImpl()
+  protected InnerStatementsImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class InnerStatementImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return TraceryLanguagePackage.Literals.INNER_STATEMENT;
+    return TraceryLanguagePackage.Literals.INNER_STATEMENTS;
   }
 
   /**
@@ -75,9 +75,9 @@ public class InnerStatementImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public String getValue()
+  public String getVal()
   {
-    return value;
+    return val;
   }
 
   /**
@@ -86,12 +86,12 @@ public class InnerStatementImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public void setValue(String newValue)
+  public void setVal(String newVal)
   {
-    String oldValue = value;
-    value = newValue;
+    String oldVal = val;
+    val = newVal;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TraceryLanguagePackage.INNER_STATEMENT__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, TraceryLanguagePackage.INNER_STATEMENTS__VAL, oldVal, val));
   }
 
   /**
@@ -104,8 +104,8 @@ public class InnerStatementImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.INNER_STATEMENT__VALUE:
-        return getValue();
+      case TraceryLanguagePackage.INNER_STATEMENTS__VAL:
+        return getVal();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class InnerStatementImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.INNER_STATEMENT__VALUE:
-        setValue((String)newValue);
+      case TraceryLanguagePackage.INNER_STATEMENTS__VAL:
+        setVal((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class InnerStatementImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.INNER_STATEMENT__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case TraceryLanguagePackage.INNER_STATEMENTS__VAL:
+        setVal(VAL_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class InnerStatementImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.INNER_STATEMENT__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case TraceryLanguagePackage.INNER_STATEMENTS__VAL:
+        return VAL_EDEFAULT == null ? val != null : !VAL_EDEFAULT.equals(val);
     }
     return super.eIsSet(featureID);
   }
@@ -171,10 +171,10 @@ public class InnerStatementImpl extends MinimalEObjectImpl.Container implements 
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (value: ");
-    result.append(value);
+    result.append(" (val: ");
+    result.append(val);
     result.append(')');
     return result.toString();
   }
 
-} //InnerStatementImpl
+} //InnerStatementsImpl

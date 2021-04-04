@@ -5,7 +5,6 @@ package uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -13,14 +12,12 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalJSONLine;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram;
 
@@ -33,7 +30,6 @@ import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryProgramImpl#getInitialStatement <em>Initial Statement</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryProgramImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,24 +37,14 @@ import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram;
 public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements TraceryProgram
 {
   /**
-   * The cached value of the '{@link #getInitialStatement() <em>Initial Statement</em>}' containment reference.
+   * The cached value of the '{@link #getInitialStatement() <em>Initial Statement</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getInitialStatement()
    * @generated
    * @ordered
    */
-  protected InitialJSONLine initialStatement;
-
-  /**
-   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStatements()
-   * @generated
-   * @ordered
-   */
-  protected EList<NormalJSONLine> statements;
+  protected EList<InitialJSONLine> initialStatement;
 
   /**
    * <!-- begin-user-doc -->
@@ -87,63 +73,13 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public InitialJSONLine getInitialStatement()
+  public EList<InitialJSONLine> getInitialStatement()
   {
+    if (initialStatement == null)
+    {
+      initialStatement = new EObjectContainmentEList<InitialJSONLine>(InitialJSONLine.class, this, TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT);
+    }
     return initialStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetInitialStatement(InitialJSONLine newInitialStatement, NotificationChain msgs)
-  {
-    InitialJSONLine oldInitialStatement = initialStatement;
-    initialStatement = newInitialStatement;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT, oldInitialStatement, newInitialStatement);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setInitialStatement(InitialJSONLine newInitialStatement)
-  {
-    if (newInitialStatement != initialStatement)
-    {
-      NotificationChain msgs = null;
-      if (initialStatement != null)
-        msgs = ((InternalEObject)initialStatement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT, null, msgs);
-      if (newInitialStatement != null)
-        msgs = ((InternalEObject)newInitialStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT, null, msgs);
-      msgs = basicSetInitialStatement(newInitialStatement, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT, newInitialStatement, newInitialStatement));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<NormalJSONLine> getStatements()
-  {
-    if (statements == null)
-    {
-      statements = new EObjectContainmentEList<NormalJSONLine>(NormalJSONLine.class, this, TraceryLanguagePackage.TRACERY_PROGRAM__STATEMENTS);
-    }
-    return statements;
   }
 
   /**
@@ -157,9 +93,7 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT:
-        return basicSetInitialStatement(null, msgs);
-      case TraceryLanguagePackage.TRACERY_PROGRAM__STATEMENTS:
-        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
+        return ((InternalEList<?>)getInitialStatement()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -176,8 +110,6 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
     {
       case TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT:
         return getInitialStatement();
-      case TraceryLanguagePackage.TRACERY_PROGRAM__STATEMENTS:
-        return getStatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -194,11 +126,8 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT:
-        setInitialStatement((InitialJSONLine)newValue);
-        return;
-      case TraceryLanguagePackage.TRACERY_PROGRAM__STATEMENTS:
-        getStatements().clear();
-        getStatements().addAll((Collection<? extends NormalJSONLine>)newValue);
+        getInitialStatement().clear();
+        getInitialStatement().addAll((Collection<? extends InitialJSONLine>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -215,10 +144,7 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT:
-        setInitialStatement((InitialJSONLine)null);
-        return;
-      case TraceryLanguagePackage.TRACERY_PROGRAM__STATEMENTS:
-        getStatements().clear();
+        getInitialStatement().clear();
         return;
     }
     super.eUnset(featureID);
@@ -235,9 +161,7 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT:
-        return initialStatement != null;
-      case TraceryLanguagePackage.TRACERY_PROGRAM__STATEMENTS:
-        return statements != null && !statements.isEmpty();
+        return initialStatement != null && !initialStatement.isEmpty();
     }
     return super.eIsSet(featureID);
   }

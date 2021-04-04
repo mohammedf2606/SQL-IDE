@@ -33,15 +33,6 @@ public interface TraceryLanguageFactory extends EFactory
   TraceryProgram createTraceryProgram();
 
   /**
-   * Returns a new object of class '<em>Variable Decleration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Decleration</em>'.
-   * @generated
-   */
-  VariableDecleration createVariableDecleration();
-
-  /**
    * Returns a new object of class '<em>Initial JSON Line</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -51,49 +42,49 @@ public interface TraceryLanguageFactory extends EFactory
   InitialJSONLine createInitialJSONLine();
 
   /**
-   * Returns a new object of class '<em>Normal JSON Line</em>'.
+   * Returns a new object of class '<em>Initial JSON Ending</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Normal JSON Line</em>'.
+   * @return a new object of class '<em>Initial JSON Ending</em>'.
    * @generated
    */
-  NormalJSONLine createNormalJSONLine();
+  InitialJSONEnding createInitialJSONEnding();
 
   /**
-   * Returns a new object of class '<em>start Value</em>'.
+   * Returns a new object of class '<em>Start Value</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>start Value</em>'.
+   * @return a new object of class '<em>Start Value</em>'.
    * @generated
    */
-  startValue createstartValue();
+  StartValue createStartValue();
 
   /**
-   * Returns a new object of class '<em>normal Value</em>'.
+   * Returns a new object of class '<em>Normal Value</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>normal Value</em>'.
+   * @return a new object of class '<em>Normal Value</em>'.
    * @generated
    */
-  normalValue createnormalValue();
+  NormalValue createNormalValue();
 
   /**
-   * Returns a new object of class '<em>Inner Statement</em>'.
+   * Returns a new object of class '<em>Inner Statements</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Inner Statement</em>'.
+   * @return a new object of class '<em>Inner Statements</em>'.
    * @generated
    */
-  InnerStatement createInnerStatement();
+  InnerStatements createInnerStatements();
 
   /**
-   * Returns a new object of class '<em>Starting JSON Expression</em>'.
+   * Returns a new object of class '<em>Declared Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Starting JSON Expression</em>'.
+   * @return a new object of class '<em>Declared Variable</em>'.
    * @generated
    */
-  StartingJSONExpression createStartingJSONExpression();
+  DeclaredVariable createDeclaredVariable();
 
   /**
    * Returns the package supported by this factory.

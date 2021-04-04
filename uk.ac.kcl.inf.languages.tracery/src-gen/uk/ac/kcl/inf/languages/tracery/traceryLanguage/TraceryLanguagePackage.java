@@ -68,7 +68,7 @@ public interface TraceryLanguagePackage extends EPackage
   int TRACERY_PROGRAM = 0;
 
   /**
-   * The feature id for the '<em><b>Initial Statement</b></em>' containment reference.
+   * The feature id for the '<em><b>Initial Statement</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -77,87 +77,13 @@ public interface TraceryLanguagePackage extends EPackage
   int TRACERY_PROGRAM__INITIAL_STATEMENT = 0;
 
   /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRACERY_PROGRAM__STATEMENTS = 1;
-
-  /**
    * The number of structural features of the '<em>Tracery Program</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRACERY_PROGRAM_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InnerStatementImpl <em>Inner Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InnerStatementImpl
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getInnerStatement()
-   * @generated
-   */
-  int INNER_STATEMENT = 6;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_STATEMENT__VALUE = 0;
-
-  /**
-   * The number of structural features of the '<em>Inner Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_STATEMENT_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.VariableDeclerationImpl <em>Variable Decleration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.VariableDeclerationImpl
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getVariableDecleration()
-   * @generated
-   */
-  int VARIABLE_DECLERATION = 1;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLERATION__VALUE = INNER_STATEMENT__VALUE;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLERATION__NAME = INNER_STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Variable Decleration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLERATION_FEATURE_COUNT = INNER_STATEMENT_FEATURE_COUNT + 1;
+  int TRACERY_PROGRAM_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InitialJSONLineImpl <em>Initial JSON Line</em>}' class.
@@ -167,25 +93,25 @@ public interface TraceryLanguagePackage extends EPackage
    * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getInitialJSONLine()
    * @generated
    */
-  int INITIAL_JSON_LINE = 2;
+  int INITIAL_JSON_LINE = 1;
 
   /**
-   * The feature id for the '<em><b>Start Val</b></em>' containment reference list.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INITIAL_JSON_LINE__START_VAL = 0;
+  int INITIAL_JSON_LINE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Vals</b></em>' containment reference list.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INITIAL_JSON_LINE__VALS = 1;
+  int INITIAL_JSON_LINE__VALUE = 1;
 
   /**
    * The number of structural features of the '<em>Initial JSON Line</em>' class.
@@ -197,89 +123,14 @@ public interface TraceryLanguagePackage extends EPackage
   int INITIAL_JSON_LINE_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.NormalJSONLineImpl <em>Normal JSON Line</em>}' class.
+   * The meta object id for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InitialJSONEndingImpl <em>Initial JSON Ending</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.NormalJSONLineImpl
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getNormalJSONLine()
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InitialJSONEndingImpl
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getInitialJSONEnding()
    * @generated
    */
-  int NORMAL_JSON_LINE = 3;
-
-  /**
-   * The number of structural features of the '<em>Normal JSON Line</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NORMAL_JSON_LINE_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.startValueImpl <em>start Value</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.startValueImpl
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getstartValue()
-   * @generated
-   */
-  int START_VALUE = 4;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int START_VALUE__VALUE = 0;
-
-  /**
-   * The number of structural features of the '<em>start Value</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int START_VALUE_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.normalValueImpl <em>normal Value</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.normalValueImpl
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getnormalValue()
-   * @generated
-   */
-  int NORMAL_VALUE = 5;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NORMAL_VALUE__VALUE = 0;
-
-  /**
-   * The number of structural features of the '<em>normal Value</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NORMAL_VALUE_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StartingJSONExpressionImpl <em>Starting JSON Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StartingJSONExpressionImpl
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getStartingJSONExpression()
-   * @generated
-   */
-  int STARTING_JSON_EXPRESSION = 7;
+  int INITIAL_JSON_ENDING = 2;
 
   /**
    * The feature id for the '<em><b>Start Val</b></em>' containment reference list.
@@ -288,7 +139,7 @@ public interface TraceryLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int STARTING_JSON_EXPRESSION__START_VAL = NORMAL_JSON_LINE_FEATURE_COUNT + 0;
+  int INITIAL_JSON_ENDING__START_VAL = 0;
 
   /**
    * The feature id for the '<em><b>Vals</b></em>' containment reference list.
@@ -297,7 +148,119 @@ public interface TraceryLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int STARTING_JSON_EXPRESSION__VALS = NORMAL_JSON_LINE_FEATURE_COUNT + 1;
+  int INITIAL_JSON_ENDING__VALS = 1;
+
+  /**
+   * The number of structural features of the '<em>Initial JSON Ending</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INITIAL_JSON_ENDING_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StartValueImpl <em>Start Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StartValueImpl
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getStartValue()
+   * @generated
+   */
+  int START_VALUE = 3;
+
+  /**
+   * The feature id for the '<em><b>Value Inner Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int START_VALUE__VALUE_INNER_STATEMENTS = 0;
+
+  /**
+   * The number of structural features of the '<em>Start Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int START_VALUE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.NormalValueImpl <em>Normal Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.NormalValueImpl
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getNormalValue()
+   * @generated
+   */
+  int NORMAL_VALUE = 4;
+
+  /**
+   * The feature id for the '<em><b>Value Inner Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NORMAL_VALUE__VALUE_INNER_STATEMENTS = 0;
+
+  /**
+   * The number of structural features of the '<em>Normal Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NORMAL_VALUE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InnerStatementsImpl <em>Inner Statements</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InnerStatementsImpl
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getInnerStatements()
+   * @generated
+   */
+  int INNER_STATEMENTS = 5;
+
+  /**
+   * The feature id for the '<em><b>Val</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_STATEMENTS__VAL = 0;
+
+  /**
+   * The number of structural features of the '<em>Inner Statements</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_STATEMENTS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.DeclaredVariableImpl <em>Declared Variable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.DeclaredVariableImpl
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getDeclaredVariable()
+   * @generated
+   */
+  int DECLARED_VARIABLE = 6;
+
+  /**
+   * The feature id for the '<em><b>Val</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARED_VARIABLE__VAL = INNER_STATEMENTS__VAL;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' reference.
@@ -306,16 +269,16 @@ public interface TraceryLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int STARTING_JSON_EXPRESSION__VAR = NORMAL_JSON_LINE_FEATURE_COUNT + 2;
+  int DECLARED_VARIABLE__VAR = INNER_STATEMENTS_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Starting JSON Expression</em>' class.
+   * The number of structural features of the '<em>Declared Variable</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STARTING_JSON_EXPRESSION_FEATURE_COUNT = NORMAL_JSON_LINE_FEATURE_COUNT + 3;
+  int DECLARED_VARIABLE_FEATURE_COUNT = INNER_STATEMENTS_FEATURE_COUNT + 1;
 
 
   /**
@@ -329,47 +292,15 @@ public interface TraceryLanguagePackage extends EPackage
   EClass getTraceryProgram();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getInitialStatement <em>Initial Statement</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getInitialStatement <em>Initial Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Initial Statement</em>'.
+   * @return the meta object for the containment reference list '<em>Initial Statement</em>'.
    * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getInitialStatement()
    * @see #getTraceryProgram()
    * @generated
    */
   EReference getTraceryProgram_InitialStatement();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getStatements <em>Statements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getStatements()
-   * @see #getTraceryProgram()
-   * @generated
-   */
-  EReference getTraceryProgram_Statements();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDecleration <em>Variable Decleration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable Decleration</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDecleration
-   * @generated
-   */
-  EClass getVariableDecleration();
-
-  /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDecleration#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDecleration#getName()
-   * @see #getVariableDecleration()
-   * @generated
-   */
-  EAttribute getVariableDecleration_Name();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine <em>Initial JSON Line</em>}'.
@@ -382,142 +313,142 @@ public interface TraceryLanguagePackage extends EPackage
   EClass getInitialJSONLine();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getStartVal <em>Start Val</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Start Val</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getStartVal()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getName()
    * @see #getInitialJSONLine()
    * @generated
    */
-  EReference getInitialJSONLine_StartVal();
+  EAttribute getInitialJSONLine_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getVals <em>Vals</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Vals</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getVals()
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getValue()
    * @see #getInitialJSONLine()
    * @generated
    */
-  EReference getInitialJSONLine_Vals();
+  EReference getInitialJSONLine_Value();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalJSONLine <em>Normal JSON Line</em>}'.
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONEnding <em>Initial JSON Ending</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Normal JSON Line</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalJSONLine
+   * @return the meta object for class '<em>Initial JSON Ending</em>'.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONEnding
    * @generated
    */
-  EClass getNormalJSONLine();
+  EClass getInitialJSONEnding();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.startValue <em>start Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>start Value</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.startValue
-   * @generated
-   */
-  EClass getstartValue();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.startValue#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Value</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.startValue#getValue()
-   * @see #getstartValue()
-   * @generated
-   */
-  EReference getstartValue_Value();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.normalValue <em>normal Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>normal Value</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.normalValue
-   * @generated
-   */
-  EClass getnormalValue();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.normalValue#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Value</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.normalValue#getValue()
-   * @see #getnormalValue()
-   * @generated
-   */
-  EReference getnormalValue_Value();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatement <em>Inner Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Inner Statement</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatement
-   * @generated
-   */
-  EClass getInnerStatement();
-
-  /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatement#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatement#getValue()
-   * @see #getInnerStatement()
-   * @generated
-   */
-  EAttribute getInnerStatement_Value();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartingJSONExpression <em>Starting JSON Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Starting JSON Expression</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartingJSONExpression
-   * @generated
-   */
-  EClass getStartingJSONExpression();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartingJSONExpression#getStartVal <em>Start Val</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONEnding#getStartVal <em>Start Val</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Start Val</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartingJSONExpression#getStartVal()
-   * @see #getStartingJSONExpression()
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONEnding#getStartVal()
+   * @see #getInitialJSONEnding()
    * @generated
    */
-  EReference getStartingJSONExpression_StartVal();
+  EReference getInitialJSONEnding_StartVal();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartingJSONExpression#getVals <em>Vals</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONEnding#getVals <em>Vals</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Vals</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartingJSONExpression#getVals()
-   * @see #getStartingJSONExpression()
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONEnding#getVals()
+   * @see #getInitialJSONEnding()
    * @generated
    */
-  EReference getStartingJSONExpression_Vals();
+  EReference getInitialJSONEnding_Vals();
 
   /**
-   * Returns the meta object for the reference '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartingJSONExpression#getVar <em>Var</em>}'.
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartValue <em>Start Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Start Value</em>'.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartValue
+   * @generated
+   */
+  EClass getStartValue();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartValue#getValueInnerStatements <em>Value Inner Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Value Inner Statements</em>'.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartValue#getValueInnerStatements()
+   * @see #getStartValue()
+   * @generated
+   */
+  EReference getStartValue_ValueInnerStatements();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalValue <em>Normal Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Normal Value</em>'.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalValue
+   * @generated
+   */
+  EClass getNormalValue();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalValue#getValueInnerStatements <em>Value Inner Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Value Inner Statements</em>'.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalValue#getValueInnerStatements()
+   * @see #getNormalValue()
+   * @generated
+   */
+  EReference getNormalValue_ValueInnerStatements();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatements <em>Inner Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Inner Statements</em>'.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatements
+   * @generated
+   */
+  EClass getInnerStatements();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatements#getVal <em>Val</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Val</em>'.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatements#getVal()
+   * @see #getInnerStatements()
+   * @generated
+   */
+  EAttribute getInnerStatements_Val();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.DeclaredVariable <em>Declared Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declared Variable</em>'.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.DeclaredVariable
+   * @generated
+   */
+  EClass getDeclaredVariable();
+
+  /**
+   * Returns the meta object for the reference '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.DeclaredVariable#getVar <em>Var</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Var</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartingJSONExpression#getVar()
-   * @see #getStartingJSONExpression()
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.DeclaredVariable#getVar()
+   * @see #getDeclaredVariable()
    * @generated
    */
-  EReference getStartingJSONExpression_Var();
+  EReference getDeclaredVariable_Var();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -553,38 +484,12 @@ public interface TraceryLanguagePackage extends EPackage
     EClass TRACERY_PROGRAM = eINSTANCE.getTraceryProgram();
 
     /**
-     * The meta object literal for the '<em><b>Initial Statement</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Initial Statement</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference TRACERY_PROGRAM__INITIAL_STATEMENT = eINSTANCE.getTraceryProgram_InitialStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TRACERY_PROGRAM__STATEMENTS = eINSTANCE.getTraceryProgram_Statements();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.VariableDeclerationImpl <em>Variable Decleration</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.VariableDeclerationImpl
-     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getVariableDecleration()
-     * @generated
-     */
-    EClass VARIABLE_DECLERATION = eINSTANCE.getVariableDecleration();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARIABLE_DECLERATION__NAME = eINSTANCE.getVariableDecleration_Name();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InitialJSONLineImpl <em>Initial JSON Line</em>}' class.
@@ -597,94 +502,30 @@ public interface TraceryLanguagePackage extends EPackage
     EClass INITIAL_JSON_LINE = eINSTANCE.getInitialJSONLine();
 
     /**
-     * The meta object literal for the '<em><b>Start Val</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INITIAL_JSON_LINE__START_VAL = eINSTANCE.getInitialJSONLine_StartVal();
+    EAttribute INITIAL_JSON_LINE__NAME = eINSTANCE.getInitialJSONLine_Name();
 
     /**
-     * The meta object literal for the '<em><b>Vals</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INITIAL_JSON_LINE__VALS = eINSTANCE.getInitialJSONLine_Vals();
+    EReference INITIAL_JSON_LINE__VALUE = eINSTANCE.getInitialJSONLine_Value();
 
     /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.NormalJSONLineImpl <em>Normal JSON Line</em>}' class.
+     * The meta object literal for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InitialJSONEndingImpl <em>Initial JSON Ending</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.NormalJSONLineImpl
-     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getNormalJSONLine()
+     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InitialJSONEndingImpl
+     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getInitialJSONEnding()
      * @generated
      */
-    EClass NORMAL_JSON_LINE = eINSTANCE.getNormalJSONLine();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.startValueImpl <em>start Value</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.startValueImpl
-     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getstartValue()
-     * @generated
-     */
-    EClass START_VALUE = eINSTANCE.getstartValue();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference START_VALUE__VALUE = eINSTANCE.getstartValue_Value();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.normalValueImpl <em>normal Value</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.normalValueImpl
-     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getnormalValue()
-     * @generated
-     */
-    EClass NORMAL_VALUE = eINSTANCE.getnormalValue();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NORMAL_VALUE__VALUE = eINSTANCE.getnormalValue_Value();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InnerStatementImpl <em>Inner Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InnerStatementImpl
-     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getInnerStatement()
-     * @generated
-     */
-    EClass INNER_STATEMENT = eINSTANCE.getInnerStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INNER_STATEMENT__VALUE = eINSTANCE.getInnerStatement_Value();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StartingJSONExpressionImpl <em>Starting JSON Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StartingJSONExpressionImpl
-     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getStartingJSONExpression()
-     * @generated
-     */
-    EClass STARTING_JSON_EXPRESSION = eINSTANCE.getStartingJSONExpression();
+    EClass INITIAL_JSON_ENDING = eINSTANCE.getInitialJSONEnding();
 
     /**
      * The meta object literal for the '<em><b>Start Val</b></em>' containment reference list feature.
@@ -692,7 +533,7 @@ public interface TraceryLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STARTING_JSON_EXPRESSION__START_VAL = eINSTANCE.getStartingJSONExpression_StartVal();
+    EReference INITIAL_JSON_ENDING__START_VAL = eINSTANCE.getInitialJSONEnding_StartVal();
 
     /**
      * The meta object literal for the '<em><b>Vals</b></em>' containment reference list feature.
@@ -700,7 +541,71 @@ public interface TraceryLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STARTING_JSON_EXPRESSION__VALS = eINSTANCE.getStartingJSONExpression_Vals();
+    EReference INITIAL_JSON_ENDING__VALS = eINSTANCE.getInitialJSONEnding_Vals();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StartValueImpl <em>Start Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StartValueImpl
+     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getStartValue()
+     * @generated
+     */
+    EClass START_VALUE = eINSTANCE.getStartValue();
+
+    /**
+     * The meta object literal for the '<em><b>Value Inner Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference START_VALUE__VALUE_INNER_STATEMENTS = eINSTANCE.getStartValue_ValueInnerStatements();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.NormalValueImpl <em>Normal Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.NormalValueImpl
+     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getNormalValue()
+     * @generated
+     */
+    EClass NORMAL_VALUE = eINSTANCE.getNormalValue();
+
+    /**
+     * The meta object literal for the '<em><b>Value Inner Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NORMAL_VALUE__VALUE_INNER_STATEMENTS = eINSTANCE.getNormalValue_ValueInnerStatements();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InnerStatementsImpl <em>Inner Statements</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InnerStatementsImpl
+     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getInnerStatements()
+     * @generated
+     */
+    EClass INNER_STATEMENTS = eINSTANCE.getInnerStatements();
+
+    /**
+     * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INNER_STATEMENTS__VAL = eINSTANCE.getInnerStatements_Val();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.DeclaredVariableImpl <em>Declared Variable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.DeclaredVariableImpl
+     * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryLanguagePackageImpl#getDeclaredVariable()
+     * @generated
+     */
+    EClass DECLARED_VARIABLE = eINSTANCE.getDeclaredVariable();
 
     /**
      * The meta object literal for the '<em><b>Var</b></em>' reference feature.
@@ -708,7 +613,7 @@ public interface TraceryLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STARTING_JSON_EXPRESSION__VAR = eINSTANCE.getStartingJSONExpression_Var();
+    EReference DECLARED_VARIABLE__VAR = eINSTANCE.getDeclaredVariable_Var();
 
   }
 
