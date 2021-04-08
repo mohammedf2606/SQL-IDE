@@ -7,22 +7,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Initial JSON Line</b></em>'.
+ * A representation of the model object '<em><b>Initial JSON Lines</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getValue <em>Value</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLines#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLines#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONLine()
+ * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONLines()
  * @model
  * @generated
  */
-public interface InitialJSONLine extends EObject
+public interface InitialJSONLines extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -30,14 +30,14 @@ public interface InitialJSONLine extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONLine_Name()
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONLines_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLines#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -52,14 +52,14 @@ public interface InitialJSONLine extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' containment reference.
    * @see #setValue(InitialJSONEnding)
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONLine_Value()
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONLines_Value()
    * @model containment="true"
    * @generated
    */
   InitialJSONEnding getValue();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine#getValue <em>Value</em>}' containment reference.
+   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLines#getValue <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' containment reference.
@@ -68,4 +68,4 @@ public interface InitialJSONLine extends EObject
    */
   void setValue(InitialJSONEnding value);
 
-} // InitialJSONLine
+} // InitialJSONLines

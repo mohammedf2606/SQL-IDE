@@ -3,21 +3,29 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="traceryLanguage" nsURI="http://www.ac.uk/kcl/inf/languages/tracery/TraceryLanguage"
     nsPrefix="traceryLanguage">
   <eClassifiers xsi:type="ecore:EClass" name="TraceryProgram">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="initialStatement" upperBound="-1"
-        eType="#//InitialJSONLine" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//Statement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InitialJSONLine">
+  <eClassifiers xsi:type="ecore:EClass" name="Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialStatement" upperBound="-1"
+        eType="#//InitialJSONLines" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="finalStatement" eType="#//FinalJSONLine"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialJSONLines">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//InitialJSONEnding"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InitialJSONEnding">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="startVal" upperBound="-1"
-        eType="#//StartValue" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vals" upperBound="-1" eType="#//NormalValue"
+  <eClassifiers xsi:type="ecore:EClass" name="FinalJSONLine">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//FinalJSONEnding"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StartValue">
+  <eClassifiers xsi:type="ecore:EClass" name="InitialJSONEnding"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FinalJSONEnding"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StartValue" eSuperTypes="#//InitialJSONEnding #//FinalJSONEnding">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vals" upperBound="-1" eType="#//NormalValue"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="valueInnerStatements" upperBound="-1"
         eType="#//InnerStatements" containment="true"/>
   </eClassifiers>
@@ -25,10 +33,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="valueInnerStatements" upperBound="-1"
         eType="#//InnerStatements" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InnerStatements">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InnerStatements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringDeclaration" eSuperTypes="#//InnerStatements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeclaredVariable" eSuperTypes="#//InnerStatements">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//InitialJSONLine"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//InitialJSONLines"/>
   </eClassifiers>
 </ecore:EPackage>

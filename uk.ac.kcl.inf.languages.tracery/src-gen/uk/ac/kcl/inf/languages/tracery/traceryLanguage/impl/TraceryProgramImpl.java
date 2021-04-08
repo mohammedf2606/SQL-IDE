@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.Statement;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram;
 
@@ -29,7 +29,7 @@ import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryProgramImpl#getInitialStatement <em>Initial Statement</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryProgramImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +37,14 @@ import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram;
 public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements TraceryProgram
 {
   /**
-   * The cached value of the '{@link #getInitialStatement() <em>Initial Statement</em>}' containment reference list.
+   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInitialStatement()
+   * @see #getStatements()
    * @generated
    * @ordered
    */
-  protected EList<InitialJSONLine> initialStatement;
+  protected EList<Statement> statements;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +73,13 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public EList<InitialJSONLine> getInitialStatement()
+  public EList<Statement> getStatements()
   {
-    if (initialStatement == null)
+    if (statements == null)
     {
-      initialStatement = new EObjectContainmentEList<InitialJSONLine>(InitialJSONLine.class, this, TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT);
+      statements = new EObjectContainmentEList<Statement>(Statement.class, this, TraceryLanguagePackage.TRACERY_PROGRAM__STATEMENTS);
     }
-    return initialStatement;
+    return statements;
   }
 
   /**
@@ -92,8 +92,8 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT:
-        return ((InternalEList<?>)getInitialStatement()).basicRemove(otherEnd, msgs);
+      case TraceryLanguagePackage.TRACERY_PROGRAM__STATEMENTS:
+        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT:
-        return getInitialStatement();
+      case TraceryLanguagePackage.TRACERY_PROGRAM__STATEMENTS:
+        return getStatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT:
-        getInitialStatement().clear();
-        getInitialStatement().addAll((Collection<? extends InitialJSONLine>)newValue);
+      case TraceryLanguagePackage.TRACERY_PROGRAM__STATEMENTS:
+        getStatements().clear();
+        getStatements().addAll((Collection<? extends Statement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT:
-        getInitialStatement().clear();
+      case TraceryLanguagePackage.TRACERY_PROGRAM__STATEMENTS:
+        getStatements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +160,8 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.TRACERY_PROGRAM__INITIAL_STATEMENT:
-        return initialStatement != null && !initialStatement.isEmpty();
+      case TraceryLanguagePackage.TRACERY_PROGRAM__STATEMENTS:
+        return statements != null && !statements.isEmpty();
     }
     return super.eIsSet(featureID);
   }

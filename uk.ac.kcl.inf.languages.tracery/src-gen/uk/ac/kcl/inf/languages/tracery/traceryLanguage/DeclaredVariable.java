@@ -13,7 +13,7 @@ package uk.ac.kcl.inf.languages.tracery.traceryLanguage;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.DeclaredVariable#getVar <em>Var</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.DeclaredVariable#getVariable <em>Variable</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getDeclaredVariable()
@@ -23,25 +23,25 @@ package uk.ac.kcl.inf.languages.tracery.traceryLanguage;
 public interface DeclaredVariable extends InnerStatements
 {
   /**
-   * Returns the value of the '<em><b>Var</b></em>' reference.
+   * Returns the value of the '<em><b>Variable</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var</em>' reference.
-   * @see #setVar(InitialJSONLine)
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getDeclaredVariable_Var()
+   * @return the value of the '<em>Variable</em>' reference.
+   * @see #setVariable(InitialJSONLines)
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getDeclaredVariable_Variable()
    * @model
    * @generated
    */
-  InitialJSONLine getVar();
+  InitialJSONLines getVariable();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.DeclaredVariable#getVar <em>Var</em>}' reference.
+   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.DeclaredVariable#getVariable <em>Variable</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var</em>' reference.
-   * @see #getVar()
+   * @param value the new value of the '<em>Variable</em>' reference.
+   * @see #getVariable()
    * @generated
    */
-  void setVar(InitialJSONLine value);
+  void setVariable(InitialJSONLines value);
 
 } // DeclaredVariable

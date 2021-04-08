@@ -3,8 +3,6 @@
  */
 package uk.ac.kcl.inf.languages.tracery.traceryLanguage;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -12,13 +10,6 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Initial JSON Ending</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONEnding#getStartVal <em>Start Val</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONEnding#getVals <em>Vals</em>}</li>
- * </ul>
  *
  * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONEnding()
  * @model
@@ -26,28 +17,4 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface InitialJSONEnding extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Start Val</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartValue}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Start Val</em>' containment reference list.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONEnding_StartVal()
-   * @model containment="true"
-   * @generated
-   */
-  EList<StartValue> getStartVal();
-
-  /**
-   * Returns the value of the '<em><b>Vals</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalValue}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Vals</em>' containment reference list.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInitialJSONEnding_Vals()
-   * @model containment="true"
-   * @generated
-   */
-  EList<NormalValue> getVals();
-
 } // InitialJSONEnding

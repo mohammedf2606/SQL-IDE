@@ -1,4 +1,5 @@
 {
-	&hello&:[&"Test"& ,&hello&]
-	
+	&hello&:[&"Test"&],
+	&kek&:[&"my gosh"&, &"keep me away from " #hello#&],
+	&origin&:[&#hello# #kek#&]
 }

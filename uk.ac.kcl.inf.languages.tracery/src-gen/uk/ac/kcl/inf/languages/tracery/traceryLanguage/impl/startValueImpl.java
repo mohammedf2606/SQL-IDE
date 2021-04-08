@@ -12,12 +12,11 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatements;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalValue;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartValue;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
 
@@ -29,13 +28,24 @@ import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StartValueImpl#getVals <em>Vals</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StartValueImpl#getValueInnerStatements <em>Value Inner Statements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class StartValueImpl extends MinimalEObjectImpl.Container implements StartValue
+public class StartValueImpl extends InitialJSONEndingImpl implements StartValue
 {
+  /**
+   * The cached value of the '{@link #getVals() <em>Vals</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVals()
+   * @generated
+   * @ordered
+   */
+  protected EList<NormalValue> vals;
+
   /**
    * The cached value of the '{@link #getValueInnerStatements() <em>Value Inner Statements</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -73,6 +83,21 @@ public class StartValueImpl extends MinimalEObjectImpl.Container implements Star
    * @generated
    */
   @Override
+  public EList<NormalValue> getVals()
+  {
+    if (vals == null)
+    {
+      vals = new EObjectContainmentEList<NormalValue>(NormalValue.class, this, TraceryLanguagePackage.START_VALUE__VALS);
+    }
+    return vals;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<InnerStatements> getValueInnerStatements()
   {
     if (valueInnerStatements == null)
@@ -92,6 +117,8 @@ public class StartValueImpl extends MinimalEObjectImpl.Container implements Star
   {
     switch (featureID)
     {
+      case TraceryLanguagePackage.START_VALUE__VALS:
+        return ((InternalEList<?>)getVals()).basicRemove(otherEnd, msgs);
       case TraceryLanguagePackage.START_VALUE__VALUE_INNER_STATEMENTS:
         return ((InternalEList<?>)getValueInnerStatements()).basicRemove(otherEnd, msgs);
     }
@@ -108,6 +135,8 @@ public class StartValueImpl extends MinimalEObjectImpl.Container implements Star
   {
     switch (featureID)
     {
+      case TraceryLanguagePackage.START_VALUE__VALS:
+        return getVals();
       case TraceryLanguagePackage.START_VALUE__VALUE_INNER_STATEMENTS:
         return getValueInnerStatements();
     }
@@ -125,6 +154,10 @@ public class StartValueImpl extends MinimalEObjectImpl.Container implements Star
   {
     switch (featureID)
     {
+      case TraceryLanguagePackage.START_VALUE__VALS:
+        getVals().clear();
+        getVals().addAll((Collection<? extends NormalValue>)newValue);
+        return;
       case TraceryLanguagePackage.START_VALUE__VALUE_INNER_STATEMENTS:
         getValueInnerStatements().clear();
         getValueInnerStatements().addAll((Collection<? extends InnerStatements>)newValue);
@@ -143,6 +176,9 @@ public class StartValueImpl extends MinimalEObjectImpl.Container implements Star
   {
     switch (featureID)
     {
+      case TraceryLanguagePackage.START_VALUE__VALS:
+        getVals().clear();
+        return;
       case TraceryLanguagePackage.START_VALUE__VALUE_INNER_STATEMENTS:
         getValueInnerStatements().clear();
         return;
@@ -160,6 +196,8 @@ public class StartValueImpl extends MinimalEObjectImpl.Container implements Star
   {
     switch (featureID)
     {
+      case TraceryLanguagePackage.START_VALUE__VALS:
+        return vals != null && !vals.isEmpty();
       case TraceryLanguagePackage.START_VALUE__VALUE_INNER_STATEMENTS:
         return valueInnerStatements != null && !valueInnerStatements.isEmpty();
     }

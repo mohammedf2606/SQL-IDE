@@ -83,18 +83,18 @@ ruleTraceryProgram returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTraceryProgramAccess().getInitialStatementInitialJSONLineParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getTraceryProgramAccess().getStatementsStatementParserRuleCall_1_0());
 				}
-				lv_initialStatement_1_0=ruleInitialJSONLine
+				lv_statements_1_0=ruleStatement
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTraceryProgramRule());
 					}
 					add(
 						$current,
-						"initialStatement",
-						lv_initialStatement_1_0,
-						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.InitialJSONLine");
+						"statements",
+						lv_statements_1_0,
+						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.Statement");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -106,23 +106,89 @@ ruleTraceryProgram returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleInitialJSONLine
-entryRuleInitialJSONLine returns [EObject current=null]@init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+// Entry rule entryRuleStatement
+entryRuleStatement returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 }:
-	{ newCompositeNode(grammarAccess.getInitialJSONLineRule()); }
-	iv_ruleInitialJSONLine=ruleInitialJSONLine
-	{ $current=$iv_ruleInitialJSONLine.current; }
+	{ newCompositeNode(grammarAccess.getStatementRule()); }
+	iv_ruleStatement=ruleStatement
+	{ $current=$iv_ruleStatement.current; }
 	EOF;
 finally {
 	myHiddenTokenState.restore();
 }
 
-// Rule InitialJSONLine
-ruleInitialJSONLine returns [EObject current=null]
+// Rule Statement
+ruleStatement returns [EObject current=null]
 @init {
 	enterRule();
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getStatementAccess().getInitialStatementInitialJSONLinesParserRuleCall_0_0());
+				}
+				lv_initialStatement_0_0=ruleInitialJSONLines
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getStatementRule());
+					}
+					add(
+						$current,
+						"initialStatement",
+						lv_initialStatement_0_0,
+						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.InitialJSONLines");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getStatementAccess().getFinalStatementFinalJSONLineParserRuleCall_1_0());
+				}
+				lv_finalStatement_1_0=ruleFinalJSONLine
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getStatementRule());
+					}
+					set(
+						$current,
+						"finalStatement",
+						lv_finalStatement_1_0,
+						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.FinalJSONLine");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleInitialJSONLines
+entryRuleInitialJSONLines returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getInitialJSONLinesRule()); }
+	iv_ruleInitialJSONLines=ruleInitialJSONLines
+	{ $current=$iv_ruleInitialJSONLines.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule InitialJSONLines
+ruleInitialJSONLines returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 }
 @after {
 	leaveRule();
@@ -130,17 +196,17 @@ ruleInitialJSONLine returns [EObject current=null]
 	(
 		otherlv_0='&'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getInitialJSONLineAccess().getAmpersandKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getInitialJSONLinesAccess().getAmpersandKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getInitialJSONLineAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getInitialJSONLinesAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getInitialJSONLineRule());
+						$current = createModelElement(grammarAccess.getInitialJSONLinesRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -152,27 +218,82 @@ ruleInitialJSONLine returns [EObject current=null]
 		)
 		otherlv_2='&'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getInitialJSONLineAccess().getAmpersandKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getInitialJSONLinesAccess().getAmpersandKeyword_2());
 		}
 		otherlv_3=':'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getInitialJSONLineAccess().getColonKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getInitialJSONLinesAccess().getColonKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getInitialJSONLineAccess().getValueInitialJSONEndingParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getInitialJSONLinesAccess().getValueInitialJSONEndingParserRuleCall_4_0());
 				}
 				lv_value_4_0=ruleInitialJSONEnding
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getInitialJSONLineRule());
+						$current = createModelElementForParent(grammarAccess.getInitialJSONLinesRule());
 					}
 					set(
 						$current,
 						"value",
 						lv_value_4_0,
 						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.InitialJSONEnding");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleFinalJSONLine
+entryRuleFinalJSONLine returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getFinalJSONLineRule()); }
+	iv_ruleFinalJSONLine=ruleFinalJSONLine
+	{ $current=$iv_ruleFinalJSONLine.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule FinalJSONLine
+ruleFinalJSONLine returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='&origin&'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getFinalJSONLineAccess().getOriginKeyword_0());
+		}
+		otherlv_1=':'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getFinalJSONLineAccess().getColonKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getFinalJSONLineAccess().getValueFinalJSONEndingParserRuleCall_2_0());
+				}
+				lv_value_2_0=ruleFinalJSONEnding
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFinalJSONLineRule());
+					}
+					set(
+						$current,
+						"value",
+						lv_value_2_0,
+						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.FinalJSONEnding");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -209,25 +330,14 @@ ruleInitialJSONEnding returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getInitialJSONEndingAccess().getLeftSquareBracketKeyword_0());
 		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getInitialJSONEndingAccess().getStartValStartValueParserRuleCall_1_0());
-				}
-				lv_startVal_1_0=ruleStartValue
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getInitialJSONEndingRule());
-					}
-					add(
-						$current,
-						"startVal",
-						lv_startVal_1_0,
-						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.StartValue");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
+		{
+			newCompositeNode(grammarAccess.getInitialJSONEndingAccess().getStartValueParserRuleCall_1());
+		}
+		this_StartValue_1=ruleStartValue
+		{
+			$current = $this_StartValue_1.current;
+			afterParserOrEnumRuleCall();
+		}
 		(
 			(
 				{
@@ -250,6 +360,73 @@ ruleInitialJSONEnding returns [EObject current=null]
 		otherlv_3=']'
 		{
 			newLeafNode(otherlv_3, grammarAccess.getInitialJSONEndingAccess().getRightSquareBracketKeyword_3());
+		}
+		otherlv_4=','
+		{
+			newLeafNode(otherlv_4, grammarAccess.getInitialJSONEndingAccess().getCommaKeyword_4());
+		}
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleFinalJSONEnding
+entryRuleFinalJSONEnding returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getFinalJSONEndingRule()); }
+	iv_ruleFinalJSONEnding=ruleFinalJSONEnding
+	{ $current=$iv_ruleFinalJSONEnding.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule FinalJSONEnding
+ruleFinalJSONEnding returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='['
+		{
+			newLeafNode(otherlv_0, grammarAccess.getFinalJSONEndingAccess().getLeftSquareBracketKeyword_0());
+		}
+		{
+			newCompositeNode(grammarAccess.getFinalJSONEndingAccess().getStartValueParserRuleCall_1());
+		}
+		this_StartValue_1=ruleStartValue
+		{
+			$current = $this_StartValue_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getFinalJSONEndingAccess().getValsNormalValueParserRuleCall_2_0());
+				}
+				lv_vals_2_0=ruleNormalValue
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFinalJSONEndingRule());
+					}
+					add(
+						$current,
+						"vals",
+						lv_vals_2_0,
+						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.NormalValue");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_3=']'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getFinalJSONEndingAccess().getRightSquareBracketKeyword_3());
 		}
 	)
 ;
@@ -301,7 +478,7 @@ ruleStartValue returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)+
 		otherlv_2='&'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getStartValueAccess().getAmpersandKeyword_2());
@@ -360,7 +537,7 @@ ruleNormalValue returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)+
 		otherlv_3='&'
 		{
 			newLeafNode(otherlv_3, grammarAccess.getNormalValueAccess().getAmpersandKeyword_3());
@@ -393,24 +570,14 @@ ruleInnerStatements returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			(
-				lv_val_0_0=RULE_STRING
-				{
-					newLeafNode(lv_val_0_0, grammarAccess.getInnerStatementsAccess().getValSTRINGTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getInnerStatementsRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"val",
-						lv_val_0_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
+		{
+			newCompositeNode(grammarAccess.getInnerStatementsAccess().getStringDeclarationParserRuleCall_0());
+		}
+		this_StringDeclaration_0=ruleStringDeclaration
+		{
+			$current = $this_StringDeclaration_0.current;
+			afterParserOrEnumRuleCall();
+		}
 		    |
 		{
 			newCompositeNode(grammarAccess.getInnerStatementsAccess().getDeclaredVariableParserRuleCall_1());
@@ -426,35 +593,98 @@ finally {
 	myHiddenTokenState.restore();
 }
 
-// Entry rule entryRuleDeclaredVariable
-entryRuleDeclaredVariable returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getDeclaredVariableRule()); }
-	iv_ruleDeclaredVariable=ruleDeclaredVariable
-	{ $current=$iv_ruleDeclaredVariable.current; }
+// Entry rule entryRuleStringDeclaration
+entryRuleStringDeclaration returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+}:
+	{ newCompositeNode(grammarAccess.getStringDeclarationRule()); }
+	iv_ruleStringDeclaration=ruleStringDeclaration
+	{ $current=$iv_ruleStringDeclaration.current; }
 	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
 
-// Rule DeclaredVariable
-ruleDeclaredVariable returns [EObject current=null]
+// Rule StringDeclaration
+ruleStringDeclaration returns [EObject current=null]
 @init {
 	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 }
 @after {
 	leaveRule();
 }:
 	(
 		(
+			lv_value_0_0=RULE_STRING
+			{
+				newLeafNode(lv_value_0_0, grammarAccess.getStringDeclarationAccess().getValueSTRINGTerminalRuleCall_0());
+			}
 			{
 				if ($current==null) {
-					$current = createModelElement(grammarAccess.getDeclaredVariableRule());
+					$current = createModelElement(grammarAccess.getStringDeclarationRule());
 				}
-			}
-			otherlv_0=RULE_ID
-			{
-				newLeafNode(otherlv_0, grammarAccess.getDeclaredVariableAccess().getVarInitialJSONLineCrossReference_0());
+				setWithLastConsumed(
+					$current,
+					"value",
+					lv_value_0_0,
+					"org.eclipse.xtext.common.Terminals.STRING");
 			}
 		)
 	)
 ;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleDeclaredVariable
+entryRuleDeclaredVariable returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+}:
+	{ newCompositeNode(grammarAccess.getDeclaredVariableRule()); }
+	iv_ruleDeclaredVariable=ruleDeclaredVariable
+	{ $current=$iv_ruleDeclaredVariable.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule DeclaredVariable
+ruleDeclaredVariable returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='#'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getDeclaredVariableAccess().getNumberSignKeyword_0());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDeclaredVariableRule());
+					}
+				}
+				otherlv_1=RULE_ID
+				{
+					newLeafNode(otherlv_1, grammarAccess.getDeclaredVariableAccess().getVariableInitialJSONLinesCrossReference_1_0());
+				}
+			)
+		)
+		otherlv_2='#'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getDeclaredVariableAccess().getNumberSignKeyword_2());
+		}
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

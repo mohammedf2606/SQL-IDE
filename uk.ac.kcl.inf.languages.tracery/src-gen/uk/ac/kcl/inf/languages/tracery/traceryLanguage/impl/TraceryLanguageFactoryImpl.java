@@ -66,11 +66,15 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
     switch (eClass.getClassifierID())
     {
       case TraceryLanguagePackage.TRACERY_PROGRAM: return createTraceryProgram();
-      case TraceryLanguagePackage.INITIAL_JSON_LINE: return createInitialJSONLine();
+      case TraceryLanguagePackage.STATEMENT: return createStatement();
+      case TraceryLanguagePackage.INITIAL_JSON_LINES: return createInitialJSONLines();
+      case TraceryLanguagePackage.FINAL_JSON_LINE: return createFinalJSONLine();
       case TraceryLanguagePackage.INITIAL_JSON_ENDING: return createInitialJSONEnding();
+      case TraceryLanguagePackage.FINAL_JSON_ENDING: return createFinalJSONEnding();
       case TraceryLanguagePackage.START_VALUE: return createStartValue();
       case TraceryLanguagePackage.NORMAL_VALUE: return createNormalValue();
       case TraceryLanguagePackage.INNER_STATEMENTS: return createInnerStatements();
+      case TraceryLanguagePackage.STRING_DECLARATION: return createStringDeclaration();
       case TraceryLanguagePackage.DECLARED_VARIABLE: return createDeclaredVariable();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -95,10 +99,34 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
    * @generated
    */
   @Override
-  public InitialJSONLine createInitialJSONLine()
+  public Statement createStatement()
   {
-    InitialJSONLineImpl initialJSONLine = new InitialJSONLineImpl();
-    return initialJSONLine;
+    StatementImpl statement = new StatementImpl();
+    return statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InitialJSONLines createInitialJSONLines()
+  {
+    InitialJSONLinesImpl initialJSONLines = new InitialJSONLinesImpl();
+    return initialJSONLines;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FinalJSONLine createFinalJSONLine()
+  {
+    FinalJSONLineImpl finalJSONLine = new FinalJSONLineImpl();
+    return finalJSONLine;
   }
 
   /**
@@ -111,6 +139,18 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
   {
     InitialJSONEndingImpl initialJSONEnding = new InitialJSONEndingImpl();
     return initialJSONEnding;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FinalJSONEnding createFinalJSONEnding()
+  {
+    FinalJSONEndingImpl finalJSONEnding = new FinalJSONEndingImpl();
+    return finalJSONEnding;
   }
 
   /**
@@ -147,6 +187,18 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
   {
     InnerStatementsImpl innerStatements = new InnerStatementsImpl();
     return innerStatements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StringDeclaration createStringDeclaration()
+  {
+    StringDeclarationImpl stringDeclaration = new StringDeclarationImpl();
+    return stringDeclaration;
   }
 
   /**

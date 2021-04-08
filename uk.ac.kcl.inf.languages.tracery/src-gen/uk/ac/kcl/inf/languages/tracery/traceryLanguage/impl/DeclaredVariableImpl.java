@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.DeclaredVariable;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLines;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
 
 /**
@@ -22,7 +22,7 @@ import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.DeclaredVariableImpl#getVar <em>Var</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.DeclaredVariableImpl#getVariable <em>Variable</em>}</li>
  * </ul>
  *
  * @generated
@@ -30,14 +30,14 @@ import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
 public class DeclaredVariableImpl extends InnerStatementsImpl implements DeclaredVariable
 {
   /**
-   * The cached value of the '{@link #getVar() <em>Var</em>}' reference.
+   * The cached value of the '{@link #getVariable() <em>Variable</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVar()
+   * @see #getVariable()
    * @generated
    * @ordered
    */
-  protected InitialJSONLine var;
+  protected InitialJSONLines variable;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,19 +66,19 @@ public class DeclaredVariableImpl extends InnerStatementsImpl implements Declare
    * @generated
    */
   @Override
-  public InitialJSONLine getVar()
+  public InitialJSONLines getVariable()
   {
-    if (var != null && var.eIsProxy())
+    if (variable != null && variable.eIsProxy())
     {
-      InternalEObject oldVar = (InternalEObject)var;
-      var = (InitialJSONLine)eResolveProxy(oldVar);
-      if (var != oldVar)
+      InternalEObject oldVariable = (InternalEObject)variable;
+      variable = (InitialJSONLines)eResolveProxy(oldVariable);
+      if (variable != oldVariable)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, TraceryLanguagePackage.DECLARED_VARIABLE__VAR, oldVar, var));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, TraceryLanguagePackage.DECLARED_VARIABLE__VARIABLE, oldVariable, variable));
       }
     }
-    return var;
+    return variable;
   }
 
   /**
@@ -86,9 +86,9 @@ public class DeclaredVariableImpl extends InnerStatementsImpl implements Declare
    * <!-- end-user-doc -->
    * @generated
    */
-  public InitialJSONLine basicGetVar()
+  public InitialJSONLines basicGetVariable()
   {
-    return var;
+    return variable;
   }
 
   /**
@@ -97,12 +97,12 @@ public class DeclaredVariableImpl extends InnerStatementsImpl implements Declare
    * @generated
    */
   @Override
-  public void setVar(InitialJSONLine newVar)
+  public void setVariable(InitialJSONLines newVariable)
   {
-    InitialJSONLine oldVar = var;
-    var = newVar;
+    InitialJSONLines oldVariable = variable;
+    variable = newVariable;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TraceryLanguagePackage.DECLARED_VARIABLE__VAR, oldVar, var));
+      eNotify(new ENotificationImpl(this, Notification.SET, TraceryLanguagePackage.DECLARED_VARIABLE__VARIABLE, oldVariable, variable));
   }
 
   /**
@@ -115,9 +115,9 @@ public class DeclaredVariableImpl extends InnerStatementsImpl implements Declare
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.DECLARED_VARIABLE__VAR:
-        if (resolve) return getVar();
-        return basicGetVar();
+      case TraceryLanguagePackage.DECLARED_VARIABLE__VARIABLE:
+        if (resolve) return getVariable();
+        return basicGetVariable();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -132,8 +132,8 @@ public class DeclaredVariableImpl extends InnerStatementsImpl implements Declare
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.DECLARED_VARIABLE__VAR:
-        setVar((InitialJSONLine)newValue);
+      case TraceryLanguagePackage.DECLARED_VARIABLE__VARIABLE:
+        setVariable((InitialJSONLines)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -149,8 +149,8 @@ public class DeclaredVariableImpl extends InnerStatementsImpl implements Declare
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.DECLARED_VARIABLE__VAR:
-        setVar((InitialJSONLine)null);
+      case TraceryLanguagePackage.DECLARED_VARIABLE__VARIABLE:
+        setVariable((InitialJSONLines)null);
         return;
     }
     super.eUnset(featureID);
@@ -166,8 +166,8 @@ public class DeclaredVariableImpl extends InnerStatementsImpl implements Declare
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.DECLARED_VARIABLE__VAR:
-        return var != null;
+      case TraceryLanguagePackage.DECLARED_VARIABLE__VARIABLE:
+        return variable != null;
     }
     return super.eIsSet(featureID);
   }

@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getInitialStatement <em>Initial Statement</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getStatements <em>Statements</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getTraceryProgram()
@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface TraceryProgram extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Initial Statement</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine}.
+   * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
+   * The list contents are of type {@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.Statement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Initial Statement</em>' containment reference list.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getTraceryProgram_InitialStatement()
+   * @return the value of the '<em>Statements</em>' containment reference list.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getTraceryProgram_Statements()
    * @model containment="true"
    * @generated
    */
-  EList<InitialJSONLine> getInitialStatement();
+  EList<Statement> getStatements();
 
 } // TraceryProgram

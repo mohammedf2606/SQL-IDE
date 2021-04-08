@@ -33,19 +33,26 @@ public class TraceryLanguageParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, TraceryLanguageGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getInnerStatementsAccess().getAlternatives(), "rule__InnerStatements__Alternatives");
 			builder.put(grammarAccess.getTraceryProgramAccess().getGroup(), "rule__TraceryProgram__Group__0");
-			builder.put(grammarAccess.getInitialJSONLineAccess().getGroup(), "rule__InitialJSONLine__Group__0");
+			builder.put(grammarAccess.getStatementAccess().getGroup(), "rule__Statement__Group__0");
+			builder.put(grammarAccess.getInitialJSONLinesAccess().getGroup(), "rule__InitialJSONLines__Group__0");
+			builder.put(grammarAccess.getFinalJSONLineAccess().getGroup(), "rule__FinalJSONLine__Group__0");
 			builder.put(grammarAccess.getInitialJSONEndingAccess().getGroup(), "rule__InitialJSONEnding__Group__0");
+			builder.put(grammarAccess.getFinalJSONEndingAccess().getGroup(), "rule__FinalJSONEnding__Group__0");
 			builder.put(grammarAccess.getStartValueAccess().getGroup(), "rule__StartValue__Group__0");
 			builder.put(grammarAccess.getNormalValueAccess().getGroup(), "rule__NormalValue__Group__0");
-			builder.put(grammarAccess.getTraceryProgramAccess().getInitialStatementAssignment_1(), "rule__TraceryProgram__InitialStatementAssignment_1");
-			builder.put(grammarAccess.getInitialJSONLineAccess().getNameAssignment_1(), "rule__InitialJSONLine__NameAssignment_1");
-			builder.put(grammarAccess.getInitialJSONLineAccess().getValueAssignment_4(), "rule__InitialJSONLine__ValueAssignment_4");
-			builder.put(grammarAccess.getInitialJSONEndingAccess().getStartValAssignment_1(), "rule__InitialJSONEnding__StartValAssignment_1");
+			builder.put(grammarAccess.getDeclaredVariableAccess().getGroup(), "rule__DeclaredVariable__Group__0");
+			builder.put(grammarAccess.getTraceryProgramAccess().getStatementsAssignment_1(), "rule__TraceryProgram__StatementsAssignment_1");
+			builder.put(grammarAccess.getStatementAccess().getInitialStatementAssignment_0(), "rule__Statement__InitialStatementAssignment_0");
+			builder.put(grammarAccess.getStatementAccess().getFinalStatementAssignment_1(), "rule__Statement__FinalStatementAssignment_1");
+			builder.put(grammarAccess.getInitialJSONLinesAccess().getNameAssignment_1(), "rule__InitialJSONLines__NameAssignment_1");
+			builder.put(grammarAccess.getInitialJSONLinesAccess().getValueAssignment_4(), "rule__InitialJSONLines__ValueAssignment_4");
+			builder.put(grammarAccess.getFinalJSONLineAccess().getValueAssignment_2(), "rule__FinalJSONLine__ValueAssignment_2");
 			builder.put(grammarAccess.getInitialJSONEndingAccess().getValsAssignment_2(), "rule__InitialJSONEnding__ValsAssignment_2");
+			builder.put(grammarAccess.getFinalJSONEndingAccess().getValsAssignment_2(), "rule__FinalJSONEnding__ValsAssignment_2");
 			builder.put(grammarAccess.getStartValueAccess().getValueInnerStatementsAssignment_1(), "rule__StartValue__ValueInnerStatementsAssignment_1");
 			builder.put(grammarAccess.getNormalValueAccess().getValueInnerStatementsAssignment_2(), "rule__NormalValue__ValueInnerStatementsAssignment_2");
-			builder.put(grammarAccess.getInnerStatementsAccess().getValAssignment_0(), "rule__InnerStatements__ValAssignment_0");
-			builder.put(grammarAccess.getDeclaredVariableAccess().getVarAssignment(), "rule__DeclaredVariable__VarAssignment");
+			builder.put(grammarAccess.getStringDeclarationAccess().getValueAssignment(), "rule__StringDeclaration__ValueAssignment");
+			builder.put(grammarAccess.getDeclaredVariableAccess().getVariableAssignment_1(), "rule__DeclaredVariable__VariableAssignment_1");
 		}
 	}
 	

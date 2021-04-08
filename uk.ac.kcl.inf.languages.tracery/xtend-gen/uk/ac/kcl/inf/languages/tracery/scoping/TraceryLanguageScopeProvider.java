@@ -3,7 +3,10 @@
  */
 package uk.ac.kcl.inf.languages.tracery.scoping;
 
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.DeclaredVariable;
 
 /**
  * This class contains custom scoping description.
@@ -12,4 +15,7 @@ import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
  */
 @SuppressWarnings("all")
 public class TraceryLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
+  public IScope scope_DeclaredVariable_variable(final DeclaredVariable context, final EReference ref) {
+    return null;
+  }
 }

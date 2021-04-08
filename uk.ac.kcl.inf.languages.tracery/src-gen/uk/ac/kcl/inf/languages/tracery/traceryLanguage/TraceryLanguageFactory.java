@@ -33,13 +33,31 @@ public interface TraceryLanguageFactory extends EFactory
   TraceryProgram createTraceryProgram();
 
   /**
-   * Returns a new object of class '<em>Initial JSON Line</em>'.
+   * Returns a new object of class '<em>Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Initial JSON Line</em>'.
+   * @return a new object of class '<em>Statement</em>'.
    * @generated
    */
-  InitialJSONLine createInitialJSONLine();
+  Statement createStatement();
+
+  /**
+   * Returns a new object of class '<em>Initial JSON Lines</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Initial JSON Lines</em>'.
+   * @generated
+   */
+  InitialJSONLines createInitialJSONLines();
+
+  /**
+   * Returns a new object of class '<em>Final JSON Line</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Final JSON Line</em>'.
+   * @generated
+   */
+  FinalJSONLine createFinalJSONLine();
 
   /**
    * Returns a new object of class '<em>Initial JSON Ending</em>'.
@@ -49,6 +67,15 @@ public interface TraceryLanguageFactory extends EFactory
    * @generated
    */
   InitialJSONEnding createInitialJSONEnding();
+
+  /**
+   * Returns a new object of class '<em>Final JSON Ending</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Final JSON Ending</em>'.
+   * @generated
+   */
+  FinalJSONEnding createFinalJSONEnding();
 
   /**
    * Returns a new object of class '<em>Start Value</em>'.
@@ -76,6 +103,15 @@ public interface TraceryLanguageFactory extends EFactory
    * @generated
    */
   InnerStatements createInnerStatements();
+
+  /**
+   * Returns a new object of class '<em>String Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Declaration</em>'.
+   * @generated
+   */
+  StringDeclaration createStringDeclaration();
 
   /**
    * Returns a new object of class '<em>Declared Variable</em>'.

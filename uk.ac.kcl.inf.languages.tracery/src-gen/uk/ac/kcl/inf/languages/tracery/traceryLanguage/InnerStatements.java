@@ -10,12 +10,6 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Inner Statements</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatements#getVal <em>Val</em>}</li>
- * </ul>
  *
  * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInnerStatements()
  * @model
@@ -23,26 +17,4 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface InnerStatements extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Val</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Val</em>' attribute.
-   * @see #setVal(String)
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInnerStatements_Val()
-   * @model
-   * @generated
-   */
-  String getVal();
-
-  /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatements#getVal <em>Val</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Val</em>' attribute.
-   * @see #getVal()
-   * @generated
-   */
-  void setVal(String value);
-
 } // InnerStatements

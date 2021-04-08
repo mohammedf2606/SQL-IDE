@@ -10,10 +10,12 @@ import org.eclipse.emf.ecore.EReference
 
 import static extension org.eclipse.xtext.EcoreUtil2.*
 
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram
 
 
 import static org.eclipse.xtext.scoping.Scopes.*
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.DeclaredVariable
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLines
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.Statement
 
 /** 
  * This class contains custom scoping description.
@@ -22,6 +24,20 @@ import static org.eclipse.xtext.scoping.Scopes.*
  */
 class TraceryLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
 
-	
-	
+	def IScope scope_DeclaredVariable_variable(DeclaredVariable context, EReference ref) {
+		// val containingProgram = context.getContainerOfType(Statement)
+		// return scopeFor(containingProgram.initialStatement.filter(InitialJSONLines))
+		/*
+		//BlockExpression block = (BlockExpression) context.eContainer();
+		Statement statement = context.eContainer()
+		
+		IScope parentScope = getParentScopes(statement);
+		
+		List<VariableDeclaration> elements = getVariableDeclarations(context, statement);
+		
+		return scopeFor(elements, parentScope);
+		
+		*/
+	}
+ 	
 }
