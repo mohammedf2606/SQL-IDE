@@ -14,7 +14,7 @@ Statement hidden(WS):
 	finalStatement = FinalJSONLine
 ;
 
-InitialJSONLines hidden(WS):
+InitialJSONLines hidden():
 	'&' name=ID '&' ':' value = InitialJSONEnding
 ;
 

@@ -243,7 +243,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
     // InternalTraceryLanguage.g:111:1: entryRuleInitialJSONLines : ruleInitialJSONLines EOF ;
     public final void entryRuleInitialJSONLines() throws RecognitionException {
          
-        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 
         try {
             // InternalTraceryLanguage.g:115:1: ( ruleInitialJSONLines EOF )
@@ -279,7 +279,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
     // InternalTraceryLanguage.g:126:1: ruleInitialJSONLines : ( ( rule__InitialJSONLines__Group__0 ) ) ;
     public final void ruleInitialJSONLines() throws RecognitionException {
 
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
         		int stackSize = keepStackSize();
         	
         try {

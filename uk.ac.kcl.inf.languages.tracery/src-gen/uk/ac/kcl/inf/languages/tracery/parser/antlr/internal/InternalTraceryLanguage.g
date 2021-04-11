@@ -174,7 +174,7 @@ finally {
 
 // Entry rule entryRuleInitialJSONLines
 entryRuleInitialJSONLines returns [EObject current=null]@init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 }:
 	{ newCompositeNode(grammarAccess.getInitialJSONLinesRule()); }
 	iv_ruleInitialJSONLines=ruleInitialJSONLines
@@ -188,7 +188,7 @@ finally {
 ruleInitialJSONLines returns [EObject current=null]
 @init {
 	enterRule();
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 }
 @after {
 	leaveRule();

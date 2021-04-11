@@ -110,7 +110,7 @@ finally {
 // Entry rule entryRuleInitialJSONLines
 entryRuleInitialJSONLines
 @init { 
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 }
 :
 { before(grammarAccess.getInitialJSONLinesRule()); }
@@ -125,7 +125,7 @@ finally {
 // Rule InitialJSONLines
 ruleInitialJSONLines 
 	@init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 		int stackSize = keepStackSize();
 	}
 	:

@@ -94,7 +94,7 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cValueInitialJSONEndingParserRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
 		
-		//InitialJSONLines hidden(WS):
+		//InitialJSONLines hidden():
 		//	'&' name=ID '&' ':' value=InitialJSONEnding;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -424,7 +424,7 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		return getStatementAccess().getRule();
 	}
 	
-	//InitialJSONLines hidden(WS):
+	//InitialJSONLines hidden():
 	//	'&' name=ID '&' ':' value=InitialJSONEnding;
 	public InitialJSONLinesElements getInitialJSONLinesAccess() {
 		return pInitialJSONLines;

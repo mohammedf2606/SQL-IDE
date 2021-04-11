@@ -374,7 +374,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
 
-        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 
         try {
             // InternalTraceryLanguage.g:178:2: (iv_ruleInitialJSONLines= ruleInitialJSONLines EOF )
@@ -421,7 +421,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
         	enterRule();
-        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 
         try {
             // InternalTraceryLanguage.g:195:2: ( (otherlv_0= '&' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '&' otherlv_3= ':' ( (lv_value_4_0= ruleInitialJSONEnding ) ) ) )
