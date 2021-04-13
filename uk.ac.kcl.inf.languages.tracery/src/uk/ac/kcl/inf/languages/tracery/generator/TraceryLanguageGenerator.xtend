@@ -8,6 +8,10 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLines
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.FinalJSONLine
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InitialJSONLinesImpl
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StartValueImpl
 
 /**
  * Generates code from your model files on save.
@@ -26,19 +30,23 @@ class TraceryLanguageGenerator extends AbstractGenerator {
 	}
 	
 	def generate(TraceryProgram program) {
-		val characters = program.toString.toCharArray
+		val statements = program.statements.head.eContents	
 	'''
-		«for (char character : characters) {
-			if(character.equals('"')){
-				
-			}
-			else if(character.equals('&')) {
-				
-			}
-			else {
-				
-			}
-		}»
+		{
+		«FOR statement : statements»
+			«IF statement.class == InitialJSONLinesImpl»
+				«val JSONLine = statement as InitialJSONLines»
+				«val value = JSONLine.value as StartValueImpl»
+				«val innerStatement = value.valueInnerStatements»
+				«'\t' + '"' + JSONLine.getName() + '"' + ": [" + innerStatement + "],"»
+			«ELSE»
+				«val JSONLine = statement as FinalJSONLine»
+				«val value = JSONLine.value as StartValueImpl»
+				«val innerStatement = value.valueInnerStatements»
+				«'\t' + '"' + "origin" + '"' + ": [" + innerStatement + "]"»
+			«ENDIF»
+		«ENDFOR»
+		}
 	'''
 	}
 }
