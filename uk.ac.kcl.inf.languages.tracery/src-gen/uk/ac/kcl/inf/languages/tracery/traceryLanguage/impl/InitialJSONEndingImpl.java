@@ -7,24 +7,24 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalJSONLine;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONEnding;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Normal JSON Line</b></em>'.
+ * An implementation of the model object '<em><b>Initial JSON Ending</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class NormalJSONLineImpl extends MinimalEObjectImpl.Container implements NormalJSONLine
+public class InitialJSONEndingImpl extends MinimalEObjectImpl.Container implements InitialJSONEnding
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected NormalJSONLineImpl()
+  protected InitialJSONEndingImpl()
   {
     super();
   }
@@ -37,7 +37,7 @@ public class NormalJSONLineImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return TraceryLanguagePackage.Literals.NORMAL_JSON_LINE;
+    return TraceryLanguagePackage.Literals.INITIAL_JSON_ENDING;
   }
 
-} //NormalJSONLineImpl
+} //InitialJSONEndingImpl

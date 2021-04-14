@@ -15,14 +15,15 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import uk.ac.kcl.inf.languages.tracery.services.TraceryLanguageGrammarAccess;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLine;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatement;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartingJSONExpression;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.DeclaredVariable;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.FinalJSONLine;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLines;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalValue;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartValue;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.Statement;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.StringDeclaration;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDecleration;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.normalValue;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.startValue;
 
 @SuppressWarnings("all")
 public class TraceryLanguageSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -38,33 +39,41 @@ public class TraceryLanguageSemanticSequencer extends AbstractDelegatingSemantic
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == TraceryLanguagePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case TraceryLanguagePackage.INITIAL_JSON_LINE:
-				sequence_InitialJSONLine(context, (InitialJSONLine) semanticObject); 
+			case TraceryLanguagePackage.DECLARED_VARIABLE:
+				sequence_DeclaredVariable(context, (DeclaredVariable) semanticObject); 
 				return; 
-			case TraceryLanguagePackage.INNER_STATEMENT:
-				sequence_InnerStatement(context, (InnerStatement) semanticObject); 
+			case TraceryLanguagePackage.FINAL_JSON_LINE:
+				sequence_FinalJSONLine(context, (FinalJSONLine) semanticObject); 
 				return; 
-			case TraceryLanguagePackage.STARTING_JSON_EXPRESSION:
-				if (rule == grammarAccess.getNormalJSONLineRule()) {
-					sequence_NormalJSONLine_StartingJSONExpression(context, (StartingJSONExpression) semanticObject); 
+			case TraceryLanguagePackage.INITIAL_JSON_LINES:
+				sequence_InitialJSONLines(context, (InitialJSONLines) semanticObject); 
+				return; 
+			case TraceryLanguagePackage.NORMAL_VALUE:
+				sequence_NormalValue(context, (NormalValue) semanticObject); 
+				return; 
+			case TraceryLanguagePackage.START_VALUE:
+				if (rule == grammarAccess.getFinalJSONEndingRule()) {
+					sequence_FinalJSONEnding_StartValue(context, (StartValue) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getStartingJSONExpressionRule()) {
-					sequence_StartingJSONExpression(context, (StartingJSONExpression) semanticObject); 
+				else if (rule == grammarAccess.getInitialJSONEndingRule()
+						|| rule == grammarAccess.getInnerValuesRule()) {
+					sequence_InnerValues_StartValue(context, (StartValue) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getStartValueRule()) {
+					sequence_StartValue(context, (StartValue) semanticObject); 
 					return; 
 				}
 				else break;
+			case TraceryLanguagePackage.STATEMENT:
+				sequence_Statement(context, (Statement) semanticObject); 
+				return; 
+			case TraceryLanguagePackage.STRING_DECLARATION:
+				sequence_StringDeclaration(context, (StringDeclaration) semanticObject); 
+				return; 
 			case TraceryLanguagePackage.TRACERY_PROGRAM:
 				sequence_TraceryProgram(context, (TraceryProgram) semanticObject); 
-				return; 
-			case TraceryLanguagePackage.VARIABLE_DECLERATION:
-				sequence_VariableDecleration(context, (VariableDecleration) semanticObject); 
-				return; 
-			case TraceryLanguagePackage.NORMAL_VALUE:
-				sequence_normalValue(context, (normalValue) semanticObject); 
-				return; 
-			case TraceryLanguagePackage.START_VALUE:
-				sequence_startValue(context, (startValue) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -73,60 +82,138 @@ public class TraceryLanguageSemanticSequencer extends AbstractDelegatingSemantic
 	
 	/**
 	 * Contexts:
-	 *     InitialJSONLine returns InitialJSONLine
+	 *     InnerStatements returns DeclaredVariable
+	 *     DeclaredVariable returns DeclaredVariable
 	 *
 	 * Constraint:
-	 *     (startVal+=startValue vals+=normalValue*)
+	 *     variable=[InitialJSONLines|ID]
 	 */
-	protected void sequence_InitialJSONLine(ISerializationContext context, InitialJSONLine semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     InnerStatement returns InnerStatement
-	 *
-	 * Constraint:
-	 *     value=STRING
-	 */
-	protected void sequence_InnerStatement(ISerializationContext context, InnerStatement semanticObject) {
+	protected void sequence_DeclaredVariable(ISerializationContext context, DeclaredVariable semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TraceryLanguagePackage.Literals.INNER_STATEMENT__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryLanguagePackage.Literals.INNER_STATEMENT__VALUE));
+			if (transientValues.isValueTransient(semanticObject, TraceryLanguagePackage.Literals.DECLARED_VARIABLE__VARIABLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryLanguagePackage.Literals.DECLARED_VARIABLE__VARIABLE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getInnerStatementAccess().getValueSTRINGTerminalRuleCall_0_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getDeclaredVariableAccess().getVariableInitialJSONLinesIDTerminalRuleCall_1_0_1(), semanticObject.eGet(TraceryLanguagePackage.Literals.DECLARED_VARIABLE__VARIABLE, false));
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     NormalJSONLine returns StartingJSONExpression
+	 *     FinalJSONEnding returns StartValue
 	 *
 	 * Constraint:
-	 *     (var=[VariableDecleration|ID] startVal+=startValue vals+=normalValue*)
+	 *     (valueInnerStatements+=InnerStatements+ vals+=NormalValue*)
 	 */
-	protected void sequence_NormalJSONLine_StartingJSONExpression(ISerializationContext context, StartingJSONExpression semanticObject) {
+	protected void sequence_FinalJSONEnding_StartValue(ISerializationContext context, StartValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     StartingJSONExpression returns StartingJSONExpression
+	 *     FinalJSONLine returns FinalJSONLine
 	 *
 	 * Constraint:
-	 *     var=[VariableDecleration|ID]
+	 *     value=FinalJSONEnding
 	 */
-	protected void sequence_StartingJSONExpression(ISerializationContext context, StartingJSONExpression semanticObject) {
+	protected void sequence_FinalJSONLine(ISerializationContext context, FinalJSONLine semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TraceryLanguagePackage.Literals.STARTING_JSON_EXPRESSION__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryLanguagePackage.Literals.STARTING_JSON_EXPRESSION__VAR));
+			if (transientValues.isValueTransient(semanticObject, TraceryLanguagePackage.Literals.FINAL_JSON_LINE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryLanguagePackage.Literals.FINAL_JSON_LINE__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getStartingJSONExpressionAccess().getVarVariableDeclerationIDTerminalRuleCall_0_1(), semanticObject.eGet(TraceryLanguagePackage.Literals.STARTING_JSON_EXPRESSION__VAR, false));
+		feeder.accept(grammarAccess.getFinalJSONLineAccess().getValueFinalJSONEndingParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     InitialJSONLines returns InitialJSONLines
+	 *
+	 * Constraint:
+	 *     (name=ID value=InitialJSONEnding)
+	 */
+	protected void sequence_InitialJSONLines(ISerializationContext context, InitialJSONLines semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TraceryLanguagePackage.Literals.INITIAL_JSON_LINES__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryLanguagePackage.Literals.INITIAL_JSON_LINES__NAME));
+			if (transientValues.isValueTransient(semanticObject, TraceryLanguagePackage.Literals.INITIAL_JSON_LINES__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryLanguagePackage.Literals.INITIAL_JSON_LINES__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getInitialJSONLinesAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getInitialJSONLinesAccess().getValueInitialJSONEndingParserRuleCall_4_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     InitialJSONEnding returns StartValue
+	 *     InnerValues returns StartValue
+	 *
+	 * Constraint:
+	 *     (valueInnerStatements+=InnerStatements+ vals+=NormalValue*)
+	 */
+	protected void sequence_InnerValues_StartValue(ISerializationContext context, StartValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     NormalValue returns NormalValue
+	 *
+	 * Constraint:
+	 *     valueInnerStatements+=InnerStatements+
+	 */
+	protected void sequence_NormalValue(ISerializationContext context, NormalValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     StartValue returns StartValue
+	 *
+	 * Constraint:
+	 *     valueInnerStatements+=InnerStatements+
+	 */
+	protected void sequence_StartValue(ISerializationContext context, StartValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns Statement
+	 *
+	 * Constraint:
+	 *     (initialStatement+=InitialJSONLines* finalStatement=FinalJSONLine)
+	 */
+	protected void sequence_Statement(ISerializationContext context, Statement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     InnerStatements returns StringDeclaration
+	 *     StringDeclaration returns StringDeclaration
+	 *
+	 * Constraint:
+	 *     value=STRING
+	 */
+	protected void sequence_StringDeclaration(ISerializationContext context, StringDeclaration semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TraceryLanguagePackage.Literals.STRING_DECLARATION__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryLanguagePackage.Literals.STRING_DECLARATION__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getStringDeclarationAccess().getValueSTRINGTerminalRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -136,52 +223,9 @@ public class TraceryLanguageSemanticSequencer extends AbstractDelegatingSemantic
 	 *     TraceryProgram returns TraceryProgram
 	 *
 	 * Constraint:
-	 *     (initialStatement=InitialJSONLine statements+=NormalJSONLine*)
+	 *     statements+=Statement
 	 */
 	protected void sequence_TraceryProgram(ISerializationContext context, TraceryProgram semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     VariableDecleration returns VariableDecleration
-	 *     InnerStatement returns VariableDecleration
-	 *
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_VariableDecleration(ISerializationContext context, VariableDecleration semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TraceryLanguagePackage.Literals.VARIABLE_DECLERATION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryLanguagePackage.Literals.VARIABLE_DECLERATION__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVariableDeclerationAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     normalValue returns normalValue
-	 *
-	 * Constraint:
-	 *     value+=InnerStatement*
-	 */
-	protected void sequence_normalValue(ISerializationContext context, normalValue semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     startValue returns startValue
-	 *
-	 * Constraint:
-	 *     value+=InnerStatement*
-	 */
-	protected void sequence_startValue(ISerializationContext context, startValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

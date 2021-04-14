@@ -5,12 +5,12 @@ package uk.ac.kcl.inf.languages.tracery.scoping
 
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider
 import org.eclipse.xtext.scoping.IScope
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartingJSONExpression
+
 import org.eclipse.emf.ecore.EReference
 
 
 import static extension org.eclipse.xtext.EcoreUtil2.*
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDecleration
+
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram
 
 

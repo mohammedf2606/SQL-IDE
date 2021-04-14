@@ -66,13 +66,17 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
     switch (eClass.getClassifierID())
     {
       case TraceryLanguagePackage.TRACERY_PROGRAM: return createTraceryProgram();
-      case TraceryLanguagePackage.VARIABLE_DECLERATION: return createVariableDecleration();
-      case TraceryLanguagePackage.INITIAL_JSON_LINE: return createInitialJSONLine();
-      case TraceryLanguagePackage.NORMAL_JSON_LINE: return createNormalJSONLine();
-      case TraceryLanguagePackage.START_VALUE: return createstartValue();
-      case TraceryLanguagePackage.NORMAL_VALUE: return createnormalValue();
-      case TraceryLanguagePackage.INNER_STATEMENT: return createInnerStatement();
-      case TraceryLanguagePackage.STARTING_JSON_EXPRESSION: return createStartingJSONExpression();
+      case TraceryLanguagePackage.STATEMENT: return createStatement();
+      case TraceryLanguagePackage.INITIAL_JSON_LINES: return createInitialJSONLines();
+      case TraceryLanguagePackage.FINAL_JSON_LINE: return createFinalJSONLine();
+      case TraceryLanguagePackage.INITIAL_JSON_ENDING: return createInitialJSONEnding();
+      case TraceryLanguagePackage.INNER_VALUES: return createInnerValues();
+      case TraceryLanguagePackage.FINAL_JSON_ENDING: return createFinalJSONEnding();
+      case TraceryLanguagePackage.START_VALUE: return createStartValue();
+      case TraceryLanguagePackage.NORMAL_VALUE: return createNormalValue();
+      case TraceryLanguagePackage.INNER_STATEMENTS: return createInnerStatements();
+      case TraceryLanguagePackage.STRING_DECLARATION: return createStringDeclaration();
+      case TraceryLanguagePackage.DECLARED_VARIABLE: return createDeclaredVariable();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -96,10 +100,10 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
    * @generated
    */
   @Override
-  public VariableDecleration createVariableDecleration()
+  public Statement createStatement()
   {
-    VariableDeclerationImpl variableDecleration = new VariableDeclerationImpl();
-    return variableDecleration;
+    StatementImpl statement = new StatementImpl();
+    return statement;
   }
 
   /**
@@ -108,10 +112,10 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
    * @generated
    */
   @Override
-  public InitialJSONLine createInitialJSONLine()
+  public InitialJSONLines createInitialJSONLines()
   {
-    InitialJSONLineImpl initialJSONLine = new InitialJSONLineImpl();
-    return initialJSONLine;
+    InitialJSONLinesImpl initialJSONLines = new InitialJSONLinesImpl();
+    return initialJSONLines;
   }
 
   /**
@@ -120,10 +124,10 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
    * @generated
    */
   @Override
-  public NormalJSONLine createNormalJSONLine()
+  public FinalJSONLine createFinalJSONLine()
   {
-    NormalJSONLineImpl normalJSONLine = new NormalJSONLineImpl();
-    return normalJSONLine;
+    FinalJSONLineImpl finalJSONLine = new FinalJSONLineImpl();
+    return finalJSONLine;
   }
 
   /**
@@ -132,9 +136,45 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
    * @generated
    */
   @Override
-  public startValue createstartValue()
+  public InitialJSONEnding createInitialJSONEnding()
   {
-    startValueImpl startValue = new startValueImpl();
+    InitialJSONEndingImpl initialJSONEnding = new InitialJSONEndingImpl();
+    return initialJSONEnding;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InnerValues createInnerValues()
+  {
+    InnerValuesImpl innerValues = new InnerValuesImpl();
+    return innerValues;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FinalJSONEnding createFinalJSONEnding()
+  {
+    FinalJSONEndingImpl finalJSONEnding = new FinalJSONEndingImpl();
+    return finalJSONEnding;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StartValue createStartValue()
+  {
+    StartValueImpl startValue = new StartValueImpl();
     return startValue;
   }
 
@@ -144,9 +184,9 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
    * @generated
    */
   @Override
-  public normalValue createnormalValue()
+  public NormalValue createNormalValue()
   {
-    normalValueImpl normalValue = new normalValueImpl();
+    NormalValueImpl normalValue = new NormalValueImpl();
     return normalValue;
   }
 
@@ -156,10 +196,10 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
    * @generated
    */
   @Override
-  public InnerStatement createInnerStatement()
+  public InnerStatements createInnerStatements()
   {
-    InnerStatementImpl innerStatement = new InnerStatementImpl();
-    return innerStatement;
+    InnerStatementsImpl innerStatements = new InnerStatementsImpl();
+    return innerStatements;
   }
 
   /**
@@ -168,10 +208,22 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
    * @generated
    */
   @Override
-  public StartingJSONExpression createStartingJSONExpression()
+  public StringDeclaration createStringDeclaration()
   {
-    StartingJSONExpressionImpl startingJSONExpression = new StartingJSONExpressionImpl();
-    return startingJSONExpression;
+    StringDeclarationImpl stringDeclaration = new StringDeclarationImpl();
+    return stringDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DeclaredVariable createDeclaredVariable()
+  {
+    DeclaredVariableImpl declaredVariable = new DeclaredVariableImpl();
+    return declaredVariable;
   }
 
   /**

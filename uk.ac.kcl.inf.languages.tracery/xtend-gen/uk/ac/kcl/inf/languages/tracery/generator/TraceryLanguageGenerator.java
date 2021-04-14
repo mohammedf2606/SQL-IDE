@@ -3,10 +3,28 @@
  */
 package uk.ac.kcl.inf.languages.tracery.generator;
 
+import com.google.common.base.Objects;
+import java.util.ArrayList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.FinalJSONEnding;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.FinalJSONLine;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONEnding;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONLines;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatements;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalValue;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.Statement;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.DeclaredVariableImpl;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InitialJSONLinesImpl;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StartValueImpl;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StringDeclarationImpl;
 
 /**
  * Generates code from your model files on save.
@@ -17,5 +35,186 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class TraceryLanguageGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    EObject _head = IterableExtensions.<EObject>head(resource.getContents());
+    final TraceryProgram model = ((TraceryProgram) _head);
+    fsa.generateFile(this.getFileName(model, resource), this.generate(model));
+  }
+  
+  public String getFileName(final TraceryProgram program, final Resource resource) {
+    return resource.getURI().appendFileExtension("txt").lastSegment();
+  }
+  
+  public CharSequence generate(final TraceryProgram program) {
+    CharSequence _xblockexpression = null;
+    {
+      final EList<EObject> statements = IterableExtensions.<Statement>head(program.getStatements()).eContents();
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("{");
+      _builder.newLine();
+      {
+        for(final EObject statement : statements) {
+          final ArrayList<Object> listOfParts = new ArrayList<Object>();
+          _builder.newLineIfNotEmpty();
+          {
+            Class<? extends EObject> _class = statement.getClass();
+            boolean _equals = Objects.equal(_class, InitialJSONLinesImpl.class);
+            if (_equals) {
+              final InitialJSONLines JSONLine = ((InitialJSONLines) statement);
+              _builder.newLineIfNotEmpty();
+              InitialJSONEnding _value = JSONLine.getValue();
+              final StartValueImpl value = ((StartValueImpl) _value);
+              _builder.newLineIfNotEmpty();
+              final EList<InnerStatements> innerStatement = value.getValueInnerStatements();
+              _builder.newLineIfNotEmpty();
+              {
+                for(final InnerStatements parts : innerStatement) {
+                  {
+                    Class<? extends InnerStatements> _class_1 = parts.getClass();
+                    boolean _equals_1 = Objects.equal(_class_1, StringDeclarationImpl.class);
+                    if (_equals_1) {
+                      final StringDeclarationImpl string = ((StringDeclarationImpl) parts);
+                      _builder.newLineIfNotEmpty();
+                      final boolean done = listOfParts.add(string.getValue());
+                      _builder.newLineIfNotEmpty();
+                    } else {
+                      final DeclaredVariableImpl variableDeclaration = ((DeclaredVariableImpl) parts);
+                      _builder.newLineIfNotEmpty();
+                      InitialJSONLines _variable = variableDeclaration.getVariable();
+                      final InitialJSONLines variable = ((InitialJSONLines) _variable);
+                      _builder.newLineIfNotEmpty();
+                      String _name = variable.getName();
+                      String _plus = (" #" + _name);
+                      String _plus_1 = (_plus + "#");
+                      final boolean done_1 = listOfParts.add(_plus_1);
+                      _builder.newLineIfNotEmpty();
+                    }
+                  }
+                }
+              }
+              final EList<NormalValue> outerStatement = value.getVals();
+              _builder.newLineIfNotEmpty();
+              {
+                for(final NormalValue normalVal : outerStatement) {
+                  final EList<InnerStatements> innerNormal = normalVal.getValueInnerStatements();
+                  _builder.newLineIfNotEmpty();
+                  {
+                    for(final InnerStatements parts_1 : innerNormal) {
+                      {
+                        Class<? extends InnerStatements> _class_2 = parts_1.getClass();
+                        boolean _equals_2 = Objects.equal(_class_2, StringDeclarationImpl.class);
+                        if (_equals_2) {
+                          final StringDeclarationImpl string_1 = ((StringDeclarationImpl) parts_1);
+                          _builder.newLineIfNotEmpty();
+                          final boolean done_2 = listOfParts.add(string_1.getValue());
+                          _builder.newLineIfNotEmpty();
+                        } else {
+                          final DeclaredVariableImpl variableDeclaration_1 = ((DeclaredVariableImpl) parts_1);
+                          _builder.newLineIfNotEmpty();
+                          InitialJSONLines _variable_1 = variableDeclaration_1.getVariable();
+                          final InitialJSONLines variable_1 = ((InitialJSONLines) _variable_1);
+                          _builder.newLineIfNotEmpty();
+                          String _name_1 = variable_1.getName();
+                          String _plus_2 = (" #" + _name_1);
+                          String _plus_3 = (_plus_2 + "#");
+                          final boolean done_3 = listOfParts.add(_plus_3);
+                          _builder.newLineIfNotEmpty();
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              String _name_2 = JSONLine.getName();
+              String _plus_4 = (("\t" + "\"") + _name_2);
+              String _plus_5 = (_plus_4 + "\"");
+              String _plus_6 = (_plus_5 + ": [");
+              String _plus_7 = (_plus_6 + "\"");
+              String _join = IterableExtensions.join(listOfParts, ",");
+              String _plus_8 = (_plus_7 + _join);
+              String _plus_9 = (_plus_8 + "\"");
+              String _plus_10 = (_plus_9 + "],");
+              _builder.append(_plus_10);
+              _builder.newLineIfNotEmpty();
+            } else {
+              final FinalJSONLine JSONLine_1 = ((FinalJSONLine) statement);
+              _builder.newLineIfNotEmpty();
+              FinalJSONEnding _value_1 = JSONLine_1.getValue();
+              final StartValueImpl value_1 = ((StartValueImpl) _value_1);
+              _builder.newLineIfNotEmpty();
+              final EList<InnerStatements> innerStatement_1 = value_1.getValueInnerStatements();
+              _builder.newLineIfNotEmpty();
+              {
+                for(final InnerStatements parts_2 : innerStatement_1) {
+                  {
+                    Class<? extends InnerStatements> _class_3 = parts_2.getClass();
+                    boolean _equals_3 = Objects.equal(_class_3, StringDeclarationImpl.class);
+                    if (_equals_3) {
+                      final StringDeclarationImpl string_2 = ((StringDeclarationImpl) parts_2);
+                      _builder.newLineIfNotEmpty();
+                      final boolean done_4 = listOfParts.add(string_2.getValue());
+                      _builder.newLineIfNotEmpty();
+                    } else {
+                      final DeclaredVariableImpl variableDeclaration_2 = ((DeclaredVariableImpl) parts_2);
+                      _builder.newLineIfNotEmpty();
+                      InitialJSONLines _variable_2 = variableDeclaration_2.getVariable();
+                      final InitialJSONLines variable_2 = ((InitialJSONLines) _variable_2);
+                      _builder.newLineIfNotEmpty();
+                      String _name_3 = variable_2.getName();
+                      String _plus_11 = (" #" + _name_3);
+                      String _plus_12 = (_plus_11 + "#");
+                      final boolean done_5 = listOfParts.add(_plus_12);
+                      _builder.newLineIfNotEmpty();
+                    }
+                  }
+                }
+              }
+              final EList<NormalValue> outerStatement_1 = value_1.getVals();
+              _builder.newLineIfNotEmpty();
+              {
+                for(final NormalValue normalVal_1 : outerStatement_1) {
+                  final EList<InnerStatements> innerNormal_1 = normalVal_1.getValueInnerStatements();
+                  _builder.newLineIfNotEmpty();
+                  {
+                    for(final InnerStatements parts_3 : innerNormal_1) {
+                      {
+                        Class<? extends InnerStatements> _class_4 = parts_3.getClass();
+                        boolean _equals_4 = Objects.equal(_class_4, StringDeclarationImpl.class);
+                        if (_equals_4) {
+                          final StringDeclarationImpl string_3 = ((StringDeclarationImpl) parts_3);
+                          _builder.newLineIfNotEmpty();
+                          final boolean done_6 = listOfParts.add(string_3.getValue());
+                          _builder.newLineIfNotEmpty();
+                        } else {
+                          final DeclaredVariableImpl variableDeclaration_3 = ((DeclaredVariableImpl) parts_3);
+                          _builder.newLineIfNotEmpty();
+                          InitialJSONLines _variable_3 = variableDeclaration_3.getVariable();
+                          final InitialJSONLines variable_3 = ((InitialJSONLines) _variable_3);
+                          _builder.newLineIfNotEmpty();
+                          String _name_4 = variable_3.getName();
+                          String _plus_13 = (" #" + _name_4);
+                          String _plus_14 = (_plus_13 + "#");
+                          final boolean done_7 = listOfParts.add(_plus_14);
+                          _builder.newLineIfNotEmpty();
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              String _join_1 = IterableExtensions.join(listOfParts, ",");
+              String _plus_15 = (((((("\t" + "\"") + "origin") + "\"") + ": [") + "\"") + _join_1);
+              String _plus_16 = (_plus_15 + "\"");
+              String _plus_17 = (_plus_16 + "]");
+              _builder.append(_plus_17);
+              _builder.newLineIfNotEmpty();
+            }
+          }
+        }
+      }
+      _builder.append("}");
+      _builder.newLine();
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
   }
 }

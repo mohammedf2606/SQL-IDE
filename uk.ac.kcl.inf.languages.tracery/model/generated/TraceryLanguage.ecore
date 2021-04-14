@@ -3,37 +3,42 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="traceryLanguage" nsURI="http://www.ac.uk/kcl/inf/languages/tracery/TraceryLanguage"
     nsPrefix="traceryLanguage">
   <eClassifiers xsi:type="ecore:EClass" name="TraceryProgram">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="initialStatement" eType="#//InitialJSONLine"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
-        eType="#//NormalJSONLine" containment="true"/>
+        eType="#//Statement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VariableDecleration" eSuperTypes="#//InnerStatement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InitialJSONLine">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="startVal" upperBound="-1"
-        eType="#//startValue" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vals" upperBound="-1" eType="#//normalValue"
+  <eClassifiers xsi:type="ecore:EClass" name="Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialStatement" upperBound="-1"
+        eType="#//InitialJSONLines" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="finalStatement" eType="#//FinalJSONLine"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NormalJSONLine"/>
-  <eClassifiers xsi:type="ecore:EClass" name="startValue">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
-        eType="#//InnerStatement" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialJSONLines">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//InitialJSONEnding"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="normalValue">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
-        eType="#//InnerStatement" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FinalJSONLine">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//FinalJSONEnding"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InnerStatement">
+  <eClassifiers xsi:type="ecore:EClass" name="InitialJSONEnding"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InnerValues" eSuperTypes="#//InitialJSONEnding"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FinalJSONEnding"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StartValue" eSuperTypes="#//InnerValues #//FinalJSONEnding">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vals" upperBound="-1" eType="#//NormalValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueInnerStatements" upperBound="-1"
+        eType="#//InnerStatements" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NormalValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueInnerStatements" upperBound="-1"
+        eType="#//InnerStatements" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InnerStatements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringDeclaration" eSuperTypes="#//InnerStatements">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StartingJSONExpression" eSuperTypes="#//NormalJSONLine">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="startVal" upperBound="-1"
-        eType="#//startValue" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vals" upperBound="-1" eType="#//normalValue"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//VariableDecleration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclaredVariable" eSuperTypes="#//InnerStatements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//InitialJSONLines"/>
   </eClassifiers>
 </ecore:EPackage>

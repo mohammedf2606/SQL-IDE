@@ -10,9 +10,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
-import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import uk.ac.kcl.inf.languages.tracery.services.TraceryLanguageGrammarAccess;
@@ -21,12 +18,10 @@ import uk.ac.kcl.inf.languages.tracery.services.TraceryLanguageGrammarAccess;
 public class TraceryLanguageSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected TraceryLanguageGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_InnerStatement_NumberSignKeyword_1_0_or_NumberSignKeyword_2_0_or_NumberSignKeyword_3_0_or_NumberSignKeyword_4_0_or_NumberSignKeyword_5_0;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (TraceryLanguageGrammarAccess) access;
-		match_InnerStatement_NumberSignKeyword_1_0_or_NumberSignKeyword_2_0_or_NumberSignKeyword_3_0_or_NumberSignKeyword_4_0_or_NumberSignKeyword_5_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getInnerStatementAccess().getNumberSignKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getInnerStatementAccess().getNumberSignKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getInnerStatementAccess().getNumberSignKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getInnerStatementAccess().getNumberSignKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getInnerStatementAccess().getNumberSignKeyword_5_0()));
 	}
 	
 	@Override
@@ -41,21 +36,8 @@ public class TraceryLanguageSyntacticSequencer extends AbstractSyntacticSequence
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_InnerStatement_NumberSignKeyword_1_0_or_NumberSignKeyword_2_0_or_NumberSignKeyword_3_0_or_NumberSignKeyword_4_0_or_NumberSignKeyword_5_0.equals(syntax))
-				emit_InnerStatement_NumberSignKeyword_1_0_or_NumberSignKeyword_2_0_or_NumberSignKeyword_3_0_or_NumberSignKeyword_4_0_or_NumberSignKeyword_5_0(semanticObject, getLastNavigableState(), syntaxNodes);
-			else acceptNodes(getLastNavigableState(), syntaxNodes);
+			acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * Ambiguous syntax:
-	 *     '#' | '#' | '#' | '#' | '#'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) name=ID
-	 */
-	protected void emit_InnerStatement_NumberSignKeyword_1_0_or_NumberSignKeyword_2_0_or_NumberSignKeyword_3_0_or_NumberSignKeyword_4_0_or_NumberSignKeyword_5_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 }
