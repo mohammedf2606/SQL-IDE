@@ -46,11 +46,11 @@ class TraceryLanguageGenerator extends AbstractGenerator {
 				«FOR parts : innerStatement»
 					«IF parts.class == StringDeclarationImpl»
 						«val string = parts as StringDeclarationImpl»
-						«val done = listOfParts.add(string.value)»
+						«val done = listOfParts.add('"' + string.value + '"')»
 					«ELSE»
 						«val variableDeclaration = parts as DeclaredVariableImpl»
 						«val variable = variableDeclaration.variable as InitialJSONLines»
-						«val done = listOfParts.add(' #' + variable.name + '#')»
+						«val done = listOfParts.add(' "#' + variable.name + '#"')»
 					«ENDIF»
 				«ENDFOR»
 				«val outerStatement = value.vals»
@@ -59,15 +59,15 @@ class TraceryLanguageGenerator extends AbstractGenerator {
 					«FOR parts : innerNormal»
 						«IF parts.class == StringDeclarationImpl»
 							«val string = parts as StringDeclarationImpl»
-							«val done = listOfParts.add(string.value)»
+							«val done = listOfParts.add('"' + string.value + '"')»
 						«ELSE»	
 							«val variableDeclaration = parts as DeclaredVariableImpl»
 							«val variable = variableDeclaration.variable as InitialJSONLines»
-							«val done = listOfParts.add(' #' + variable.name + '#')»
+							«val done = listOfParts.add(' "#' + variable.name + '#"')»
 						«ENDIF»
 					«ENDFOR»
 				«ENDFOR»		
-				«'\t' + '"' + JSONLine.getName() + '"' + ": [" + '"' + listOfParts.join(",") + '"' + "],"»
+				«'\t' + '"' + JSONLine.getName() + '"' + ": [" + listOfParts.join(",") + "],"»
 			«ELSE»
 				«val JSONLine = statement as FinalJSONLine»
 				«val value = JSONLine.value as StartValueImpl»
@@ -75,11 +75,11 @@ class TraceryLanguageGenerator extends AbstractGenerator {
 				«FOR parts : innerStatement»
 					«IF parts.class == StringDeclarationImpl»
 						«val string = parts as StringDeclarationImpl»
-						«val done = listOfParts.add(string.value)»
+						«val done = listOfParts.add('"' + string.value + '"')»
 					«ELSE»	
 						«val variableDeclaration = parts as DeclaredVariableImpl»
 						«val variable = variableDeclaration.variable as InitialJSONLines»
-						«val done = listOfParts.add(' #' + variable.name + '#')»
+						«val done = listOfParts.add(' "#' + variable.name + '#"')»
 					«ENDIF»
 				«ENDFOR»
 				«val outerStatement = value.vals»
@@ -88,15 +88,15 @@ class TraceryLanguageGenerator extends AbstractGenerator {
 					«FOR parts : innerNormal»
 						«IF parts.class == StringDeclarationImpl»
 							«val string = parts as StringDeclarationImpl»
-							«val done = listOfParts.add(string.value)»
+							«val done = listOfParts.add('"' + string.value + '"')»
 						«ELSE»	
 							«val variableDeclaration = parts as DeclaredVariableImpl»
 							«val variable = variableDeclaration.variable as InitialJSONLines»
-							«val done = listOfParts.add(' #' + variable.name + '#')»
+							«val done = listOfParts.add(' "#' + variable.name + '#"')»
 						«ENDIF»
 					«ENDFOR»
 				«ENDFOR»
-				«'\t' + '"' + "origin" + '"' + ": [" + '"' + listOfParts.join(",") + '"' + "]"»
+				«'\t' + '"' + "origin" + '"' + ": [" + listOfParts.join(",")  + "]"»
 			«ENDIF»
 		«ENDFOR»
 		}
