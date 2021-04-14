@@ -5,7 +5,7 @@ generate traceryLanguage "http://www.ac.uk/kcl/inf/languages/tracery/TraceryLang
 
 TraceryProgram:
 	'{'
-		statements += Statement+
+		statements += Statement
 	'}'
 ;
 

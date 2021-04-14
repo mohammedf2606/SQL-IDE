@@ -1,4 +1,7 @@
 {
-	"origin": ["hello", "#test_abc.the#"]
-	,"test_abc":["nice job dude", "nah bad job #helloworld# la ala ala ala"]
+	"hello":["yellow"],
+	"myFriend":["hello", "#hello#"],
+	"bob":["Hello my name is betty"],
+	"betty":["idk", "btw", "cya", "bye"],
+	"origin":["Test #myFriend#"]
 }

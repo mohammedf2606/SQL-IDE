@@ -9,32 +9,32 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>normal Value</b></em>'.
+ * A representation of the model object '<em><b>Normal Value</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.normalValue#getValue <em>Value</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalValue#getValueInnerStatements <em>Value Inner Statements</em>}</li>
  * </ul>
  *
- * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getnormalValue()
+ * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getNormalValue()
  * @model
  * @generated
  */
-public interface normalValue extends EObject
+public interface NormalValue extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Value</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatement}.
+   * Returns the value of the '<em><b>Value Inner Statements</b></em>' containment reference list.
+   * The list contents are of type {@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatements}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' containment reference list.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getnormalValue_Value()
+   * @return the value of the '<em>Value Inner Statements</em>' containment reference list.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getNormalValue_ValueInnerStatements()
    * @model containment="true"
    * @generated
    */
-  EList<InnerStatement> getValue();
+  EList<InnerStatements> getValueInnerStatements();
 
-} // normalValue
+} // NormalValue

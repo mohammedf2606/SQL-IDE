@@ -55,7 +55,7 @@ class TraceryLanguageGenerator extends AbstractGenerator {
 				«ENDFOR»
 				«val outerStatement = value.vals»
 				«FOR NormalValue normalVal : outerStatement»
-					«val innerNormal = value.valueInnerStatements»
+					«val innerNormal = normalVal.valueInnerStatements»
 					«FOR parts : innerNormal»
 						«IF parts.class == StringDeclarationImpl»
 							«val string = parts as StringDeclarationImpl»
@@ -67,7 +67,7 @@ class TraceryLanguageGenerator extends AbstractGenerator {
 						«ENDIF»
 					«ENDFOR»
 				«ENDFOR»		
-				«'\t' + '"' + JSONLine.getName() + '"' + ": [" + '"' + listOfParts.join + '"' + "],"»
+				«'\t' + '"' + JSONLine.getName() + '"' + ": [" + '"' + listOfParts.join(",") + '"' + "],"»
 			«ELSE»
 				«val JSONLine = statement as FinalJSONLine»
 				«val value = JSONLine.value as StartValueImpl»
@@ -84,7 +84,7 @@ class TraceryLanguageGenerator extends AbstractGenerator {
 				«ENDFOR»
 				«val outerStatement = value.vals»
 				«FOR NormalValue normalVal : outerStatement»
-					«val innerNormal = value.valueInnerStatements»
+					«val innerNormal = normalVal.valueInnerStatements»
 					«FOR parts : innerNormal»
 						«IF parts.class == StringDeclarationImpl»
 							«val string = parts as StringDeclarationImpl»
@@ -96,7 +96,7 @@ class TraceryLanguageGenerator extends AbstractGenerator {
 						«ENDIF»
 					«ENDFOR»
 				«ENDFOR»
-				«'\t' + '"' + "origin" + '"' + ": [" + '"' + listOfParts.join + '"' + "]"»
+				«'\t' + '"' + "origin" + '"' + ": [" + '"' + listOfParts.join(",") + '"' + "]"»
 			«ENDIF»
 		«ENDFOR»
 		}

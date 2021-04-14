@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getInitialStatement <em>Initial Statement</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getStatements <em>Statements</em>}</li>
  * </ul>
  *
@@ -27,30 +26,8 @@ import org.eclipse.emf.ecore.EObject;
 public interface TraceryProgram extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Initial Statement</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Initial Statement</em>' containment reference.
-   * @see #setInitialStatement(InitialJSONLine)
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getTraceryProgram_InitialStatement()
-   * @model containment="true"
-   * @generated
-   */
-  InitialJSONLine getInitialStatement();
-
-  /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getInitialStatement <em>Initial Statement</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Initial Statement</em>' containment reference.
-   * @see #getInitialStatement()
-   * @generated
-   */
-  void setInitialStatement(InitialJSONLine value);
-
-  /**
    * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.NormalJSONLine}.
+   * The list contents are of type {@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.Statement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Statements</em>' containment reference list.
@@ -58,6 +35,6 @@ public interface TraceryProgram extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<NormalJSONLine> getStatements();
+  EList<Statement> getStatements();
 
 } // TraceryProgram

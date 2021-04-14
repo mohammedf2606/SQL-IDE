@@ -3,25 +3,24 @@
  */
 package uk.ac.kcl.inf.languages.tracery.traceryLanguage;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Inner Statement</b></em>'.
+ * A representation of the model object '<em><b>String Declaration</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatement#getValue <em>Value</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StringDeclaration#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInnerStatement()
+ * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getStringDeclaration()
  * @model
  * @generated
  */
-public interface InnerStatement extends EObject
+public interface StringDeclaration extends InnerStatements
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.
@@ -29,14 +28,14 @@ public interface InnerStatement extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
    * @see #setValue(String)
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInnerStatement_Value()
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getStringDeclaration_Value()
    * @model
    * @generated
    */
   String getValue();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InnerStatement#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StringDeclaration#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' attribute.
@@ -45,4 +44,4 @@ public interface InnerStatement extends EObject
    */
   void setValue(String value);
 
-} // InnerStatement
+} // StringDeclaration
