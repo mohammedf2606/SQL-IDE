@@ -57,5 +57,13 @@ StringDeclaration hidden():
 ;
 
 DeclaredVariable hidden():
-	'#' variable = [InitialJSONLines] '#'
+    '#' variable = [InitialJSONLines] '#' |
+    '#' variable = [InitialJSONLines] additions=VariableAdditions* '#'
+;
+
+VariableAdditions hidden():
+    ".a" |
+    ".the" |
+    ".capitalize" |
+    ".s"
 ;
