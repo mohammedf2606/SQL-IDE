@@ -1,5 +1,0 @@
-{
-	"hello":["Test", "#hello#"],
-	"rofl":["my gosh", "keep me away from  #hello#"],
-	"origin":["#hello# #rofl#"]
-}
