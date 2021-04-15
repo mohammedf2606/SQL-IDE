@@ -1,7 +1,0 @@
-{
-	"hello":["yellow"],
-	"myFriend":["hello", "#hello#"],
-	"bob":["Hello my name is betty"],
-	"betty":["idk", "btw", "cya", "bye"],
-	"origin":["Test #myFriend#"]
-}
