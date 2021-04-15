@@ -27,7 +27,7 @@ class TraceryLanguageValidator extends AbstractTraceryLanguageValidator { //	pub
 	public static val INVALID_VARIABLE_NAME = 'uk.ac.kcl.inf.szschaler.turtles.INVALID_VARIABLE_NAME'
 	
 	@Check
-	def lmao(InitialJSONLines initialJSONLine){
+	def checkingTheCapitalisation(InitialJSONLines initialJSONLine){
 		
 		if (!Character.isLowerCase(initialJSONLine.name.charAt(0))) {
 			warning('Name should start with a lower-case character', initialJSONLine,
